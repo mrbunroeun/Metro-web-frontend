@@ -39,7 +39,7 @@
             ['text' => 'Customized menus for every event'],
         ];
     @endphp
-    <section class="h-[5000px] font-sans">
+    <section class="h-[10000px] font-sans">
 
 
 
@@ -372,10 +372,13 @@ Catering Solutions --}}
 
             </div>
         </section>
+
+
+
         {{-- Catering Gallery Section (Tailwind, CSS Grid) --}}
         <section class="bg-[#ffffff] py-20 px-6 md:px-10">
             <div
-                class="max-w-[340px] mx-auto md:max-w-6xl grid grid-cols-[150px_150px] gap-x-35 gap-y-0 md:grid-cols-5 md:grid-rows-2 md:gap-0">
+                class="max-w-[500px] mx-auto md:max-w-6xl grid grid-cols-[130px_130px] justify-center gap-x-[128px] gap-y-0 md:grid-cols-5 md:grid-rows-2 md:gap-0">
 
                 <a href="#"
                     class="group relative block aspect-square overflow-hidden md:col-start-1 md:row-start-1">
@@ -400,7 +403,7 @@ Catering Solutions --}}
                 </a>
 
                 <a href="#"
-                    class="group relative block aspect-square overflow-hidden col-span-2 w-36 mx-auto md:w-full md:col-span-1 md:mx-0 md:col-start-3 md:row-start-1">
+                    class="group relative block aspect-square overflow-hidden col-span-2 w-32 mx-auto md:w-full md:col-span-1 md:mx-0 md:col-start-3 md:row-start-1">
                     <img src="{{ asset('images/catering/private-parties.jpg') }}" alt="Private Parties &amp; Functions"
                         class="h-full w-full bg-black object-cover transition-transform duration-500 ease-out group-hover:scale-110">
                     <span
