@@ -10,6 +10,16 @@
             ['icon' => 'school.svg', 'label' => 'Schools', 'width' => 'w-24'],
             ['icon' => 'goverments.svg', 'label' => 'Government Organizations', 'width' => 'w-28'],
         ];
+        $latestEvents = [
+            ['image' => 'home/our_core_services/canteen_catering.png', 'label' => 'Corporate Lunch Events'],
+            ['image' => 'home/our_core_services/mobile_catering.png', 'label' => 'Wedding Catering Projects'],
+            [
+                'image' => 'home/our_core_services/food_box_light_refreshment_catering.png',
+                'label' => 'Food Display',
+            ],
+            ['image' => 'home/our_core_services/corporate_buffet_catering.png', 'label' => 'Gala Dinner Catering'],
+            ['image' => 'home/our_core_services/event_rental_setup.png', 'label' => 'Events'],
+        ];
 
         $mobileCateringPackages = [
             ['number' => '01', 'label' => 'Custom Corporate Package'],
@@ -48,10 +58,10 @@
             <div class="flex flex-row items-center justify-center gap-4 md:gap-6 mb-2 mt-[54px] md:mt-[58px]">
                 <span class="h-px w-16 md:w-24 bg-white/70"></span>
                 <div class="flex flex-col items-center">
-                    <h2 class="text-[#A80000] font-bold text-2xl md:text-4xl tracking-[0.3em]">
+                    <h2 class="text-[#A80000] font-bold text-[24px] md:text-[36px] tracking-[0.3em]">
                         METRO
                     </h2>
-                    <p class="text-white text-[10px] md:text-xs tracking-[0.35em] -mt-1">
+                    <p class="text-white text-[14px] tracking-[0.35em] -mt-1">
                         CATERING &amp; EVENTS
                     </p>
                 </div>
@@ -59,7 +69,7 @@
             </div>
 
             {{-- Main heading --}}
-            <h1 class="text-white font-semibold text-3xl md:text-5xl leading-tight mt-8 max-w-5xl">
+            <h1 class="text-white font-semibold text-[30px] md:text-[48px] leading-tight mt-8 max-w-5xl">
                 Premium Catering Services in Cambodia for Corporate, Weddings &amp; Private Events
             </h1>
 
@@ -71,7 +81,7 @@
 
             {{-- Contact Us button --}}
             <a href="#"
-                class="mt-8 bg-[#A80000] hover:bg-[#8f0000] text-white text-sm font-medium px-8 py-3 rounded-full transition duration-300 ease-in-out">
+                class="mt-8 bg-[#A80000] hover:bg-[#8f0000] text-white text-[14px] font-medium px-8 py-3 rounded-full transition duration-300 ease-in-out">
                 Contact Us
             </a>
 
@@ -124,7 +134,7 @@
 
             {{-- Title --}}
             <div class="text-center mb-8 sm:mb-10 lg:mb-12">
-                <h2 class="text-2xl md:text-3xl font-medium text-gray-800">
+                <h2 class="text-[24px] md:text-[30px] font-medium text-gray-800">
                     Our <span class="text-[#A80000] font-bold">Core Services</span>
                 </h2>
             </div>
@@ -132,8 +142,8 @@
             {{-- Cards --}}
             <div
                 class="grid justify-start gap-6
-                grid-cols-[repeat(auto-fit,minmax(clamp(140px,40vw,200px),1fr))]
-                max-w-[1280px] mx-auto">
+                    grid-cols-[repeat(auto-fit,minmax(clamp(140px,40vw,200px),1fr))]
+                    max-w-[1280px] mx-auto">
                 <x-home.our_core_services number="01" title="Canteen Catering"
                     image="home/our_core_services/canteen_catering.png" />
                 <x-home.our_core_services number="02" title="Mobile Catering"
@@ -149,7 +159,7 @@
             {{-- Button --}}
             <div class="flex justify-center mt-8 sm:mt-10 lg:mt-12">
                 <a href="#"
-                    class="inline-block px-8 py-3 rounded-full  bg-[#FFFFFF] text-[#A80000] font-medium text-sm
+                    class="inline-block px-8 py-3 rounded-full  bg-[#FFFFFF] text-[#A80000] font-medium text-[14px]
                    transition-colors duration-300 hover:bg-[#A80000] hover:text-white">
                     Explore All Services
                 </a>
@@ -165,13 +175,13 @@
 
                 {{-- Left content --}}
                 <div class="flex flex-col items-center text-center lg:w-[300px] shrink-0">
-                    <h2 class="text-white text-xl sm:text-2xl leading-snug">
+                    <h2 class="text-white text-[20px] sm:text-[24px] leading-snug">
                         Featured Mobile Catering
                         <span class="block font-bold">Menu Packages</span>
                     </h2>
 
                     <a href="#"
-                        class="mt-5 inline-block px-6 py-3 rounded-full bg-black text-white text-sm font-medium
+                        class="mt-5 inline-block px-6 py-3 rounded-full bg-black text-white text-[14px] font-medium
                        transition-colors duration-300 hover:bg-[#F3F0E9] hover:text-[#A80000]">
                         Request Quotation
                     </a>
@@ -185,8 +195,8 @@
                         flex items-center justify-center px-3 text-center">
                             <span
                                 class="absolute top-1 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-[#A80000]
-                             flex items-center justify-center text-white text-xs font-semibold">{{ $package['number'] }}</span>
-                            <p class="text-[#1a1a1a] text-sm font-medium">{{ $package['label'] }}</p>
+                             flex items-center justify-center text-white text-[14px] font-semibold">{{ $package['number'] }}</span>
+                            <p class="text-[#1a1a1a] text-[14px] font-medium">{{ $package['label'] }}</p>
                         </div>
                     @endforeach
                 </div>
@@ -199,9 +209,9 @@ Catering Solutions --}}
         <section class="py-12 sm:py-16 px-4 text-center font-sans">
 
             {{-- Title --}}
-            <h2 class="text-lg sm:text-xl mb-8 sm:mb-10">
+            <h2 class="text-[18px] sm:text-[20px] mb-8 sm:mb-10">
                 Canteen
-                <span class="block font-bold text-[#A80000] text-xl sm:text-2xl">Catering Solutions</span>
+                <span class="block font-bold text-[#A80000] text-[20px] sm:text-[24px]">Catering Solutions</span>
             </h2>
 
 
@@ -233,7 +243,7 @@ Catering Solutions --}}
 
                 {{-- Left heading --}}
                 <div class="text-center lg:text-left shrink-0 lg:w-[340px]">
-                    <h2 class="text-white text-3xl sm:text-4xl leading-snug">
+                    <h2 class="text-white text-[30px] sm:text-[36px] leading-snug">
                         Why Choose
                         <span class="block font-bold">Metro Catering?</span>
                     </h2>
@@ -252,7 +262,7 @@ Catering Solutions --}}
                                         clip-rule="evenodd" />
                                 </svg>
                             </span>
-                            <p class="text-white text-sm sm:text-base leading-snug">{{ $point['text'] }}</p>
+                            <p class="text-white text-[14px] sm:text-[16px] leading-snug">{{ $point['text'] }}</p>
                         </div>
                     @endforeach
                 </div>
@@ -262,24 +272,24 @@ Catering Solutions --}}
 
         {{-- 20% OFF Promotion Board --}}
         <section
-            class="relative bg-[#A80000] w-[calc(100%-2rem)] sm:w-[calc(100%-3rem)] lg:w-full max-w-[1080px] mx-auto px-4 sm:px-8 lg:px-16 pt-10 sm:pt-12 lg:pt-16 pb-10 sm:pb-12 lg:pb-16">
-            <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-6 lg:gap-10">
+            class="relative bg-[#A80000] w-[calc(100%-2rem)] sm:w-[calc(100%-3rem)] lg:w-full max-w-[1080px] mx-auto px-4 sm:px-8 lg:px-16 pt-6 sm:pt-10 lg:pt-8 pb-8 sm:pb-10 lg:pb-8">
+            <div class="flex flex-col lg:grid lg:grid-cols-2 items-center gap-4 lg:gap-10">
 
                 {{-- Food tray image --}}
-                <div class="w-full -mt-10 sm:-mt-12 lg:-mt-16">
+                <div class="sm:w-[120%] sm:ml-[-4rem] w-[115%] max-w-[470px] lg:max-w-[820px] -mt-6 sm:-mt-10 lg:-mt-8">
                     <img src="{{ asset('home/tweenty_off/tweenty_off.png') }}" alt="20% Off Promotion food tray"
                         class="w-full h-auto object-contain">
                 </div>
 
                 {{-- Right content --}}
-                <div class="text-center lg:text-left">
-                    <h2 class="text-white font-bold text-3xl sm:text-4xl leading-tight">
+                <div class="w-full text-left lg:text-left">
+                    <h2 class="text-white font-bold text-2xl sm:text-3xl lg:text-4xl leading-tight">
                         20% OFF
                     </h2>
-                    <p class="text-white text-xl sm:text-2xl mt-1 mb-3">
+                    <p class="text-white text-lg sm:text-xl lg:text-2xl leading-tight lg:mb-3">
                         Promotion Board
                     </p>
-                    <p class="text-white/90 text-sm sm:text-base leading-relaxed max-w-md">
+                    <p class="text-white/90 text-xs sm:text-sm lg:text-base leading-snug lg:leading-relaxed mt-2 max-w-md">
                         Lorem Introduce Metro Catering as a trusted Cambodian catering
                         company specializing in corporate dining and event services.
                     </p>
@@ -288,8 +298,141 @@ Catering Solutions --}}
             </div>
         </section>
 
+        {{-- Latest Events --}}
+        <section class="py-12 sm:py-16 px-4 font-sans">
 
+            {{-- Title --}}
+            <h2 class="text-center text-[18px] sm:text-[20px] mb-10 sm:mb-12">
+                Latest <span class="font-bold text-[#A80000]">Events</span>
+            </h2>
 
+            {{-- Staggered image grid --}}
+            <div
+                class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-x-4 gap-y-4 sm:gap-x-5 sm:gap-y-5 lg:gap-x-6 lg:gap-y-6 max-w-[1100px] mx-auto">
 
+                {{-- Item 1 --}}
+                <div
+                    class="relative w-full h-[150px] sm:h-[170px] lg:h-[180px] overflow-hidden
+                    sm:col-start-1 sm:col-span-2 sm:row-start-1
+                    lg:col-start-1 lg:col-span-2 lg:row-start-1">
+                    <img src="{{ asset($latestEvents[0]['image']) }}" alt="{{ $latestEvents[0]['label'] }}"
+                        class="w-full h-full object-cover object-center">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <p class="absolute bottom-2 left-3 text-white text-[13px] font-medium leading-tight">
+                        {{ $latestEvents[0]['label'] }}</p>
+                </div>
+
+                {{-- Item 2 --}}
+                <div
+                    class="relative w-full h-[150px] sm:h-[170px] lg:h-[180px] overflow-hidden
+                    sm:col-start-3 sm:col-span-2 sm:row-start-1
+                    lg:col-start-3 lg:col-span-2 lg:row-start-1">
+                    <img src="{{ asset($latestEvents[1]['image']) }}" alt="{{ $latestEvents[1]['label'] }}"
+                        class="w-full h-full object-cover object-center">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <p class="absolute bottom-2 left-3 text-white text-[13px] font-medium leading-tight">
+                        {{ $latestEvents[1]['label'] }}</p>
+                </div>
+
+                {{-- Item 3 --}}
+                <div
+                    class="relative w-full h-[150px] sm:h-[170px] lg:h-[180px] overflow-hidden
+                    sm:col-start-2 sm:col-span-2 sm:row-start-2
+                    lg:col-start-5 lg:col-span-2 lg:row-start-1">
+                    <img src="{{ asset($latestEvents[2]['image']) }}" alt="{{ $latestEvents[2]['label'] }}"
+                        class="w-full h-full object-cover object-center">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <p class="absolute bottom-2 left-3 text-white text-[13px] font-medium leading-tight">
+                        {{ $latestEvents[2]['label'] }}</p>
+                </div>
+
+                {{-- Item 4 --}}
+                <div
+                    class="relative w-full h-[150px] sm:h-[170px] lg:h-[180px] overflow-hidden
+                    sm:col-start-1 sm:col-span-2 sm:row-start-3
+                    lg:col-start-2 lg:col-span-2 lg:row-start-2">
+                    <img src="{{ asset($latestEvents[3]['image']) }}" alt="{{ $latestEvents[3]['label'] }}"
+                        class="w-full h-full object-cover object-center">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <p class="absolute bottom-2 left-3 text-white text-[13px] font-medium leading-tight">
+                        {{ $latestEvents[3]['label'] }}</p>
+                </div>
+
+                {{-- Item 5 --}}
+                <div
+                    class="relative w-full h-[150px] sm:h-[170px] lg:h-[180px] overflow-hidden
+                    sm:col-start-3 sm:col-span-2 sm:row-start-3
+                    lg:col-start-4 lg:col-span-2 lg:row-start-2">
+                    <img src="{{ asset($latestEvents[4]['image']) }}" alt="{{ $latestEvents[4]['label'] }}"
+                        class="w-full h-full object-cover object-center">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <p class="absolute bottom-2 left-3 text-white text-[13px] font-medium leading-tight">
+                        {{ $latestEvents[4]['label'] }}</p>
+                </div>
+
+            </div>
+        </section>
+        {{-- Catering Gallery Section (Tailwind, CSS Grid) --}}
+        <section class="bg-[#ffffff] py-20 px-6 md:px-10">
+            <div
+                class="max-w-[340px] mx-auto md:max-w-6xl grid grid-cols-[150px_150px] gap-x-35 gap-y-0 md:grid-cols-5 md:grid-rows-2 md:gap-0">
+
+                <a href="#"
+                    class="group relative block aspect-square overflow-hidden md:col-start-1 md:row-start-1">
+                    <img src="{{ asset('images/catering/corporate-lunch.jpg') }}" alt="Corporate Lunch Events"
+                        class="h-full w-full bg-black object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+                    <span
+                        class="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-red-900/90 via-red-900/30 to-transparent"></span>
+                    <span class="absolute bottom-3 left-3 right-3 text-sm font-semibold leading-tight text-white">
+                        Corporate Lunch Events
+                    </span>
+                </a>
+
+                <a href="#"
+                    class="group relative block aspect-square overflow-hidden md:col-start-2 md:row-start-2">
+                    <img src="{{ asset('images/catering/wedding-catering.jpg') }}" alt="Wedding Catering Projects"
+                        class="h-full w-full bg-black object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+                    <span
+                        class="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-red-900/90 via-red-900/30 to-transparent"></span>
+                    <span class="absolute bottom-3 left-3 right-3 text-sm font-semibold leading-tight text-white">
+                        Wedding Catering Projects
+                    </span>
+                </a>
+
+                <a href="#"
+                    class="group relative block aspect-square overflow-hidden col-span-2 w-36 mx-auto md:w-full md:col-span-1 md:mx-0 md:col-start-3 md:row-start-1">
+                    <img src="{{ asset('images/catering/private-parties.jpg') }}" alt="Private Parties &amp; Functions"
+                        class="h-full w-full bg-black object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+                    <span
+                        class="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-red-900/90 via-red-900/30 to-transparent"></span>
+                    <span class="absolute bottom-3 left-3 right-3 text-sm font-semibold leading-tight text-white">
+                        Private Parties &amp; Functions
+                    </span>
+                </a>
+
+                <a href="#"
+                    class="group relative block aspect-square overflow-hidden md:col-start-4 md:row-start-2">
+                    <img src="{{ asset('images/catering/community-outreach.jpg') }}" alt="Community Outreach Activities"
+                        class="h-full w-full bg-black object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+                    <span
+                        class="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-red-900/90 via-red-900/30 to-transparent"></span>
+                    <span class="absolute bottom-3 left-3 right-3 text-sm font-semibold leading-tight text-white">
+                        Community Outreach Activities
+                    </span>
+                </a>
+
+                <a href="#"
+                    class="group relative block aspect-square overflow-hidden md:col-start-5 md:row-start-1">
+                    <img src="{{ asset('images/catering/festival-events.jpg') }}" alt="Festival Events"
+                        class="h-full w-full bg-black object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+                    <span
+                        class="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-red-900/90 via-red-900/30 to-transparent"></span>
+                    <span class="absolute bottom-3 left-3 right-3 text-sm font-semibold leading-tight text-white">
+                        Festival Events
+                    </span>
+                </a>
+
+            </div>
+        </section>
     </section>
 @endsection
