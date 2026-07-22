@@ -1,6 +1,35 @@
 @extends('layouts.app')
 @section('content')
-    <section class="h-[3000px]">
+    @php
+        $cateringSolutionItems = [
+            ['icon' => 'offices.svg', 'label' => 'Offices', 'width' => 'w-20'],
+            ['icon' => 'hotels.svg', 'label' => 'Hotels', 'width' => 'w-20'],
+            ['icon' => 'factories.svg', 'label' => 'Factories', 'width' => 'w-20'],
+            ['icon' => 'ngos.svg', 'label' => 'NGOs', 'width' => 'w-20'],
+            ['icon' => 'construction.svg', 'label' => 'Construction Sites', 'width' => 'w-24'],
+            ['icon' => 'school.svg', 'label' => 'Schools', 'width' => 'w-24'],
+            ['icon' => 'goverments.svg', 'label' => 'Government Organizations', 'width' => 'w-28'],
+        ];
+
+        $mobileCateringPackages = [
+            ['number' => '01', 'label' => 'Custom Corporate Package'],
+            ['number' => '02', 'label' => '$5 Package (Minimum 25 Pax)'],
+            ['number' => '03', 'label' => '$20 Premium Package'],
+            ['number' => '04', 'label' => '$10 Package'],
+            ['number' => '05', 'label' => '$15 Package'],
+        ];
+
+        $whyChooseUsPoints = [
+            ['text' => 'Professional event management team'],
+            ['text' => 'Flexible menu packages from $5–$20 per person'],
+            ['text' => 'Minimum order starting from 25 participants'],
+            ['text' => 'Reliable delivery and setup services'],
+            ['text' => 'Corporate contract and long-term catering solutions'],
+            ['text' => 'Three-day advance booking support'],
+            ['text' => 'Customized menus for every event'],
+        ];
+    @endphp
+    <section class="h-[5000px] font-sans">
 
 
 
@@ -19,7 +48,7 @@
             <div class="flex flex-row items-center justify-center gap-4 md:gap-6 mb-2 mt-[54px] md:mt-[58px]">
                 <span class="h-px w-16 md:w-24 bg-white/70"></span>
                 <div class="flex flex-col items-center">
-                    <h2 class="text-[#B00000] font-bold text-2xl md:text-4xl tracking-[0.3em]">
+                    <h2 class="text-[#A80000] font-bold text-2xl md:text-4xl tracking-[0.3em]">
                         METRO
                     </h2>
                     <p class="text-white text-[10px] md:text-xs tracking-[0.35em] -mt-1">
@@ -42,20 +71,18 @@
 
             {{-- Contact Us button --}}
             <a href="#"
-                class="mt-8 bg-[#B00000] hover:bg-[#8f0000] text-white text-sm font-medium px-8 py-3 rounded-full transition duration-300 ease-in-out">
+                class="mt-8 bg-[#A80000] hover:bg-[#8f0000] text-white text-sm font-medium px-8 py-3 rounded-full transition duration-300 ease-in-out">
                 Contact Us
             </a>
 
         </section>
 
-
-
         {{-- About Metro Catering --}}
-        <section class="relative w-full mb-[20rem]">
+        <section class="relative w-full ">
             <div class="grid grid-cols-2 h-[400px] md:h-[500px]">
 
                 {{-- Left red panel --}}
-                <div class="bg-[#B00000] flex flex-col items-center justify-center px-4 sm:px-8 md:px-16 py-6 md:py-0">
+                <div class="bg-[#A80000] flex flex-col items-center justify-center px-4 sm:px-8 md:px-16 py-6 md:py-0">
 
                     {{-- Fixed-width inner content container --}}
                     <div class="text-left w-full max-w-[280px] sm:max-w-[340px] md:max-w-[420px]">
@@ -87,18 +114,18 @@
             {{-- Decorative rounded blob blending into page background --}}
             <div
                 class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2
-        w-10 h-10 md:w-14 md:h-14 rounded-full bg-white z-10">
+        w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#F3F0E9] z-10">
             </div>
         </section>
 
 
         {{-- Our Core Services --}}
-        <section class="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
+        <section class=" bg-[#F3F0E9] pt-6 pb-30 sm:pt-12 sm:pb-46 lg:pb-56 lg:pt-16 px-4 sm:px-6 lg:px-8">
 
             {{-- Title --}}
             <div class="text-center mb-8 sm:mb-10 lg:mb-12">
                 <h2 class="text-2xl md:text-3xl font-medium text-gray-800">
-                    Our <span class="text-[#B00000] font-bold">Core Services</span>
+                    Our <span class="text-[#A80000] font-bold">Core Services</span>
                 </h2>
             </div>
 
@@ -107,23 +134,158 @@
                 class="grid justify-start gap-6
                 grid-cols-[repeat(auto-fit,minmax(clamp(140px,40vw,200px),1fr))]
                 max-w-[1280px] mx-auto">
-                <x-home.our_core_services number="01" title="Canteen Catering" image="under_hero/food.png" />
-                <x-home.our_core_services number="02" title="Mobile Catering" image="under_hero/food.png" />
+                <x-home.our_core_services number="01" title="Canteen Catering"
+                    image="home/our_core_services/canteen_catering.png" />
+                <x-home.our_core_services number="02" title="Mobile Catering"
+                    image="home/our_core_services/mobile_catering.png" />
                 <x-home.our_core_services number="03" title="Food Box & Light Refreshment Catering"
-                    image="under_hero/food.png" />
-                <x-home.our_core_services number="04" title="Corporate Buffet Catering" image="under_hero/food.png" />
-                <x-home.our_core_services number="05" title="Event Rental & Setup" image="under_hero/food.png" />
+                    image="home/our_core_services/food_box_light_refreshment_catering.png" />
+                <x-home.our_core_services number="04" title="Corporate Buffet Catering"
+                    image="home/our_core_services/corporate_buffet_catering.png" />
+                <x-home.our_core_services number="05" title="Event Rental & Setup"
+                    image="home/our_core_services/event_rental_setup.png" />
             </div>
 
             {{-- Button --}}
             <div class="flex justify-center mt-8 sm:mt-10 lg:mt-12">
                 <a href="#"
-                    class="inline-block px-8 py-3 rounded-full border border-[#B00000] text-[#B00000] font-medium text-sm
-                   transition-colors duration-300 hover:bg-[#B00000] hover:text-white">
+                    class="inline-block px-8 py-3 rounded-full  bg-[#FFFFFF] text-[#A80000] font-medium text-sm
+                   transition-colors duration-300 hover:bg-[#A80000] hover:text-white">
                     Explore All Services
                 </a>
             </div>
 
+        </section>
+
+
+        {{-- Featured Mobile Catering Menu Packages --}}
+        <section
+            class="bg-[#A80000] mt-[-5rem] w-[calc(100%-2rem)] sm:w-[calc(100%-3rem)] lg:w-full max-w-[1080px] mx-auto px-4 py-10 sm:px-8 sm:py-12 lg:px-16 lg:py-14">
+            <div class="mx-auto flex flex-col lg:flex-row lg:items-center justify-center gap-8 lg:gap-10">
+
+                {{-- Left content --}}
+                <div class="flex flex-col items-center text-center lg:w-[300px] shrink-0">
+                    <h2 class="text-white text-xl sm:text-2xl leading-snug">
+                        Featured Mobile Catering
+                        <span class="block font-bold">Menu Packages</span>
+                    </h2>
+
+                    <a href="#"
+                        class="mt-5 inline-block px-6 py-3 rounded-full bg-black text-white text-sm font-medium
+                       transition-colors duration-300 hover:bg-[#F3F0E9] hover:text-[#A80000]">
+                        Request Quotation
+                    </a>
+                </div>
+
+                {{-- Cards --}}
+                <div class="flex flex-wrap justify-center gap-4 sm:gap-5">
+                    @foreach ($mobileCateringPackages as $package)
+                        <div
+                            class="relative w-[calc(50%-0.5rem)] sm:w-[160px] h-[110px] bg-[#ffffff] rounded-xl shadow-md
+                        flex items-center justify-center px-3 text-center">
+                            <span
+                                class="absolute top-1 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-[#A80000]
+                             flex items-center justify-center text-white text-xs font-semibold">{{ $package['number'] }}</span>
+                            <p class="text-[#1a1a1a] text-sm font-medium">{{ $package['label'] }}</p>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+
+
+        {{-- Canteen
+Catering Solutions --}}
+        <section class="py-12 sm:py-16 px-4 text-center font-sans">
+
+            {{-- Title --}}
+            <h2 class="text-lg sm:text-xl mb-8 sm:mb-10">
+                Canteen
+                <span class="block font-bold text-[#A80000] text-xl sm:text-2xl">Catering Solutions</span>
+            </h2>
+
+
+            {{-- Icon grid --}}
+            <div class="flex mt-[4rem] flex-wrap gap-5 sm:gap-15 md:gap-25 justify-center gap-y-10 max-w-[800px] mx-auto">
+                @foreach ($cateringSolutionItems as $item)
+                    <div class="flex flex-col items-center {{ $item['width'] }}">
+                        <img src="{{ asset('home/icons/' . $item['icon']) }}" alt="{{ $item['label'] }}"
+                            class="w-10 h-10 mb-2">
+                        <p class="text-[20px] text-gray-700 leading-tight">{{ $item['label'] }}</p>
+                    </div>
+                @endforeach
+            </div>
+        </section>
+
+
+        {{-- Why Choose Metro Catering --}}
+        <section class="relative w-full overflow-hidden">
+
+            {{-- Background image --}}
+            <img src="{{ asset('home/why_choose_metro/bg_img.png') }}" alt="Metro Catering hero background"
+                class="absolute inset-0 w-full h-full object-cover object-center -z-10">
+
+            {{-- Dark overlay for text readability --}}
+            <div class="absolute inset-0 bg-black/60 -z-10"></div>
+
+            <div
+                class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 px-4 sm:px-8 lg:px-16 py-16 sm:py-20 lg:py-24">
+
+                {{-- Left heading --}}
+                <div class="text-center lg:text-left shrink-0 lg:w-[340px]">
+                    <h2 class="text-white text-3xl sm:text-4xl leading-snug">
+                        Why Choose
+                        <span class="block font-bold">Metro Catering?</span>
+                    </h2>
+                </div>
+
+                {{-- Right checklist --}}
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-6 w-full">
+                    @foreach ($whyChooseUsPoints as $point)
+                        <div class="flex items-start gap-3">
+                            <span
+                                class="flex items-center justify-center w-6 h-6 rounded-full bg-[#A80000] shrink-0 mt-0.5">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="white"
+                                    class="w-3.5 h-3.5">
+                                    <path fill-rule="evenodd"
+                                        d="M16.704 5.29a1 1 0 010 1.415l-7.09 7.09a1 1 0 01-1.414 0L4.296 9.89a1 1 0 111.414-1.414l3.198 3.198 6.383-6.384a1 1 0 011.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </span>
+                            <p class="text-white text-sm sm:text-base leading-snug">{{ $point['text'] }}</p>
+                        </div>
+                    @endforeach
+                </div>
+
+            </div>
+        </section>
+
+        {{-- 20% OFF Promotion Board --}}
+        <section
+            class="relative bg-[#A80000] w-[calc(100%-2rem)] sm:w-[calc(100%-3rem)] lg:w-full max-w-[1080px] mx-auto px-4 sm:px-8 lg:px-16 pt-10 sm:pt-12 lg:pt-16 pb-10 sm:pb-12 lg:pb-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-6 lg:gap-10">
+
+                {{-- Food tray image --}}
+                <div class="w-full -mt-10 sm:-mt-12 lg:-mt-16">
+                    <img src="{{ asset('home/tweenty_off/tweenty_off.png') }}" alt="20% Off Promotion food tray"
+                        class="w-full h-auto object-contain">
+                </div>
+
+                {{-- Right content --}}
+                <div class="text-center lg:text-left">
+                    <h2 class="text-white font-bold text-3xl sm:text-4xl leading-tight">
+                        20% OFF
+                    </h2>
+                    <p class="text-white text-xl sm:text-2xl mt-1 mb-3">
+                        Promotion Board
+                    </p>
+                    <p class="text-white/90 text-sm sm:text-base leading-relaxed max-w-md">
+                        Lorem Introduce Metro Catering as a trusted Cambodian catering
+                        company specializing in corporate dining and event services.
+                    </p>
+                </div>
+
+            </div>
         </section>
 
 

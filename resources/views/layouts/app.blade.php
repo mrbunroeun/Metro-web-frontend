@@ -13,7 +13,7 @@
     @stack('styles')
 </head>
 
-<body class=" text-gray-900 bg-[#ffffff] h-[100vh] antialiased">
+<body class=" text-gray-900 bg-[#ffffff]/90 h-[100vh] font-sans antialiased">
 
     {{-- Header --}}
     <x-navbar />

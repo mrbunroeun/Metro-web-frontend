@@ -5,13 +5,13 @@
 ])
 
 <div
-    class="group flex flex-col w-full max-w-[260px] bg-[#f6f6f6] shadow-md overflow-hidden
+    class="group flex flex-col w-full max-w-[260px] bg-[#ffffff] shadow-md overflow-hidden
             transition-colors duration-300 ease-in-out hover:bg-[#B00000]">
 
     {{-- Image with floating number badge --}}
     <div class="relative w-full h-[160px] mb-0.5 shrink-0">
         <img src="{{ $image ? asset($image) : asset('placeholder.png') }}" alt="{{ $title }}"
-            class="w-full h-full object-cover bg-[white] pb-[5px] object-center">
+            class="w-full h-full object-cover bg-[#f3f0e9] pb-[5px] object-center">
 
         {{-- Number badge --}}
         <div
