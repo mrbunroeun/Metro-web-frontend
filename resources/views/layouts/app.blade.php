@@ -24,7 +24,6 @@
     </main>
 
     {{-- Footer --}}
-    <x-footer />
 
     @stack('scripts')
 </body>

@@ -12,7 +12,7 @@
         ];
         $latestEvents = [
             ['image' => 'home/our_core_services/canteen_catering.png', 'label' => 'Corporate Lunch Events'],
-            ['image' => 'home/our_core_services/mobile_catering.png', 'label' => 'Wedding Catering Projects'],
+            ['image' => 'home/our_core_services/mobile_catering.png', 'label' => 'Festival & Public Events'],
             [
                 'image' => 'home/our_core_services/food_box_light_refreshment_catering.png',
                 'label' => 'Food Display',
@@ -39,7 +39,7 @@
             ['text' => 'Customized menus for every event'],
         ];
     @endphp
-    <section class="h-[10000px] font-sans">
+    <section class="h-full font-sans">
 
 
 
@@ -239,7 +239,7 @@ Catering Solutions --}}
             <div class="absolute inset-0 bg-black/60 -z-10"></div>
 
             <div
-                class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 px-4 sm:px-8 lg:px-16 py-16 sm:py-20 lg:py-24">
+                class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 px-4 sm:px-8 lg:px-16 py-16 sm:py-20 lg:py-24 max-w-6xl mx-auto">
 
                 {{-- Left heading --}}
                 <div class="text-center lg:text-left shrink-0 lg:w-[340px]">
@@ -299,90 +299,16 @@ Catering Solutions --}}
         </section>
 
         {{-- Latest Events --}}
-        <section class="py-12 sm:py-16 px-4 font-sans">
-
-            {{-- Title --}}
-            <h2 class="text-center text-[18px] sm:text-[20px] mb-10 sm:mb-12">
+        <section class="bg-[#ffffff] py-20 px-6 md:px-10">
+            <h2 class="text-center text-[20px] sm:text-[40px] mb-10 sm:mb-12">
                 Latest <span class="font-bold text-[#A80000]">Events</span>
             </h2>
-
-            {{-- Staggered image grid --}}
-            <div
-                class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-x-4 gap-y-4 sm:gap-x-5 sm:gap-y-5 lg:gap-x-6 lg:gap-y-6 max-w-[1100px] mx-auto">
-
-                {{-- Item 1 --}}
-                <div
-                    class="relative w-full h-[150px] sm:h-[170px] lg:h-[180px] overflow-hidden
-                    sm:col-start-1 sm:col-span-2 sm:row-start-1
-                    lg:col-start-1 lg:col-span-2 lg:row-start-1">
-                    <img src="{{ asset($latestEvents[0]['image']) }}" alt="{{ $latestEvents[0]['label'] }}"
-                        class="w-full h-full object-cover object-center">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                    <p class="absolute bottom-2 left-3 text-white text-[13px] font-medium leading-tight">
-                        {{ $latestEvents[0]['label'] }}</p>
-                </div>
-
-                {{-- Item 2 --}}
-                <div
-                    class="relative w-full h-[150px] sm:h-[170px] lg:h-[180px] overflow-hidden
-                    sm:col-start-3 sm:col-span-2 sm:row-start-1
-                    lg:col-start-3 lg:col-span-2 lg:row-start-1">
-                    <img src="{{ asset($latestEvents[1]['image']) }}" alt="{{ $latestEvents[1]['label'] }}"
-                        class="w-full h-full object-cover object-center">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                    <p class="absolute bottom-2 left-3 text-white text-[13px] font-medium leading-tight">
-                        {{ $latestEvents[1]['label'] }}</p>
-                </div>
-
-                {{-- Item 3 --}}
-                <div
-                    class="relative w-full h-[150px] sm:h-[170px] lg:h-[180px] overflow-hidden
-                    sm:col-start-2 sm:col-span-2 sm:row-start-2
-                    lg:col-start-5 lg:col-span-2 lg:row-start-1">
-                    <img src="{{ asset($latestEvents[2]['image']) }}" alt="{{ $latestEvents[2]['label'] }}"
-                        class="w-full h-full object-cover object-center">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                    <p class="absolute bottom-2 left-3 text-white text-[13px] font-medium leading-tight">
-                        {{ $latestEvents[2]['label'] }}</p>
-                </div>
-
-                {{-- Item 4 --}}
-                <div
-                    class="relative w-full h-[150px] sm:h-[170px] lg:h-[180px] overflow-hidden
-                    sm:col-start-1 sm:col-span-2 sm:row-start-3
-                    lg:col-start-2 lg:col-span-2 lg:row-start-2">
-                    <img src="{{ asset($latestEvents[3]['image']) }}" alt="{{ $latestEvents[3]['label'] }}"
-                        class="w-full h-full object-cover object-center">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                    <p class="absolute bottom-2 left-3 text-white text-[13px] font-medium leading-tight">
-                        {{ $latestEvents[3]['label'] }}</p>
-                </div>
-
-                {{-- Item 5 --}}
-                <div
-                    class="relative w-full h-[150px] sm:h-[170px] lg:h-[180px] overflow-hidden
-                    sm:col-start-3 sm:col-span-2 sm:row-start-3
-                    lg:col-start-4 lg:col-span-2 lg:row-start-2">
-                    <img src="{{ asset($latestEvents[4]['image']) }}" alt="{{ $latestEvents[4]['label'] }}"
-                        class="w-full h-full object-cover object-center">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                    <p class="absolute bottom-2 left-3 text-white text-[13px] font-medium leading-tight">
-                        {{ $latestEvents[4]['label'] }}</p>
-                </div>
-
-            </div>
-        </section>
-
-
-
-        {{-- Catering Gallery Section (Tailwind, CSS Grid) --}}
-        <section class="bg-[#ffffff] py-20 px-6 md:px-10">
             <div
                 class="max-w-[500px] mx-auto md:max-w-6xl grid grid-cols-[130px_130px] justify-center gap-x-[128px] gap-y-0 md:grid-cols-5 md:grid-rows-2 md:gap-0">
 
                 <a href="#"
                     class="group relative block aspect-square overflow-hidden md:col-start-1 md:row-start-1">
-                    <img src="{{ asset('images/catering/corporate-lunch.jpg') }}" alt="Corporate Lunch Events"
+                    <img src="{{ asset($latestEvents[1]['image']) }}" alt="Corporate Lunch Events"
                         class="h-full w-full bg-black object-cover transition-transform duration-500 ease-out group-hover:scale-110">
                     <span
                         class="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-red-900/90 via-red-900/30 to-transparent"></span>
@@ -393,7 +319,18 @@ Catering Solutions --}}
 
                 <a href="#"
                     class="group relative block aspect-square overflow-hidden md:col-start-2 md:row-start-2">
-                    <img src="{{ asset('images/catering/wedding-catering.jpg') }}" alt="Wedding Catering Projects"
+                    <img src="{{ asset($latestEvents[0]['image']) }}" alt="Festival & Public Events"
+                        class="h-full w-full bg-black object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+                    <span
+                        class="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-red-900/90 via-red-900/30 to-transparent"></span>
+                    <span class="absolute bottom-3 left-3 right-3 text-sm font-semibold leading-tight text-white">
+                        Festival & Public Events
+                    </span>
+                </a>
+
+                <a href="#"
+                    class="group relative block aspect-square overflow-hidden col-span-2 w-32 mx-auto md:w-full md:col-span-1 md:mx-0 md:col-start-3 md:row-start-1">
+                    <img src="{{ asset($latestEvents[2]['image']) }}" alt="Wedding Catering Projects"
                         class="h-full w-full bg-black object-cover transition-transform duration-500 ease-out group-hover:scale-110">
                     <span
                         class="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-red-900/90 via-red-900/30 to-transparent"></span>
@@ -403,39 +340,78 @@ Catering Solutions --}}
                 </a>
 
                 <a href="#"
-                    class="group relative block aspect-square overflow-hidden col-span-2 w-32 mx-auto md:w-full md:col-span-1 md:mx-0 md:col-start-3 md:row-start-1">
-                    <img src="{{ asset('images/catering/private-parties.jpg') }}" alt="Private Parties &amp; Functions"
-                        class="h-full w-full bg-black object-cover transition-transform duration-500 ease-out group-hover:scale-110">
-                    <span
-                        class="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-red-900/90 via-red-900/30 to-transparent"></span>
-                    <span class="absolute bottom-3 left-3 right-3 text-sm font-semibold leading-tight text-white">
-                        Private Parties &amp; Functions
-                    </span>
-                </a>
-
-                <a href="#"
                     class="group relative block aspect-square overflow-hidden md:col-start-4 md:row-start-2">
-                    <img src="{{ asset('images/catering/community-outreach.jpg') }}" alt="Community Outreach Activities"
+                    <img src="{{ asset($latestEvents[3]['image']) }}" alt="Festival & Public Events"
                         class="h-full w-full bg-black object-cover transition-transform duration-500 ease-out group-hover:scale-110">
                     <span
                         class="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-red-900/90 via-red-900/30 to-transparent"></span>
                     <span class="absolute bottom-3 left-3 right-3 text-sm font-semibold leading-tight text-white">
-                        Community Outreach Activities
+                        Festival & Public Events
                     </span>
                 </a>
 
                 <a href="#"
                     class="group relative block aspect-square overflow-hidden md:col-start-5 md:row-start-1">
-                    <img src="{{ asset('images/catering/festival-events.jpg') }}" alt="Festival Events"
+                    <img src="{{ asset($latestEvents[4]['image']) }}" alt="Food Box Delivery Programs"
                         class="h-full w-full bg-black object-cover transition-transform duration-500 ease-out group-hover:scale-110">
                     <span
                         class="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-red-900/90 via-red-900/30 to-transparent"></span>
                     <span class="absolute bottom-3 left-3 right-3 text-sm font-semibold leading-tight text-white">
-                        Festival Events
+                        Food Box Delivery Programs
                     </span>
                 </a>
 
             </div>
         </section>
+
+
+        {{-- Food Insights --}}
+        <section class="relative sm:mb-[10rem] mb-[5rem] w-full max-w-full md:max-w-[80%] mx-auto font-sans">
+            <div class="grid grid-cols-2 h-[300px]">
+
+                {{-- Left image panel --}}
+                <div class="relative h-full overflow-hidden">
+                    <img src="{{ asset('under_hero/food.png') }}" alt="Catering buffet spread"
+                        class="absolute inset-0 w-full h-full object-cover object-center">
+                </div>
+
+                {{-- Right red panel --}}
+                <div
+                    class="bg-[#A80000] flex flex-col items-center justify-center pl-8 pr-2 sm:px-8 md:px-16 py-6 md:py-0">
+
+                    {{-- Fixed-width inner content container --}}
+                    <div class="text-left w-full max-w-[200px] sm:max-w-[340px] md:max-w-[420px]">
+                        <p class="text-[#ffffff] text-[20px] sm:text-[28px] md:text-[40px] font-semibold">Food Insights</p>
+                        <p class="text-[#ffffff] text-[20px] sm:text-[15px] md:text-[16px] font-bold mb-1 md:mb-2">
+                            Featured Articles:
+                        </p>
+                        <ul
+                            class="text-[#ffffff]/90 text-[15px] sm:text-[15px] md:text-[14px] leading-snug md:leading-relaxed space-y-0.5 md:space-y-1 list-disc pl-3 md:pl-4">
+                            <li>How to Choose the Right Catering Service</li>
+                            <li>Buffet vs Food Box: Which is Better?</li>
+                            <li>Planning Corporate Events with Catering Services</li>
+                            <li>Wedding Catering Checklist</li>
+                            <li>Healthy Refreshment Ideas for Meetings</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+            {{-- Decorative rounded blob blending into page background --}}
+            <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+        w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#a80000] z-10">
+            </div>
+        </section>
+
+        {{-- footer --}}
+        @include('components.footer', [
+            'ctaHeading' => 'Ready to plan your event?',
+            'ctaSubtext' => '',
+            'ctaButtonText' => 'Contact Us',
+            'ctaLink' => url('/contact-us'),
+        ])
     </section>
 @endsection

@@ -24,8 +24,8 @@
 
             {{-- Desktop links (centered) --}}
             <div class="hidden lg:flex flex-row items-center justify-center gap-10 text-base">
-                <a href="#" class="text-[#B00000] transition duration-300 ease-in-out">Home</a>
-                <a href="#" class="text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">About
+                <a href="/" class="text-[#B00000] transition duration-300 ease-in-out">Home</a>
+                <a href="/about-us" class="text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">About
                     Metro Catering</a>
                 <a href="#"
                     class="text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">Catering Services</a>
@@ -59,8 +59,8 @@
             class="lg:hidden mx-auto w-[90%] md:w-[80%] bg-white/95 backdrop-blur-md rounded-3xl shadow-xl mt-2 px-6 py-4
                    opacity-0 -translate-y-2 pointer-events-none transition-all duration-300 ease-in-out">
             <div class="flex flex-col gap-3 text-base">
-                <a href="#" class="nav-link text-[#B00000] transition duration-300 ease-in-out">Home</a>
-                <a href="#"
+                <a href="/" class="nav-link text-[#B00000] transition duration-300 ease-in-out">Home</a>
+                <a href="/about-us"
                     class="nav-link text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">About Metro
                     Catering</a>
                 <a href="#"
