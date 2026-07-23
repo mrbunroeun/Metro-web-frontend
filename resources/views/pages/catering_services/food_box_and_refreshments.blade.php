@@ -51,98 +51,31 @@
                 'answer' => '-',
             ],
         ];
-        $offerImages = [
-            ['src' => 'canteen_catering.png', 'alt' => 'Canteen catering'],
-            ['src' => 'corporate_buffet_catering.png', 'alt' => 'Corporate buffet catering'],
-            ['src' => 'event_rental_setup.png', 'alt' => 'Event rental setup'],
-            ['src' => 'mobile_catering.png', 'alt' => 'Mobile catering'],
+        $whyChooseUsPoints = [
+            [
+                'title' => 'Freshly Prepared Every Day',
+                'text' => 'All meals and snacks are prepared using quality ingredients and strict hygiene standards.',
+            ],
+            [
+                'title' => 'Professional Presentation',
+                'text' => 'Food boxes and refreshment stations are neatly arranged for professional events.',
+            ],
+            [
+                'title' => 'On-Time Delivery',
+                'text' =>
+                    'Our logistics team ensures punctual delivery to offices, schools, ministries, and event venues.',
+            ],
+            [
+                'title' => 'Corporate Branding Options',
+                'text' => 'Custom stickers, labels, and branded packaging are available for large organizations.',
+            ],
+            [
+                'title' => 'Flexible Menu Customization',
+                'text' => 'Clients can mix Khmer, Asian, vegetarian, halal, and international menus.',
+            ],
+            // add more points here...
         ];
 
-        $offerItems = [
-            'Daily breakfast, lunch, and dinner services',
-            'Factory and industrial canteen management',
-            'School and university meal programs',
-            'Office employee dining solutions',
-            'Menu planning and nutrition consultation',
-            'Food safety and hygiene compliance',
-        ];
-        $serveRows = [
-            [
-                'left' => [
-                    'title' => 'Factories & Industrial Parks',
-                    'lead' => 'Daily meals for:',
-                    'items' => [
-                        'Garment factories',
-                        'Footwear manufacturers',
-                        'Electronics factories',
-                        'Food processing plants',
-                        'Special Economic Zones (SEZs)',
-                    ],
-                ],
-                'right' => [
-                    'title' => 'Schools & Educational Institutions',
-                    'lead' => 'Providing:',
-                    'items' => ['Student lunches', 'Teacher meals', 'Boarding school dining', 'University cafeterias'],
-                ],
-            ],
-            [
-                'left' => [
-                    'title' => 'Corporate Offices',
-                    'lead' => 'Daily meal solutions for:',
-                    'items' => [
-                        'Corporate headquarters',
-                        'Banks',
-                        'Technology companies',
-                        'BPO and call centers',
-                        'Co-working spaces',
-                    ],
-                ],
-                'right' => [
-                    'title' => 'Hospitals & Healthcare Facilities',
-                    'lead' => 'Supplying:',
-                    'items' => ['Patient meals', 'Medical staff meals', 'Visitor cafeterias', 'Healthcare events'],
-                ],
-            ],
-            [
-                'left' => [
-                    'title' => 'Government Institutions',
-                    'lead' => 'Long-term contracts for:',
-                    'items' => [
-                        'Ministries',
-                        'Municipal offices',
-                        'Public agencies',
-                        'Training institutes',
-                        'Government events and workshops',
-                    ],
-                ],
-                'right' => [
-                    'title' => 'Construction & Infrastructure Projects',
-                    'lead' => 'Providing meals for:',
-                    'items' => [
-                        'Construction workers',
-                        'Engineering teams',
-                        'Hydropower projects',
-                        'Mining operations',
-                        'Remote development sites',
-                    ],
-                ],
-            ],
-            [
-                'left' => null,
-                'right' => [
-                    'title' => 'Military & Security Organizations',
-                    'lead' => 'Potential customers include:',
-                    'items' => ['Military camps', 'Police academies', 'Training centers', 'Public safety institutions'],
-                ],
-            ],
-        ];
-        $whyChooseUsPoints = [
-            ['text' => 'One-stop event solution  '],
-            ['text' => 'Professional installation team  '],
-            ['text' => 'High-quality equipment  '],
-            ['text' => 'Nationwide support  '],
-            ['text' => 'Flexible rental packages  '],
-        ];
     @endphp
     @include('components.hero_section_not_for_home.hero_section_not_for_home', [
         'sectionLabel' => 'Food Box & Refreshments',
@@ -267,8 +200,8 @@ w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#a80000] z-10">
                     'number' => '04',
                     'image' => asset('catering_services/mobile_catering/corporate_mobile_package.png'),
                     'title' => 'Refreshment & Coffee Break Packages ',
-                    'price' => 'Basic Refreshment Package
-$2 / Person',
+                    'price' => 'Basic Refreshment Package $2 / Person',
+
                     'note' => '',
                     'includes' => ['1 Main Dish', 'Steamed Rice', 'Seasonal Fruit', 'Drinking Water'],
                     'perfectFor' => ['Factory meetings', 'NGO activities', 'School programs', 'Community events'],
@@ -401,12 +334,13 @@ $2 / Person',
         {{-- who we serve --}}
         <section class="relative bg-[#A80000] py-12 lg:py-0 lg:h-[560px] px-4 overflow-hidden font-sans">
 
-            <div class="flex flex-col items-center lg:block max-w-5xl mx-auto lg:h-full">
+            {{-- Shared centered container for image + content --}}
+            <div class="relative flex flex-col items-center lg:block max-w-5xl mx-auto lg:h-full">
 
                 {{-- Waiter image --}}
                 <img src="{{ asset('the_cheft/the_cheft.png') }}" alt="Catering waiter"
-                    class="static mx-auto mb-8
-            lg:absolute lg:bottom-0 lg:left-4 lg:mb-0
+                    class="block mx-auto mb-8
+            lg:absolute lg:bottom-0 lg:left-0 lg:mb-0 lg:mx-0
             h-[360px] sm:h-[390px] md:h-[420px] lg:h-full lg:max-h-[560px]
             w-auto object-contain lg:z-10">
 
@@ -444,59 +378,13 @@ $2 / Person',
             </div>
 
         </section>
-        {{-- Who We Serve --}}
-        @php
-            $whoWeServeLeft = ['Weddings', 'Government events', 'Conferences', 'Exhibitions'];
-            $whoWeServeRight = ['Product launches', 'Corporate dinners', 'Universities', 'Community events'];
-        @endphp
-        <section class="relative w-full sm:mb-[10rem] mb-[5rem] max-w-full md:max-w-[80%] mx-auto font-sans">
-            <div class="grid grid-cols-2 min-h-[300px]">
 
-                {{-- Left image panel --}}
-                <div class="relative mx-auto h-full overflow-hidden">
-                    <img src="{{ asset('under_hero/food.png') }}" alt="Catering buffet spread"
-                        class="absolute inset-0 w-full h-full object-cover object-center">
-                </div>
 
-                {{-- Right red panel --}}
-                <div class="bg-[#a80000] flex flex-col items-center justify-center pl-8 pr-2 sm:px-8 md:px-16 py-6 md:py-0">
 
-                    {{-- Fixed-width inner content container --}}
-                    <div class="text-left w-full max-w-[200px] sm:max-w-[340px] md:max-w-[420px]">
-                        <p class="text-[#ffffff] text-[20px] sm:text-[28px] md:text-[40px] font-bold mb-4">Who We Serve</p>
 
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1">
-                            <ul class="space-y-1">
-                                @foreach ($whoWeServeLeft as $item)
-                                    <li class="text-[#ffffff] text-[15px] flex gap-1">
-                                        <span>•</span> {{ $item }}
-                                    </li>
-                                @endforeach
-                            </ul>
-
-                            <ul class="space-y-1">
-                                @foreach ($whoWeServeRight as $item)
-                                    <li class="text-[#ffffff] text-[15px] flex gap-1">
-                                        <span>•</span> {{ $item }}
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-            {{-- Decorative rounded blob blending into page background --}}
-            <div
-                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#a80000] z-10">
-            </div>
-        </section>
 
         {{-- Why Choose Metro Catering --}}
-        <section class="relative w-full overflow-hidden">
+        <section class="relative w-full lg:h-[450px] overflow-hidden">
 
             {{-- Background image --}}
             <img src="{{ asset('home/why_choose_metro/bg_img.png') }}" alt="Metro Catering hero background"
@@ -506,18 +394,19 @@ w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#a80000] z-10">
             <div class="absolute inset-0 bg-black/60 -z-10"></div>
 
             <div
-                class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 px-4 sm:px-8 lg:px-16 py-16 sm:py-20 lg:py-24 max-w-6xl mx-auto">
+                class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 px-4 sm:px-8 lg:px-16
+        py-12 sm:py-16 lg:py-0 lg:h-full max-w-6xl mx-auto">
 
                 {{-- Left heading --}}
-                <div class="text-center lg:text-left shrink-0 lg:w-[340px]">
-                    <h2 class="text-white text-[30px] sm:text-[36px] leading-snug">
+                <div class="text-center lg:text-left shrink-0 lg:w-[300px]">
+                    <h2 class="text-white text-[28px] sm:text-[34px] leading-snug">
                         Why Choose
                         <span class="block font-bold">Metro Catering?</span>
                     </h2>
                 </div>
 
                 {{-- Right checklist --}}
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-6 w-full">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-5 w-full">
                     @foreach ($whyChooseUsPoints as $point)
                         <div class="flex items-start gap-3">
                             <span
@@ -529,7 +418,14 @@ w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#a80000] z-10">
                                         clip-rule="evenodd" />
                                 </svg>
                             </span>
-                            <p class="text-white text-[14px] sm:text-[16px] leading-snug">{{ $point['text'] }}</p>
+                            <div>
+                                <p class="text-white font-bold text-[15px] leading-snug mb-1">
+                                    {{ $point['title'] }}
+                                </p>
+                                <p class="text-white/90 text-[13px] sm:text-[14px] leading-snug">
+                                    {{ $point['text'] }}
+                                </p>
+                            </div>
                         </div>
                     @endforeach
                 </div>
@@ -538,16 +434,147 @@ w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#a80000] z-10">
         </section>
 
 
+        {{-- Our Process --}}
+        @php
+            $ourProcessSteps = [
+                [
+                    'step' => 'Step 1',
+                    'text' => 'Choose your preferred package.',
+                ],
+                [
+                    'step' => 'Step 2',
+                    'text' => 'Confirm participant numbers.',
+                ],
+                [
+                    'step' => 'Step 3',
+                    'text' => 'Select menu items and dietary requirements.',
+                ],
+                [
+                    'step' => 'Step 4',
+                    'text' => 'Approve the quotation.',
+                ],
+                [
+                    'step' => 'Step 5',
+                    'text' => 'Metro Catering prepares and delivers your order on schedule.',
+                ],
+                // add more steps here...
+            ];
+        @endphp
+
+        {{-- Our Process --}}
+        <section class="w-full px-4 sm:px-8 lg:px-16 py-12 sm:py-16 max-w-6xl mx-auto font-sans">
+
+            <h2 class="text-[#A80000] font-bold text-[22px] sm:text-[26px] mb-8">
+                Our Process
+            </h2>
+
+            <div class="flex flex-wrap gap-x-10 gap-y-8">
+                @foreach ($ourProcessSteps as $item)
+                    <div class="w-[calc(50%-20px)] md:w-[calc(33.333%-27px)]">
+                        <p class="text-[#A80000] font-bold text-[16px] sm:text-[20px] mb-1">
+                            {{ $item['step'] }}
+                        </p>
+                        <p class="text-[#060606] text-[14px] sm:text-[15px] leading-snug">
+                            {{ $item['text'] }}
+                        </p>
+                    </div>
+                @endforeach
+            </div>
+
+        </section>
+
+
+
+        {{-- Featured Food Box --}}
+        @php
+            $featuredEvents = [
+                [
+                    'title' => 'Featured Food Box & Refreshment Events',
+                    'lines' => [
+                        'Ministry Training Workshop',
+                        'Location: Phnom Penh',
+                        'Guests: 250 participants',
+                        'Services: Business Lunch Boxes + Coffee Break',
+                    ],
+                ],
+                [
+                    'title' => 'International NGO Conference',
+                    'lines' => [
+                        'Location: Siem Reap',
+                        'Guests: 180 participants',
+                        'Services: Executive Food Boxes + Premium Refreshments',
+                    ],
+                ],
+                [
+                    'title' => 'University Graduation Program',
+                    'lines' => [
+                        'Location: Battambang',
+                        'Guests: 400 students and staff',
+                        'Services: Standard Food Boxes',
+                    ],
+                ],
+                [
+                    'title' => 'Corporate Leadership Seminar',
+                    'lines' => [
+                        'Location: Phnom Penh',
+                        'Guests: 120 executives',
+                        'Services: Executive Lunch Boxes + VIP Coffee Stations',
+                    ],
+                ],
+                // add more events here...
+            ];
+        @endphp
+
+        {{-- Featured Food Box --}}
+        <section class="relative sm:mb-[10rem] mb-[5rem] w-full max-w-full md:max-w-[80%] mx-auto font-sans">
+            <div class="grid grid-cols-1 md:grid-cols-2 min-h-[300px]">
+
+                {{-- Left image panel --}}
+                <div class="relative min-h-[380px] sm:min-h-[420px] md:h-auto overflow-hidden">
+                    <img src="{{ asset('girl_holding_plate/girl_holding_plate.png') }}" alt="Catering staff serving guests"
+                        class="absolute inset-0 w-full h-full object-cover object-center">
+
+                    {{-- Blob: mobile only, stuck to bottom-center of the image --}}
+                    <div
+                        class="md:hidden absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2
+                w-[52px] h-[52px] rounded-full bg-[#f3f0e9] z-10">
+                    </div>
+                </div>
+
+                {{-- Right cream panel --}}
+                <div class="bg-[#f3f0e9] flex flex-col justify-center px-6 sm:px-10 md:px-14 py-8 md:py-10">
+
+                    <div class="w-full max-w-[460px] space-y-6">
+                        @foreach ($featuredEvents as $event)
+                            <div>
+                                <p class="text-[#a80000] font-bold text-[16px] sm:text-[17px] leading-snug mb-1">
+                                    {{ $event['title'] }}
+                                </p>
+                                @foreach ($event['lines'] as $line)
+                                    <p class="text-[#060606] text-[13px] sm:text-[14px] leading-snug">
+                                        {{ $line }}
+                                    </p>
+                                @endforeach
+                            </div>
+                        @endforeach
+                    </div>
+
+                </div>
+
+            </div>
+
+            {{-- Blob: desktop only, centered on the section seam --}}
+            <div
+                class="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+        w-[72px] h-[72px] rounded-full bg-[#f3f0e9] z-10">
+            </div>
+
+        </section>
+
+
 
         {{-- Frequently Ask Questions --}}
-
-
-
         <x-faqs.faqs :faqs="$metroCateringFaqs" />
-
-
-
-
 
     </section>
 
