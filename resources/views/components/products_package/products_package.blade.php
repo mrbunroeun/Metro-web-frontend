@@ -1,10 +1,10 @@
-@props(['number', 'image', 'title', 'price', 'note', 'includes' => [], 'suitableFor' => []])
+@props(['number', 'image', 'title', 'price', 'note', 'includes' => [], 'suitableFor' => [], 'list' => []])
 
 <div class="package-card group font-sans bg-white  overflow-hidden shadow-sm">
 
     {{-- Image with number badge --}}
     <div class="relative cursor-pointer bg-[#f3f0e9] pb-[5px]" onclick="togglePackageCard(this)">
-        <img src="{{ $image }}" alt="{{ $title }}" class="w-full h-[130px] object-cover bg-[#d6d6d6]">
+        <img src="{{ $image }}" alt="{{ $title }}" class="w-full h-[110px] object-cover bg-[#d6d6d6]">
 
         <div
             class="absolute -bottom-5 right-4 w-11 h-11 rounded-full bg-white group-hover:bg-[#a80000] group-[.is-active]:bg-[#a80000] shadow-md flex items-center justify-center transition-colors duration-300">
@@ -14,12 +14,12 @@
     </div>
 
     {{-- Title + price (always visible, clickable) --}}
-    <div class="px-4 bg-white  pt-7 pb-4 cursor-pointer" onclick="togglePackageCard(this.parentElement)">
-        <p class="text-[#a80000] text-[15px] font-bold leading-snug pr-2 mb-2">
+    <div class="px-2 bg-white  pt-7 pb-4 cursor-pointer" onclick="togglePackageCard(this.parentElement)">
+        <p class="text-[#a80000] text-[15px] font-bold leading-snug mb-2">
             {{ $title }}
         </p>
 
-        <p class="text-[#060606] text-[15px] font-semibold leading-relaxed">
+        <p class="text-[#060606] text-[15px]  font-semibold leading-relaxed">
             {{ $price }}
         </p>
         @if ($note)
@@ -34,6 +34,14 @@
         style="grid-template-rows: 0fr;">
         <div class="overflow-hidden">
             <div class="px-4 pb-5">
+
+                @if (count($list))
+                    <ul class="text-[#060606] text-[15px] leading-relaxed list-disc pl-4 mb-3">
+                        @foreach ($list as $item)
+                            <li>{{ $item }}</li>
+                        @endforeach
+                    </ul>
+                @endif
 
                 @if (count($includes))
                     <p class="text-[#060606] text-[15px] font-bold mb-1">Includes:</p>
