@@ -71,11 +71,13 @@
                     </div>
                 </div>
 
-                <a href="#" class="text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">Latest
+                <a href="/latest-events"
+                    class="text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">Latest
                     Events</a>
-                <a href="#"
+                <a href="/career"
                     class="text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">Career</a>
-                <a href="#" class="text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">Contact
+                <a href="/contact-us"
+                    class="text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">Contact
                     Us</a>
             </div>
 
@@ -149,12 +151,12 @@
                     </div>
                 </div>
 
-                <a href="#"
+                <a href="/latest-events"
                     class="nav-link text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">Latest
                     Events</a>
-                <a href="#"
+                <a href="/career"
                     class="nav-link text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">Career</a>
-                <a href="#"
+                <a href="/contact-us"
                     class="nav-link text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">Contact
                     Us</a>
             </div>

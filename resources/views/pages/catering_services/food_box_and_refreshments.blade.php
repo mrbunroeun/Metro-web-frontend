@@ -27,27 +27,28 @@
 
         $metroCateringFaqs = [
             [
-                'question' => 'Do you rent equipment without catering services?',
-                'answer' => 'Yes. Equipment rental can be booked independently.',
+                'question' => 'Can we order both food boxes and coffee breaks for the same event?',
+                'answer' =>
+                    'Yes. Many clients combine lunch boxes with morning and afternoon refreshment packages to provide a complete catering solution for seminars and workshops.',
             ],
             [
-                'question' => '  Who handles installation and dismantling?',
+                'question' => 'Can Metro Catering accommodate vegetarian, halal, or allergy requirements?',
                 'answer' => '-',
             ],
             [
-                'question' => '  Can equipment be delivered outside Phnom Penh?',
+                'question' => 'Can we add our company logo to the food boxes?',
                 'answer' => '-',
             ],
             [
-                'question' => '  Is there a minimum rental amount?',
+                'question' => 'What is the latest time to confirm the final number of participants?',
                 'answer' => '-',
             ],
             [
-                'question' => '  What happens if equipment is damaged during the event?',
+                'question' => 'Can you deliver food boxes outside Phnom Penh?',
                 'answer' => '-',
             ],
             [
-                'question' => '  Can you provide complete event packages including food and equipment?',
+                'question' => 'What happens if additional guests arrive on the event day?',
                 'answer' => '-',
             ],
         ];
@@ -526,7 +527,7 @@ w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#a80000] z-10">
         @endphp
 
         {{-- Featured Food Box --}}
-        <section class="relative sm:mb-[10rem] mb-[5rem] w-full max-w-full md:max-w-[80%] mx-auto font-sans">
+        <section class="relative  w-full max-w-full md:max-w-[80%] mx-auto font-sans">
             <div class="grid grid-cols-1 md:grid-cols-2 min-h-[300px]">
 
                 {{-- Left image panel --}}
@@ -580,8 +581,11 @@ w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#a80000] z-10">
 
     {{-- footer --}}
     @include('components.footer', [
-        'ctaHeading' => 'Looking for a long-term canteen partner?',
-        'ctaSubtext' => 'Contact our team for a customized proposal.',
+        'ctaHeading' => 'CATERING & EVENTS
+    Need Food Boxes or Refreshments for Your Next Event?',
+        'ctaSubtext' => '
+    Whether you are organizing a government workshop, corporate seminar, school activity, or executive meeting, 
+    Metro Catering provides reliable and professional catering solutions tailored to your needs.',
         'ctaButtonText' => 'Contact Us',
         'ctaLink' => url('/contact-us'),
     ])

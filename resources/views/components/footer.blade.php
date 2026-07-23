@@ -9,7 +9,8 @@
     <div class="absolute inset-0 bg-black/50"></div>
 
     {{-- Overlay content --}}
-    <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-8 font-sans">
+    <div
+        class="absolute inset-0  mx-auto max-w-[1300px] flex flex-col items-center justify-center text-center px-4 sm:px-8 font-sans">
 
         {{-- Small logo/brand line --}}
         <p class="text-[#A80000] text-[15px] sm:text-[20px] font-bold tracking-widest mb-1">
@@ -25,7 +26,7 @@
         </h2>
 
         {{-- Editable subtext --}}
-        <p class="text-white/90 text-[13px] sm:text-[15px] mt-2 mb-5">
+        <p class="text-white/90 text-[13px] max-w-[900px] sm:text-[15px] mt-2 mb-5">
             {{ $ctaSubtext ?? 'Contact our team for a customized proposal.' }}
         </p>
 

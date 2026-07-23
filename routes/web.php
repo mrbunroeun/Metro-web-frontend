@@ -10,8 +10,16 @@ Route::get('/about-us', function () {
     return view('pages.about_us');
 });
 
-Route::get('/latest-activities', function () {
-    return view('pages.latest_activities');
+Route::get('/latest-events', function () {
+    return view('pages.latest_events');
+});
+
+Route::get('/career', function () {
+    return view('pages.career');
+});
+
+Route::get('/contact-us', function () {
+    return view('pages.contact_us');
 });
 
 Route::get('/products', function () {
