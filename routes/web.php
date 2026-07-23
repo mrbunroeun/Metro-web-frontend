@@ -18,6 +18,23 @@ Route::get('/products', function () {
     return view('pages.products');
 });
 
-Route::get('/insights', function () {
-    return view('pages.insights');
+// Catering Services pages
+Route::get('/canteen-catering-services', function () {
+    return view('pages.catering_services.canteen_catering_services');
+});
+
+Route::get('/mobile-catering', function () {
+    return view('pages.catering_services.mobile_catering');
+});
+
+Route::get('/corporate-buffet-catering', function () {
+    return view('pages.catering_services.corporate_buffet_catering');
+});
+
+Route::get('/event-equipment-rental', function () {
+    return view('pages.catering_services.event_equipment_rental');
+});
+
+Route::get('/food-box-and-refreshments', function () {
+    return view('pages.catering_services.food_box_and_refreshments');
 });

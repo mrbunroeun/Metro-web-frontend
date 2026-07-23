@@ -28,16 +28,14 @@
             ['number' => '04', 'label' => '$10 Package'],
             ['number' => '05', 'label' => '$15 Package'],
         ];
-
         $whyChooseUsPoints = [
-            ['text' => 'Professional event management team'],
-            ['text' => 'Flexible menu packages from $5–$20 per person'],
-            ['text' => 'Minimum order starting from 25 participants'],
-            ['text' => 'Reliable delivery and setup services'],
-            ['text' => 'Corporate contract and long-term catering solutions'],
-            ['text' => 'Three-day advance booking support'],
-            ['text' => 'Customized menus for every event'],
+            ['text' => 'Experienced large-scale food operations'],
+            ['text' => 'Professional kitchen and serving staff'],
+            ['text' => 'Consistent meal quality and taste'],
+            ['text' => 'Strict food safety standards'],
+            ['text' => 'Flexible menus based on customer requirements'],
         ];
+
     @endphp
     <section class="h-full font-sans">
 

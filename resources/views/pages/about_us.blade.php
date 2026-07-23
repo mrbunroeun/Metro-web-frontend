@@ -1,5 +1,20 @@
 @extends('layouts.app')
 @section('content')
+    @php
+        $coreValues = [
+            ['icon' => 'reliability.svg', 'label' => 'Reliability'],
+            ['icon' => 'customer_satisfaction.svg', 'label' => 'Customer Satisfaction'],
+            ['icon' => 'innovation.svg', 'label' => 'Innovation'],
+            ['icon' => 'hygiene.svg', 'label' => 'Hygiene'],
+            ['icon' => 'quality.svg', 'label' => 'Quality'],
+        ];
+        $facilities = [
+            ['icon' => 'kitchen_operations.svg', 'label' => 'Kitchen Operations'],
+            ['icon' => 'food_safety_standards.svg', 'label' => 'Food Safety Standards'],
+            ['icon' => 'event_equipment.svg', 'label' => 'Event Equipment'],
+            ['icon' => 'warehouse.svg', 'label' => 'Warehouse'],
+        ];
+    @endphp
     @include('components.hero_section_not_for_home.hero_section_not_for_home', [
         'sectionLabel' => 'About Metro Catering',
         'heading' => 'Premium Catering Services in Cambodia for Corporate, Weddings & Private Events',
@@ -97,16 +112,6 @@
         </section>
 
         {{-- Our Core Values --}}
-        @php
-            $coreValues = [
-                ['icon' => 'reliability.svg', 'label' => 'Reliability'],
-                ['icon' => 'customer_satisfaction.svg', 'label' => 'Customer Satisfaction'],
-                ['icon' => 'innovation.svg', 'label' => 'Innovation'],
-                ['icon' => 'hygiene.svg', 'label' => 'Hygiene'],
-                ['icon' => 'quality.svg', 'label' => 'Quality'],
-            ];
-        @endphp
-
         <section class="py-16 max-w-[600px] mx-auto px-4 text-center font-sans">
 
             {{-- Top icon + heading --}}
@@ -127,16 +132,75 @@
                 @endforeach
             </div>
         </section>
-        <section class="bg-black w-full">
-            <img src="{{ asset('about_us/our_facilities/kitchen_operations.svg') }}" alt="">
-            <img src="{{ asset('about_us/our_facilities/food_safety_standards.svg') }}" alt="">
-            <img src="{{ asset('about_us/our_facilities/event_equipment.svg') }}" alt="">
-            <img src="{{ asset('about_us/our_facilities/warehouse.svg') }}" alt="">
+
+
+        {{-- Our Facilities --}}
+        <section class="relative py-16 px-4 bg-cover bg-center font-sans"
+            style="background-image: url('{{ asset('home/why_choose_metro/bg_img.png') }}');">
+
+            {{-- dark overlay so white text/cards stand out --}}
+            <div class="absolute inset-0 bg-black/60"></div>
+
+            <div class="relative z-10 max-w-5xl mx-auto text-center">
+                <h2 class="text-[#FFFFFF] text-[20px] sm:text-[28px] font-bold mb-8 sm:mb-10">
+                    Our Facilities
+                </h2>
+
+                <div class="flex flex-wrap justify-center gap-4 sm:gap-6">
+                    @foreach ($facilities as $facility)
+                        <div class="bg-[#A80000] rounded-xl w-[150px] sm:w-[170px] py-8 px-3">
+                            <img src="{{ asset('about_us/our_facilities/' . $facility['icon']) }}"
+                                alt="{{ $facility['label'] }} icon" class="w-10 h-10 mx-auto mb-4 brightness-0 invert">
+                            <p class="text-[#FFFFFF] text-[15px] leading-tight">
+                                {{ $facility['label'] }}
+                            </p>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+
+        {{-- Food Insights --}}
+        <section class="relative sm:mb-[10rem] mb-[5rem] w-full max-w-full md:max-w-[80%] mx-auto font-sans">
+            <div class="grid grid-cols-2 h-[300px]">
+
+                {{-- Left image panel --}}
+                <div class="relative h-full overflow-hidden">
+                    <img src="{{ asset('under_hero/food.png') }}" alt="Catering buffet spread"
+                        class="absolute inset-0 w-full h-full object-cover object-center">
+                </div>
+
+                {{-- Right red panel --}}
+                <div class="bg-[#A80000] flex flex-col items-center justify-center pl-8 pr-2 sm:px-8 md:px-16 py-6 md:py-0">
+
+                    {{-- Fixed-width inner content container --}}
+                    <div class="text-left w-full max-w-[200px] sm:max-w-[340px] md:max-w-[420px]">
+                        <p class="text-[#ffffff] text-[20px] sm:text-[28px] md:text-[40px] font-semibold">Food Insights</p>
+                        <p class="text-[#ffffff] text-[20px] sm:text-[15px] md:text-[16px] font-bold mb-1 md:mb-2">
+                            Featured Articles:
+                        </p>
+                        <ul
+                            class="text-[#ffffff]/90 text-[15px] sm:text-[15px] md:text-[14px] leading-snug md:leading-relaxed space-y-0.5 md:space-y-1 list-disc pl-3 md:pl-4">
+                            <li>How to Choose the Right Catering Service</li>
+                            <li>Buffet vs Food Box: Which is Better?</li>
+                            <li>Planning Corporate Events with Catering Services</li>
+                            <li>Wedding Catering Checklist</li>
+                            <li>Healthy Refreshment Ideas for Meetings</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+            {{-- Decorative rounded blob blending into page background --}}
+            <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+        w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#a80000] z-10">
+            </div>
         </section>
 
     </section>
-
-
 
     {{-- footer --}}
     @include('components.footer', [
