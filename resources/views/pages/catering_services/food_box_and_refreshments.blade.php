@@ -1,6 +1,33 @@
 @extends('layouts.app')
 @section('content')
     @php
+
+        $metroCateringFaqs = [
+            [
+                'question' => 'Do you rent equipment without catering services?',
+                'answer' => 'Yes. Equipment rental can be booked independently.',
+            ],
+            [
+                'question' => '  Who handles installation and dismantling?',
+                'answer' => '-',
+            ],
+            [
+                'question' => '  Can equipment be delivered outside Phnom Penh?',
+                'answer' => '-',
+            ],
+            [
+                'question' => '  Is there a minimum rental amount?',
+                'answer' => '-',
+            ],
+            [
+                'question' => '  What happens if equipment is damaged during the event?',
+                'answer' => '-',
+            ],
+            [
+                'question' => '  Can you provide complete event packages including food and equipment?',
+                'answer' => '-',
+            ],
+        ];
         $offerImages = [
             ['src' => 'canteen_catering.png', 'alt' => 'Canteen catering'],
             ['src' => 'corporate_buffet_catering.png', 'alt' => 'Corporate buffet catering'],
@@ -87,68 +114,188 @@
             ],
         ];
         $whyChooseUsPoints = [
-            ['text' => 'Experienced large-scale food operations'],
-            ['text' => 'Professional kitchen and serving staff'],
-            ['text' => 'Consistent meal quality and taste'],
-            ['text' => 'Strict food safety standards'],
-            ['text' => 'Flexible menus based on customer requirements'],
+            ['text' => 'One-stop event solution  '],
+            ['text' => 'Professional installation team  '],
+            ['text' => 'High-quality equipment  '],
+            ['text' => 'Nationwide support  '],
+            ['text' => 'Flexible rental packages  '],
         ];
     @endphp
-
     @include('components.hero_section_not_for_home.hero_section_not_for_home', [
-        'sectionLabel' => 'Food box',
-        'heading' => 'Professional Canteen Catering Services in Cambodia',
+        'sectionLabel' => 'Food Box & Refreshments',
+        'heading' => 'Professional Food Box & Refreshment Catering Services in Cambodia',
         'description' =>
-            ' Metro Catering provides reliable daily meal management solutions for factories, schools, universities, hospitals, offices, and institutions across Cambodia. We deliver nutritious, hygienic, and affordable meals designed to meet the needs of large workforces and communities.',
+            'Convenient, hygienic, and delicious food boxes and refreshment packages for meetings, seminars, training programs, schools, government institutions, and corporate events across Cambodia.',
         'buttons' => [
             ['text' => 'Contact Us', 'link' => '#', 'style' => 'solid'],
-            // ['text' => 'View Packages', 'link' => '#', 'style' => 'solid'],
+            ['text' => 'View Packages', 'link' => '#', 'style' => 'solid'],
         ],
     ])
-    <section>
 
 
-        {{-- What We Offer --}}
-        <section class="bg-[#A80000] font-sans py-16 pt-[5rem] pb-[10rem] ">
-            <div class="max-w-6xl px-[3rem] mx-auto flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-36">
+    {{-- Overview --}}
+    <section class="relative w-full">
+        <div class="grid grid-cols-2 min-h-[300px] md:min-h-[380px]">
 
-                {{-- Image grid --}}
-                <div class="grid grid-cols-2 gap-3 sm:gap-4 w-full max-w-[420px] lg:max-w-[440px] shrink-0 mx-auto lg:mx-0">
-                    @foreach ($offerImages as $image)
-                        <img src="{{ asset('home/our_core_services/' . $image['src']) }}" alt="{{ $image['alt'] }}"
-                            class="w-full h-[130px] sm:h-[160px] object-cover">
-                    @endforeach
-                </div>
+            {{-- Left dark panel --}}
+            <div class="bg-[#1a1a1a] flex flex-col items-center justify-center px-4 sm:px-8 md:px-16 py-6 md:py-0">
 
-                {{-- Content --}}
-                <div class="w-full max-w-[420px] lg:max-w-none lg:flex-1 text-left mx-auto lg:mx-0">
-                    <h2 class="text-[24px] sm:text-[32px] lg:text-[36px] font-light mb-5 sm:mb-6 text-[#FFFFFF] text-left">
-                        What We Offer
+                {{-- Fixed-width inner content container --}}
+                <div class="text-left w-full max-w-[280px] sm:max-w-[340px] md:max-w-[460px]">
+                    <h2 class="text-white sm:text-[32px] text-[20px] font-bold mb-3">
+                        Overview
                     </h2>
-
-                    <ul class="space-y-2 sm:space-y-3 mb-8 text-left">
-                        @foreach ($offerItems as $item)
-                            <li class="text-[15px] sm:text-[16px] text-[#FFFFFF] flex gap-2 text-left">
-                                <span>•</span> {{ $item }}
-                            </li>
-                        @endforeach
-                    </ul>
-
-                    <div class="text-left">
-                        <button
-                            class="bg-black text-[#FFFFFF] text-[15px] font-medium rounded-full px-6 py-3 hover:bg-gray-900 transition">
-                            Request Quotation
-                        </button>
-                    </div>
+                    <p class="text-white/90 sm:text-[15px] text-[13px] leading-snug mb-3">
+                        Metro Catering provides ready-to-serve food boxes and coffee break
+                        refreshments designed for organizations that require efficient meal
+                        distribution without compromising quality and presentation.
+                    </p>
+                    <p class="text-white/90 sm:text-[15px] text-[13px] leading-snug mb-4">
+                        From executive meetings and workshops to school programs and
+                        government conferences, our team delivers customized meal solutions
+                        with flexible menus, timely delivery, and professional service.
+                    </p>
+                    <a href="#"
+                        class="inline-flex items-center justify-center border border-white/40 hover:bg-white hover:text-[#1a1a1a] active:bg-white/90 text-white text-[13px] font-medium px-5 py-2.5 min-h-[40px] rounded-full w-fit transition duration-300 ease-in-out">
+                        Request Quotation
+                    </a>
                 </div>
 
             </div>
-        </section>
 
+            {{-- Right image panel --}}
+            <div class="relative h-full overflow-hidden">
+                <img src="{{ asset('under_hero/food.png') }}" alt="Metro Catering food boxes"
+                    class="absolute inset-0 w-full h-full object-cover object-center">
+            </div>
+
+        </div>
+    </section>
+
+    {{-- Booking Requirement --}}
+    <section
+        class="relative sm:mb-[10rem] mb-[4rem] w-full sm:max-w-[80%] max-w-[95%] mx-auto bg-[#a80000] h-[200px] overflow-visible">
+        <div class="max-w-6xl mx-auto h-full flex items-center px-4 sm:px-8">
+
+            {{-- Girl image — taller than the section, overflows top & bottom --}}
+            <img src="{{ asset('girl_hold_phone/girl_hold_phone.png') }}" alt="Woman holding phone with coffee tray"
+                class="relative sm:bottom-[1.6rem] bottom-[-0.6rem] h-[180px] sm:h-[250px] w-auto shrink-0">
+
+            {{-- Booking text --}}
+            <div class="pl-6 sm:pl-10">
+                <p class="text-[#ffffff] text-[15px] sm:text-[26px] font-bold mb-1">
+                    Booking Requirement:
+                </p>
+                <p class="text-[#ffffff] text-[15px] sm:text-[20px] leading-snug">
+                    Minimum 25 participants with at least 3 days advance notice.
+                </p>
+            </div>
+
+        </div>
+
+        {{-- Decorative rounded notch at top-center seam --}}
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2
+w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#a80000] z-10">
+        </div>
+    </section>
+
+
+
+    <section>
+        <div
+            class="flex  gap-2 justify-center bg-[#f3f0e9] pt-10 text-[#a80000] md:text-[30px] sm:text-[25px] text-[20px] font-bold">
+            <h1 class="font-normal">Equipment </h1>
+            <h1>Categories</h1>
+        </div>
+
+        {{-- What We Serve --}}
+        @php
+
+            $packages = [
+                [
+                    'number' => '01',
+                    'image' => asset('catering_services/mobile_catering/corporate_mobile_package.png'),
+                    'title' => 'Standard Food Box',
+                    'price' => '$3.50 / Person',
+                    'note' => 'Minimum: 25 Boxes',
+                    'includes' => ['1 Main Dish', 'Steamed Rice', 'Seasonal Fruit', 'Drinking Water'],
+                    'perfectFor' => ['Factory meetings', 'NGO activities', 'School programs', 'Community events'],
+                ],
+                [
+                    'number' => '02',
+                    'image' => asset('catering_services/mobile_catering/corporate_mobile_package.png'),
+                    'title' => 'Standard Food Box',
+                    'price' => '$5/ Person',
+                    'note' => 'Minimum: 25 Boxes',
+                    'includes' => ['1 Main Dish', 'Steamed Rice', 'Seasonal Fruit', 'Drinking Water'],
+                    'perfectFor' => ['Factory meetings', 'NGO activities', 'School programs', 'Community events'],
+                ],
+                [
+                    'number' => '03',
+                    'image' => asset('catering_services/mobile_catering/corporate_mobile_package.png'),
+                    'title' => 'Executive Food Box',
+                    'price' => '$8/ Person',
+                    'note' => 'Minimum: 25 Boxes',
+                    'includes' => ['1 Main Dish', 'Steamed Rice', 'Seasonal Fruit', 'Drinking Water'],
+                    'perfectFor' => ['Factory meetings', 'NGO activities', 'School programs', 'Community events'],
+                ],
+                [
+                    'number' => '04',
+                    'image' => asset('catering_services/mobile_catering/corporate_mobile_package.png'),
+                    'title' => 'Refreshment & Coffee Break Packages',
+                    'price' => 'Basic Refreshment Package
+$2 / Person',
+                    'note' => '',
+                    'includes' => ['1 Main Dish', 'Steamed Rice', 'Seasonal Fruit', 'Drinking Water'],
+                    'perfectFor' => ['Factory meetings', 'NGO activities', 'School programs', 'Community events'],
+                ],
+                [
+                    'number' => '05',
+                    'image' => asset('catering_services/mobile_catering/corporate_mobile_package.png'),
+                    'title' => 'Business Coffee Break',
+                    'price' => '$4 / Person',
+                    'note' => '‎', // zero-width char, keeps the line's height even when "empty"
+        'includes' => ['1 Main Dish', 'Steamed Rice', 'Seasonal Fruit', 'Drinking Water'],
+        'perfectFor' => ['Factory meetings', 'NGO activities', 'School programs', 'Community events'],
+    ],
+    [
+        'number' => '06',
+        'image' => asset('catering_services/mobile_catering/corporate_mobile_package.png'),
+        'title' => 'Premium Seminar Refreshment',
+        'price' => '$6 / Person',
+        'note' => '',
+        'includes' => ['1 Main Dish', 'Steamed Rice', 'Seasonal Fruit', 'Drinking Water'],
+        'perfectFor' => ['Factory meetings', 'NGO activities', 'School programs', 'Community events'],
+                ],
+
+                // add more packages here...
+            ];
+        @endphp
+        <div class="bg-[#f3f0e9]">
+            <div
+                class="grid items-start justify-center gap-2 max-w-[1400px] mx-auto px-2 py-16
+        grid-cols-[repeat(auto-fit,180px)]
+        sm:grid-cols-[repeat(auto-fit,190px)]
+        md:grid-cols-[repeat(auto-fit,190px)]
+        lg:grid-cols-[repeat(auto-fit,190px)]
+        xl:grid-cols-[repeat(auto-fit,190px)]">
+                @foreach ($packages as $package)
+                    <div class="h-[500px]">
+                        <x-products_package.products_package :number="$package['number']" :image="$package['image']" :title="$package['title']"
+                            :price="$package['price']" :note="$package['note']" :includes="$package['includes'] ?? []" :perfectFor="$package['perfectFor'] ?? []" />
+                    </div>
+                @endforeach
+            </div>
+        </div>
 
         {{-- Who We Serve --}}
-        <section class="relative sm:mb-[10rem] mb-[5rem] mt-[-5rem] w-full max-w-full md:max-w-[80%] mx-auto font-sans">
-            <div class="grid grid-cols-2 h-[300px]">
+        @php
+            $whoWeServeLeft = ['Weddings', 'Government events', 'Conferences', 'Exhibitions'];
+            $whoWeServeRight = ['Product launches', 'Corporate dinners', 'Universities', 'Community events'];
+        @endphp
+        <section class="relative w-full sm:mb-[10rem] mb-[5rem] max-w-full md:max-w-[80%] mx-auto font-sans">
+            <div class="grid grid-cols-2 min-h-[300px]">
 
                 {{-- Left image panel --}}
                 <div class="relative h-full overflow-hidden">
@@ -157,18 +304,29 @@
                 </div>
 
                 {{-- Right red panel --}}
-                <div class="bg-[#f3f0e9] flex flex-col items-center justify-center pl-8 pr-2 sm:px-8 md:px-16 py-6 md:py-0">
+                <div class="bg-[#a80000] flex flex-col items-center justify-center pl-8 pr-2 sm:px-8 md:px-16 py-6 md:py-0">
 
                     {{-- Fixed-width inner content container --}}
                     <div class="text-left w-full max-w-[200px] sm:max-w-[340px] md:max-w-[420px]">
-                        <p class="text-[#a80000] text-[20px] sm:text-[28px] md:text-[40px] font-semibold">Who We Serves</p>
+                        <p class="text-[#ffffff] text-[20px] sm:text-[28px] md:text-[40px] font-bold mb-4">Who We Serve</p>
 
-                        <p class="text-[#060606] text-[15px] sm:text-[15px] md:text-[14px] leading-snug md:leading-relaxed">
-                            Metro Catering provides professional canteen management and daily meal supply services for
-                            factories, industrial parks, schools, universities, hospitals, corporate offices, government
-                            institutions, and large organizations across Cambodia. We deliver nutritious, hygienic, and
-                            cost-effective meals tailored to workforce and community needs.
-                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1">
+                            <ul class="space-y-1">
+                                @foreach ($whoWeServeLeft as $item)
+                                    <li class="text-[#ffffff] text-[15px] flex gap-1">
+                                        <span>•</span> {{ $item }}
+                                    </li>
+                                @endforeach
+                            </ul>
+
+                            <ul class="space-y-1">
+                                @foreach ($whoWeServeRight as $item)
+                                    <li class="text-[#ffffff] text-[15px] flex gap-1">
+                                        <span>•</span> {{ $item }}
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
                     </div>
 
                 </div>
@@ -178,85 +336,9 @@
             {{-- Decorative rounded blob blending into page background --}}
             <div
                 class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#f3f0e9] z-10">
+w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#a80000] z-10">
             </div>
         </section>
-
-
-
-        {{-- Factories & Industrial Parks --}}
-        <section class=" relative font-sans max-w-5xl mt-[3rem] sm:mt-[-3rem] mx-auto px-4 py-16">
-
-            {{-- ============ DESKTOP (2-column, center line) ============ --}}
-            <div class="hidden lg:block relative">
-                {{-- vertical line down the center --}}
-                <div class="absolute left-1/2 top-0 bottom-0 w-[5px] bg-[#f3f0e9] -translate-x-1/2"></div>
-
-                @foreach ($serveRows as $row)
-                    <div class="relative grid grid-cols-2 gap-x-20 {{ !$loop->last ? 'mb-14' : '' }}">
-
-                        {{-- circle aligned with the title of this row --}}
-                        <div class="absolute left-1/2 top-0 -translate-x-1/2 w-14 h-14 rounded-full bg-[#f3f0e9] z-10">
-                        </div>
-
-                        {{-- left column: text aligns right, toward the center --}}
-                        <div class="text-right">
-                            @if ($row['left'])
-                                <p class="text-[#a80000] text-[20px] font-bold mb-3">{{ $row['left']['title'] }}</p>
-                                <p class="text-[#060606] text-[15px] font-semibold mb-1">{{ $row['left']['lead'] }}</p>
-                                <ul class="text-[#060606] text-[15px] space-y-0.5">
-                                    @foreach ($row['left']['items'] as $item)
-                                        <li>{{ $item }}</li>
-                                    @endforeach
-                                </ul>
-                            @endif
-                        </div>
-
-                        {{-- right column: text aligns left, away from the center --}}
-                        <div class="text-left">
-                            @if ($row['right'])
-                                <p class="text-[#a80000] text-[20px] font-bold mb-3">{{ $row['right']['title'] }}</p>
-                                <p class="text-[#060606] text-[15px] font-semibold mb-1">{{ $row['right']['lead'] }}</p>
-                                <ul class="text-[#060606] text-[15px] space-y-0.5">
-                                    @foreach ($row['right']['items'] as $item)
-                                        <li>{{ $item }}</li>
-                                    @endforeach
-                                </ul>
-                            @endif
-                        </div>
-
-                    </div>
-                @endforeach
-            </div>
-
-            {{-- ============ MOBILE (single column, left line) ============ --}}
-            <div class="lg:hidden relative space-y-10">
-                {{-- vertical line aligned with circle column --}}
-                <div class="absolute left-6 top-0 bottom-0 w-[5px] bg-[#f3f0e9] -translate-x-1/2"></div>
-
-                @php
-                    // flatten rows into a single ordered list for mobile
-                    $flatItems = collect($serveRows)->flatMap(fn($row) => array_filter([$row['left'], $row['right']]));
-                @endphp
-
-                @foreach ($flatItems as $entry)
-                    <div class="relative flex gap-4">
-                        <div class="shrink-0 w-12 h-12 rounded-full bg-[#f3f0e9] z-10"></div>
-                        <div class="text-left">
-                            <p class="text-[#a80000] text-[18px] font-bold mb-2">{{ $entry['title'] }}</p>
-                            <p class="text-[#060606] text-[15px] font-semibold mb-1">{{ $entry['lead'] }}</p>
-                            <ul class="text-[#060606] text-[15px] space-y-0.5">
-                                @foreach ($entry['items'] as $item)
-                                    <li>{{ $item }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-
-        </section>
-
 
         {{-- Why Choose Metro Catering --}}
         <section class="relative w-full overflow-hidden">
@@ -302,41 +384,13 @@ w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#f3f0e9] z-10">
 
 
 
-        {{-- Frequently
+        {{-- Frequently Ask Questions --}}
 
-Ask Questions --}}
-        @php
-            $metroCateringFaqs = [
-                [
-                    'question' => 'Can Metro Catering serve meals for different shifts, including night shifts?',
-                    'answer' =>
-                        'Yes. Many clients combine lunch boxes with morning and afternoon refreshment packages to provide a complete catering solution for seminars and workshops.',
-                ],
-                [
-                    'question' => 'Can you provide separate menus for office staff and factory workers?',
-                    'answer' => '-',
-                ],
-                [
-                    'question' => 'How far in advance do we need to arrange a long-term canteen contract?',
-                    'answer' => '-',
-                ],
-                [
-                    'question' => 'What happens if the number of employees changes from day to day?',
-                    'answer' => '-',
-                ],
-                [
-                    'question' => 'If our company already has a kitchen, can Metro Catering operate it?',
-                    'answer' => '-',
-                ],
-                [
-                    'question' =>
-                        'Can Metro Catering handle emergency meal requests for overtime work or special events?',
-                    'answer' => '-',
-                ],
-            ];
-        @endphp
+
 
         <x-faqs.faqs :faqs="$metroCateringFaqs" />
+
+
 
 
 

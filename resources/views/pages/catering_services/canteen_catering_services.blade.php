@@ -94,7 +94,7 @@
             ['text' => 'Flexible menus based on customer requirements'],
         ];
     @endphp
-  
+
     @include('components.hero_section_not_for_home.hero_section_not_for_home', [
         'sectionLabel' => 'Canteen Catering Services',
         'heading' => 'Professional Canteen Catering Services in Cambodia',
@@ -148,7 +148,7 @@
 
         {{-- Who We Serve --}}
         <section class="relative sm:mb-[10rem] mb-[5rem] mt-[-5rem] w-full max-w-full md:max-w-[80%] mx-auto font-sans">
-            <div class="grid grid-cols-2 h-[300px]">
+            <div class="grid grid-cols-2 min-h-[300px]">
 
                 {{-- Left image panel --}}
                 <div class="relative h-full overflow-hidden">

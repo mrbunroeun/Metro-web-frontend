@@ -1,6 +1,16 @@
-@props(['number', 'image', 'title', 'price', 'note', 'includes' => [], 'suitableFor' => [], 'list' => []])
+@props([
+    'number',
+    'image',
+    'title',
+    'price',
+    'note',
+    'includes' => [],
+    'perfectFor' => [],
+    'suitableFor' => [],
+    'list' => [],
+])
 
-<div class="package-card group font-sans bg-white  overflow-hidden shadow-sm">
+<div class="package-card group font-sans bg-white overflow-hidden shadow-sm">
 
     {{-- Image with number badge --}}
     <div class="relative cursor-pointer bg-[#f3f0e9] pb-[5px]" onclick="togglePackageCard(this)">
@@ -14,12 +24,12 @@
     </div>
 
     {{-- Title + price (always visible, clickable) --}}
-    <div class="px-2 bg-white  pt-7 pb-4 cursor-pointer" onclick="togglePackageCard(this.parentElement)">
+    <div class="px-2 bg-white pt-7 pb-4 cursor-pointer" onclick="togglePackageCard(this.parentElement)">
         <p class="text-[#a80000] text-[15px] font-bold leading-snug mb-2">
             {{ $title }}
         </p>
 
-        <p class="text-[#060606] text-[15px]  font-semibold leading-relaxed">
+        <p class="text-[#060606] text-[15px] font-semibold leading-relaxed">
             {{ $price }}
         </p>
         @if ($note)
@@ -54,8 +64,17 @@
 
                 @if (count($suitableFor))
                     <p class="text-[#060606] text-[15px] font-bold mb-1">Suitable for:</p>
-                    <ul class="text-[#060606] text-[15px] leading-relaxed list-disc pl-4">
+                    <ul class="text-[#060606] text-[15px] leading-relaxed list-disc pl-4 mb-3">
                         @foreach ($suitableFor as $item)
+                            <li>{{ $item }}</li>
+                        @endforeach
+                    </ul>
+                @endif
+
+                @if (count($perfectFor))
+                    <p class="text-[#060606] text-[15px] font-bold mb-1">Perfect for:</p>
+                    <ul class="text-[#060606] text-[15px] leading-relaxed list-disc pl-4">
+                        @foreach ($perfectFor as $item)
                             <li>{{ $item }}</li>
                         @endforeach
                     </ul>

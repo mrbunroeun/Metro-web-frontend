@@ -86,8 +86,8 @@
         </section>
 
         {{-- About Metro Catering --}}
-        <section class="relative w-full ">
-            <div class="grid grid-cols-2 h-[400px] md:h-[500px]">
+        <section class="relative w-full">
+            <div class="grid grid-cols-2 min-h-[300px] md:min-h-[380px]">
 
                 {{-- Left red panel --}}
                 <div class="bg-[#A80000] flex flex-col items-center justify-center px-4 sm:px-8 md:px-16 py-6 md:py-0">
@@ -122,7 +122,7 @@
             {{-- Decorative rounded blob blending into page background --}}
             <div
                 class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2
-        w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#F3F0E9] z-10">
+w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#F3F0E9] z-10">
             </div>
         </section>
 
