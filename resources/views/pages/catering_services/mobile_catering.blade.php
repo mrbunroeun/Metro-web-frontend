@@ -97,7 +97,7 @@
     @include('components.hero_section_not_for_home.hero_section_not_for_home', [
         'sectionLabel' => 'Mobile Catering',
         'heading' => 'Professional Mobile Catering Services
-                                                                                                                                                                                                            in Cambodia',
+                                                                                                                                                                                                                                            in Cambodia',
         'description' =>
             '  Metro Catering brings fully equipped mobile kitchens and professional food service teams directly to your location. Whether you are organizing a factory event, provincial roadshow, government ceremony, construction project, or outdoor festival, we ensure fresh meals and seamless operations anywhere in Cambodia.',
         'buttons' => [
@@ -146,33 +146,14 @@
                     'includes' => ['1 Main Dish', '2 Side Dishes', 'Rice', 'Seasonal Fruit', 'Drinking Water'],
                     'suitableFor' => ['Factory training', 'NGO activities', 'Community programs'],
                 ],
-                [
-                    'number' => '04',
-                    'image' => asset('catering_services/mobile_catering/corporate_mobile_package.png'),
-                    'title' => 'Corporate Mobile Package',
-                    'price' => '$10/person',
-                    'note' => '(Minimum 50 participants)',
-                    'includes' => ['1 Main Dish', '2 Side Dishes', 'Rice', 'Seasonal Fruit', 'Drinking Water'],
-                    'suitableFor' => ['Factory training', 'NGO activities', 'Community programs'],
-                ],
-                [
-                    'number' => '04',
-                    'image' => asset('catering_services/mobile_catering/corporate_mobile_package.png'),
-                    'title' => 'Corporate Mobile Package',
-                    'price' => '$10/person',
-                    'note' => '(Minimum 50 participants)',
-                    'includes' => ['1 Main Dish', '2 Side Dishes', 'Rice', 'Seasonal Fruit', 'Drinking Water'],
-                    'suitableFor' => ['Factory training', 'NGO activities', 'Community programs'],
-                ],
 
                 // add more packages here...
             ];
         @endphp
-        <div class="bg-[#f3f0e9]">
+        <div class="bg-[#f3f0e9] flex  justify-center">
             <div
                 class="grid items-start justify-center gap-2 max-w-[1400px] mx-auto px-2 py-16
-                grid-cols-[repeat(auto-fill,minmax(140px,1fr))]
-                sm:grid-cols-[repeat(auto-fill,220px)]">
+        grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
                 @foreach ($packages as $package)
                     <x-products_package.products_package :number="$package['number']" :image="$package['image']" :title="$package['title']"
                         :price="$package['price']" :note="$package['note']" :includes="$package['includes']" :suitableFor="$package['suitableFor']" />
