@@ -1,6 +1,29 @@
 @extends('layouts.app')
 @section('content')
     @php
+        $whoWeServe = [
+            [
+                'title' => 'Corporate Offices',
+                'items' => ['Internal meetings', 'Employee training', 'Board meetings', 'Company celebrations'],
+            ],
+            [
+                'title' => 'Government Institutions',
+                'items' => ['Workshops', 'Official conferences', 'Public consultations', 'Ministry events'],
+            ],
+            [
+                'title' => 'Schools & Universities',
+                'items' => ['Student programs', 'Teacher workshops', 'Graduation ceremonies', 'Academic conferences'],
+            ],
+            [
+                'title' => 'NGOs & International Organizations',
+                'items' => ['Internal meetings', 'Employee training', 'Board meetings', 'Company celebrations'],
+            ],
+            [
+                'title' => 'Banks & Embassies',
+                'items' => ['Executive meetings', 'VIP receptions', 'Diplomatic events'],
+            ],
+            // add more segments here...
+        ];
 
         $metroCateringFaqs = [
             [
@@ -243,7 +266,7 @@ w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#a80000] z-10">
                 [
                     'number' => '04',
                     'image' => asset('catering_services/mobile_catering/corporate_mobile_package.png'),
-                    'title' => 'Refreshment & Coffee Break Packages',
+                    'title' => 'Refreshment & Coffee Break Packages ',
                     'price' => 'Basic Refreshment Package
 $2 / Person',
                     'note' => '',
@@ -255,7 +278,7 @@ $2 / Person',
                     'image' => asset('catering_services/mobile_catering/corporate_mobile_package.png'),
                     'title' => 'Business Coffee Break',
                     'price' => '$4 / Person',
-                    'note' => '‎', // zero-width char, keeps the line's height even when "empty"
+                    'note' => '', // zero-width char, keeps the line's height even when "empty"
         'includes' => ['1 Main Dish', 'Steamed Rice', 'Seasonal Fruit', 'Drinking Water'],
         'perfectFor' => ['Factory meetings', 'NGO activities', 'School programs', 'Community events'],
     ],
@@ -275,20 +298,152 @@ $2 / Person',
         <div class="bg-[#f3f0e9]">
             <div
                 class="grid items-start justify-center gap-2 max-w-[1400px] mx-auto px-2 py-16
-        grid-cols-[repeat(auto-fit,180px)]
-        sm:grid-cols-[repeat(auto-fit,190px)]
-        md:grid-cols-[repeat(auto-fit,190px)]
-        lg:grid-cols-[repeat(auto-fit,190px)]
-        xl:grid-cols-[repeat(auto-fit,190px)]">
+    grid-cols-[repeat(auto-fit,180px)]
+    sm:grid-cols-[repeat(auto-fit,190px)]
+    md:grid-cols-[repeat(auto-fit,190px)]
+    lg:grid-cols-[repeat(auto-fit,190px)]
+    xl:grid-cols-[repeat(auto-fit,190px)]">
                 @foreach ($packages as $package)
-                    <div class="h-[500px]">
-                        <x-products_package.products_package :number="$package['number']" :image="$package['image']" :title="$package['title']"
-                            :price="$package['price']" :note="$package['note']" :includes="$package['includes'] ?? []" :perfectFor="$package['perfectFor'] ?? []" />
+                    <x-products_package.products_package :number="$package['number']" :image="$package['image']" :title="$package['title']"
+                        :price="$package['price']" :note="$package['note']" :includes="$package['includes'] ?? []" :perfectFor="$package['perfectFor'] ?? []" :suitableFor="$package['suitableFor'] ?? []"
+                        :list="$package['list'] ?? []" />
+                @endforeach
+            </div>
+        </div>
+
+
+        {{-- Menu Options --}}
+        @php
+            $menuOptions = [
+                [
+                    'number' => '01',
+                    'image' => asset('catering_services/menu/khmer_favorites.png'),
+                    'title' => 'Khmer Favorites',
+                    'items' => [
+                        'Chicken Amok',
+                        'Beef Lok Lak',
+                        'Stir-Fried Vegetables',
+                        'Fried Rice',
+                        'Grilled Chicken with Rice',
+                        'Fish Curry',
+                    ],
+                ],
+                [
+                    'number' => '02',
+                    'image' => asset('catering_services/menu/international_options.png'),
+                    'title' => 'International Options',
+                    'items' => [
+                        'Teriyaki Chicken',
+                        'Pasta Bolognese',
+                        'Grilled Fish Fillet',
+                        'Caesar Salad',
+                        'Roasted Chicken',
+                        'Beef Stroganoff',
+                    ],
+                ],
+                [
+                    'number' => '03',
+                    'image' => asset('catering_services/menu/snack_pastry.png'),
+                    'title' => 'Snack & Pastry Selections',
+                    'items' => [
+                        'Mini Sandwiches',
+                        'Croissants',
+                        'Spring Rolls',
+                        'Khmer Desserts',
+                        'Muffins',
+                        'Fresh Fruits',
+                        'Cookies',
+                        'Traditional Rice Cakes',
+                    ],
+                ],
+                // add more menu options here...
+            ];
+        @endphp
+
+        <div class="bg-white py-16 px-4">
+            <h2 class="text-[#a80000] text-[28px] md:text-[40px] font-bold text-center mb-12">
+                Menu Options
+            </h2>
+
+            <div class="grid items-stretch justify-center gap-4 max-w-[700px] mx-auto grid-cols-2 md:grid-cols-3">
+                @foreach ($menuOptions as $option)
+                    <div class="font-sans bg-[#f3f0e9] overflow-hidden shadow-sm h-full flex flex-col">
+                        {{-- Image with number badge --}}
+                        <div class="relative  bg-[#ffffff] pb-[5px] shrink-0">
+                            <img src="{{ $option['image'] }}" alt="{{ $option['title'] }}"
+                                class="w-full h-[160px] md:h-[130px] object-cover bg-[#d6d6d6]">
+                            <div
+                                class="absolute -bottom-5 right-4 w-11 h-11 rounded-full bg-[#a80000] shadow-md flex items-center justify-center">
+                                <span class="text-white text-[15px] font-semibold">
+                                    {{ $option['number'] }}
+                                </span>
+                            </div>
+                        </div>
+
+                        {{-- Title + list --}}
+                        <div class="px-5 pt-8 pb-6 flex-grow">
+                            <p class="text-[#a80000] text-[15px] font-bold leading-snug mb-3">
+                                {{ $option['title'] }}
+                            </p>
+                            <ul class="text-[#060606] text-[15px] leading-relaxed list-disc pl-4">
+                                @foreach ($option['items'] as $item)
+                                    <li>{{ $item }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
                     </div>
                 @endforeach
             </div>
         </div>
 
+
+
+        {{-- who we serve --}}
+        <section class="relative bg-[#A80000] py-12 lg:py-0 lg:h-[560px] px-4 overflow-hidden font-sans">
+
+            <div class="flex flex-col items-center lg:block max-w-5xl mx-auto lg:h-full">
+
+                {{-- Waiter image --}}
+                <img src="{{ asset('the_cheft/the_cheft.png') }}" alt="Catering waiter"
+                    class="static mx-auto mb-8
+            lg:absolute lg:bottom-0 lg:left-4 lg:mb-0
+            h-[360px] sm:h-[390px] md:h-[420px] lg:h-full lg:max-h-[560px]
+            w-auto object-contain lg:z-10">
+
+                {{-- Heading + Cards --}}
+                <div class="relative z-0 flex flex-col items-center lg:h-full lg:justify-center lg:pl-[380px]">
+
+                    {{-- Heading --}}
+                    <h2 class="text-white text-[24px] sm:text-[32px] font-bold text-center mb-1">
+                        Who We Serve
+                    </h2>
+                    <p class="text-white text-[15px] text-center mb-6">
+                        Metro Catering supports:
+                    </p>
+
+                    {{-- Cards --}}
+                    <div class="flex flex-wrap justify-center gap-4 max-w-[650px]">
+                        @foreach ($whoWeServe as $segment)
+                            <div
+                                class="bg-[#8f0000] rounded-xl pt-4 pb-4 px-4
+                        w-[calc(50%-8px)] md:w-[calc(33.333%-11px)]">
+                                <p class="text-white font-bold text-[15px] leading-snug mb-2">
+                                    {{ $segment['title'] }}
+                                </p>
+                                <ul class="text-white text-[13px] leading-snug list-disc pl-4 opacity-90">
+                                    @foreach ($segment['items'] as $item)
+                                        <li>{{ $item }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endforeach
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
         {{-- Who We Serve --}}
         @php
             $whoWeServeLeft = ['Weddings', 'Government events', 'Conferences', 'Exhibitions'];
@@ -298,7 +453,7 @@ $2 / Person',
             <div class="grid grid-cols-2 min-h-[300px]">
 
                 {{-- Left image panel --}}
-                <div class="relative h-full overflow-hidden">
+                <div class="relative mx-auto h-full overflow-hidden">
                     <img src="{{ asset('under_hero/food.png') }}" alt="Catering buffet spread"
                         class="absolute inset-0 w-full h-full object-cover object-center">
                 </div>

@@ -10,10 +10,28 @@
     'list' => [],
 ])
 
-<div class="package-card group font-sans bg-white overflow-hidden shadow-sm">
+@once
+    <script>
+        document.addEventListener('click', function(e) {
+            const trigger = e.target.closest('[data-package-toggle]');
+            if (!trigger) return;
+
+            const card = trigger.closest('[data-package-card]');
+            if (!card) return;
+
+            const details = card.querySelector('.package-details');
+            const isOpen = details.style.gridTemplateRows === '1fr';
+
+            details.style.gridTemplateRows = isOpen ? '0fr' : '1fr';
+            card.classList.toggle('is-active', !isOpen);
+        });
+    </script>
+@endonce
+
+<div class="package-card group font-sans bg-white overflow-hidden shadow-sm" data-package-card>
 
     {{-- Image with number badge --}}
-    <div class="relative cursor-pointer bg-[#f3f0e9] pb-[5px]" onclick="togglePackageCard(this)">
+    <div class="relative cursor-pointer bg-[#f3f0e9] pb-[5px]" data-package-toggle>
         <img src="{{ $image }}" alt="{{ $title }}" class="w-full h-[110px] object-cover bg-[#d6d6d6]">
 
         <div
@@ -24,7 +42,7 @@
     </div>
 
     {{-- Title + price (always visible, clickable) --}}
-    <div class="px-2 bg-white pt-7 pb-4 cursor-pointer" onclick="togglePackageCard(this.parentElement)">
+    <div class="px-2 bg-white pt-7 pb-4 cursor-pointer min-h-[150px]" data-package-toggle>
         <p class="text-[#a80000] text-[15px] font-bold leading-snug mb-2">
             {{ $title }}
         </p>
@@ -85,14 +103,3 @@
     </div>
 
 </div>
-
-<script>
-    function togglePackageCard(cardEl) {
-        const card = cardEl.classList.contains('package-card') ? cardEl : cardEl.closest('.package-card');
-        const details = card.querySelector('.package-details');
-        const isOpen = details.style.gridTemplateRows === '1fr';
-
-        details.style.gridTemplateRows = isOpen ? '0fr' : '1fr';
-        card.classList.toggle('is-active', !isOpen);
-    }
-</script>
