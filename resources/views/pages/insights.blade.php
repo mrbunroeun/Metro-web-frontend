@@ -32,15 +32,79 @@
 
     @endphp
     @include('components.hero_section_not_for_home.hero_section_not_for_home', [
-        'sectionLabel' => 'Latest Events',
+        'sectionLabel' => 'Insights',
         'heading' => 'Premium Catering Services in Cambodia for Corporate, Weddings & Private Events',
-        'description' =>
-            'Metro Catering delivers high-quality food, professional event setups, and customized catering solutions for businesses, schools, weddings, and special occasions across Cambodia.',
+        'description' => '
+                                Metro Catering delivers high-quality food, professional event setups, and customized catering solutions for businesses, schools, weddings, and special occasions across Cambodia.',
         'buttons' => [
             ['text' => 'Contact Us', 'link' => '#', 'style' => 'solid'],
             ['text' => 'View Packages', 'link' => '#', 'style' => 'solid'],
         ],
     ])
+
+
+    {{-- Featured Food Box --}}
+    @php
+        $featuredEvents = [
+            [
+                'title' => 'Featured Food Box & Refreshment Events',
+                'lines' => [
+                    'Ministry Training Workshop',
+                    'Location: Phnom Penh',
+                    'Guests: 250 participants',
+                    'Services: Business Lunch Boxes + Coffee Break',
+                ],
+            ],
+            // add more events here...
+        ];
+    @endphp
+
+    {{-- Featured Food Box --}}
+    <section class="relative w-full max-w-full md:max-w-[80%] mx-auto font-sans">
+        <div class="grid grid-cols-1 md:grid-cols-2 min-h-[220px]">
+
+            {{-- Left image panel --}}
+            <div class="relative min-h-[220px] sm:min-h-[260px] md:h-auto overflow-hidden">
+                <img src="{{ asset('girl_holding_plate/girl_holding_plate.png') }}" alt="Catering staff serving guests"
+                    class="absolute inset-0 w-full h-full object-cover object-center">
+
+                {{-- Blob: mobile only, stuck to bottom-center of the image --}}
+                <div
+                    class="md:hidden absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2
+            w-[52px] h-[52px] rounded-full bg-[#f3f0e9] z-10">
+                </div>
+            </div>
+
+            {{-- Right cream panel --}}
+            <div class="bg-[#f3f0e9] flex flex-col justify-center px-6 sm:px-10 md:px-14 py-6 md:py-8">
+
+                <div class="w-full max-w-[460px] space-y-6">
+                    @foreach ($featuredEvents as $event)
+                        <div>
+                            <p class="text-[#a80000] font-bold text-[16px] sm:text-[17px] leading-snug mb-1">
+                                {{ $event['title'] }}
+                            </p>
+                            @foreach ($event['lines'] as $line)
+                                <p class="text-[#060606] text-[13px] sm:text-[14px] leading-snug">
+                                    {{ $line }}
+                                </p>
+                            @endforeach
+                        </div>
+                    @endforeach
+                </div>
+
+            </div>
+
+        </div>
+
+        {{-- Blob: desktop only, centered on the section seam --}}
+        <div
+            class="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+    w-[72px] h-[72px] rounded-full bg-[#f3f0e9] z-10">
+        </div>
+
+    </section>
+
 
 
     @php
@@ -165,7 +229,7 @@
     @include('components.footer', [
         'ctaHeading' => 'Need Food Boxes or Refreshments for Your Next Event?',
         'ctaSubtext' => 'Whether you are organizing a government workshop, corporate seminar, school activity, or executive meeting, 
-        Metro Catering provides reliable and professional catering solutions tailored to your needs.',
+                                                    Metro Catering provides reliable and professional catering solutions tailored to your needs.',
         'ctaButtonText' => 'Contact Us',
         'ctaLink' => url('/contact-us'),
     ])

@@ -10,9 +10,6 @@ Route::get('/about-us', function () {
     return view('pages.about_us');
 });
 
-Route::get('/latest-events', function () {
-    return view('pages.latest_events');
-});
 
 Route::get('/career', function () {
     return view('pages.career');
@@ -45,4 +42,17 @@ Route::get('/event-equipment-rental', function () {
 
 Route::get('/food-box-and-refreshments', function () {
     return view('pages.catering_services.food_box_and_refreshments');
+});
+
+Route::get('/latest-events', function () {
+    return view('pages.latest_events');
+});
+
+Route::get('/latest-events-detail', function () {
+    return view('pages.latest_events_detail.latest_events_detail');
+});
+
+
+Route::get('/insights', function () {
+    return view('pages.insights');
 });

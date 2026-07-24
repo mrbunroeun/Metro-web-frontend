@@ -42,114 +42,61 @@
         ],
     ])
 
-
-    @php
-        $packages = [
-            [
-                'number' => '01',
-                'image' => asset('catering_services/menu/lorem_insume.png'),
-                'title' => 'Lorem Insume',
-                'description' =>
-                    'Metro Catering provides ready-to-serve food boxes and coffee break refreshments designed for organizations that require efficient meal distribution without compromising quality and presentation.',
-                'link' => '#',
-            ],
-            [
-                'number' => '02',
-                'image' => asset('catering_services/menu/lorem_insume.png'),
-                'title' => 'Lorem Insume',
-                'description' =>
-                    'Metro Catering provides ready-to-serve food boxes and coffee break refreshments designed for organizations that require efficient meal distribution without compromising quality and presentation.',
-                'link' => '#',
-            ],
-            [
-                'number' => '03',
-                'image' => asset('catering_services/menu/lorem_insume.png'),
-                'title' => 'Lorem Insume',
-                'description' =>
-                    'Metro Catering provides ready-to-serve food boxes and coffee break refreshments designed for organizations that require efficient meal distribution without compromising quality and presentation.',
-                'link' => '#',
-            ],
-            [
-                'number' => '04',
-                'image' => asset('catering_services/menu/lorem_insume.png'),
-                'title' => 'Lorem Insume',
-                'description' =>
-                    'Metro Catering provides ready-to-serve food boxes and coffee break refreshments designed for organizations that require efficient meal distribution without compromising quality and presentation.',
-                'link' => '#',
-            ],
-            [
-                'number' => '05',
-                'image' => asset('catering_services/menu/lorem_insume.png'),
-                'title' => 'Lorem Insume',
-                'description' =>
-                    'Metro Catering provides ready-to-serve food boxes and coffee break refreshments designed for organizations that require efficient meal distribution without compromising quality and presentation.',
-                'link' => '#',
-            ],
-            [
-                'number' => '06',
-                'image' => asset('catering_services/menu/lorem_insume.png'),
-                'title' => 'Lorem Insume',
-                'description' =>
-                    'Metro Catering provides ready-to-serve food boxes and coffee break refreshments designed for organizations that require efficient meal distribution without compromising quality and presentation.',
-                'link' => '#',
-            ],
-            [
-                'number' => '07',
-                'image' => asset('catering_services/menu/lorem_insume.png'),
-                'title' => 'Lorem Insume',
-                'description' =>
-                    'Metro Catering provides ready-to-serve food boxes and coffee break refreshments designed for organizations that require efficient meal distribution without compromising quality and presentation.',
-                'link' => '#',
-            ],
-            [
-                'number' => '08',
-                'image' => asset('catering_services/menu/lorem_insume.png'),
-                'title' => 'Lorem Insume',
-                'description' =>
-                    'Metro Catering provides ready-to-serve food boxes and coffee break refreshments designed for organizations that require efficient meal distribution without compromising quality and presentation.',
-                'link' => '#',
-            ],
-            // add more packages here...
-        ];
-    @endphp
-
-    <div class="bg-white py-16 px-4">
+    {{-- Metro Catering --}}
+    <section class="relative w-full bg-[#1a1a1a]">
         <div
-            class="grid items-stretch justify-center gap-4 max-w-[1300px] mx-auto grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
-            @foreach ($packages as $package)
-                <div class="font-sans bg-[#f3f0e9] overflow-hidden shadow-sm h-full flex flex-col">
-                    {{-- Image with number badge --}}
-                    <div class="relative bg-[#ffffff] pb-[5px] shrink-0">
-                        <img src="{{ $package['image'] }}" alt="{{ $package['title'] }}"
-                            class="w-full h-[160px] md:h-[130px] object-cover bg-[#d6d6d6]">
-                        <div
-                            class="absolute -bottom-5 right-4 w-11 h-11 rounded-full bg-[#a80000] shadow-md flex items-center justify-center">
-                            <span class="text-white text-[15px] font-semibold">
-                                {{ $package['number'] }}
-                            </span>
-                        </div>
-                    </div>
+            class="flex flex-col min-[1250px]:flex-row items-center gap-8 min-[1250px]:gap-10 px-6 sm:px-10 py-10 min-[1250px]:py-20 min-[1250px]:px-30">
 
-                    {{-- Title + description + button --}}
-                    <div class="px-5 pt-8 pb-6 flex-grow flex flex-col">
-                        <p class="text-[#060606] text-[17px] font-bold leading-snug mb-3">
-                            {{ $package['title'] }}
-                        </p>
-                        <p class="text-[#060606] text-[14px] leading-relaxed mb-6">
-                            {{ $package['description'] }}
-                        </p>
-
-                        <div class="mt-auto flex justify-center">
-                            <a href="{{ $package['link'] }}"
-                                class="inline-block bg-[#a80000] text-white text-[14px] font-semibold rounded-full sm:px-8 px-4 py-2.5 hover:bg-[#8f0000] transition-colors">
-                                Read More
-                            </a>
-                        </div>
-                    </div>
+            {{-- Left image panel --}}
+            <div class="w-full min-[1250px]:w-[45%] shrink-0">
+                <div class="relative w-full max-w-[520px] mx-auto aspect-[4/3] overflow-hidden">
+                    <img src="{{ asset('') }}" alt="Metro Catering"
+                        class="absolute inset-0 w-full h-full object-cover object-center bg-[#cdcdcd] transition-transform duration-500 ease-in-out hover:scale-105">
                 </div>
-            @endforeach
+            </div>
+
+            {{-- Right text panel --}}
+            <div class="w-full min-[1250px]:w-[55%] flex flex-col justify-center">
+                <div class="text-left w-full max-w-full mx-auto min-[1250px]:mx-0">
+                    <h2 class="text-[#e02020] text-[20px] sm:text-[24px] min-[1250px]:text-[26px] font-bold mb-3">
+                        Metro Catering
+                    </h2>
+                    <p class="text-white/90 text-[12px] sm:text-[13px] leading-relaxed mb-3">
+                        Trusted by companies, organizations, and families, Metro Catering
+                        provides complete catering and event solutions from food preparation
+                        and buffet services to equipment rental and venue setup. Trusted by
+                        companies, organizations, and families, Metro Catering provides
+                        complete catering and event solutions from food preparation and
+                        buffet rental and venue setup. Catering and event solutions from
+                        food preparation and buffet services to equipment rental and venue
+                        setup. Trusted by companies, organizations, and families, Metro
+                        Catering provides complete catering and event solutions from food
+                        preparation and buffet services to equipment rental and venue setup.
+                    </p>
+                    <p class="text-white/90 text-[12px] sm:text-[13px] leading-relaxed mb-4">
+                        Trusted by companies, organizations, and families, Metro Catering
+                        provides complete catering and event solutions from food preparation
+                        and buffet services to equipment rental and venue setup. Trusted by
+                        companies, organizations, and families, Metro Catering provides
+                        complete catering and event solutions from food preparation and
+                        buffet services to equipment rental and venue setup. Catering and
+                        event solutions from food preparation and buffet rental and venue
+                        setup. Trusted by companies, organizations, and families, Metro
+                        Catering provides complete catering and event solutions from food
+                        preparation and buffet services to equipment rental and venue setup.
+                        Trusted by companies, organizations, and families, Metro Catering
+                        provides complete catering and event solutions from food preparation
+                        and buffet services.
+                    </p>
+                    <a href="#"
+                        class="inline-flex items-center text-white text-[13px] font-medium underline underline-offset-4 hover:text-[#e02020] transition duration-300 ease-in-out">
+                        Link
+                    </a>
+                </div>
+            </div>
+
         </div>
-    </div>
+    </section>
 
 
     {{-- Frequently Ask Questions --}}
@@ -161,7 +108,7 @@
     @include('components.footer', [
         'ctaHeading' => 'Need Food Boxes or Refreshments for Your Next Event?',
         'ctaSubtext' => 'Whether you are organizing a government workshop, corporate seminar, school activity, or executive meeting, 
-            Metro Catering provides reliable and professional catering solutions tailored to your needs.',
+                                                                                                                                                                                                                                Metro Catering provides reliable and professional catering solutions tailored to your needs.',
         'ctaButtonText' => 'Contact Us',
         'ctaLink' => url('/contact-us'),
     ])

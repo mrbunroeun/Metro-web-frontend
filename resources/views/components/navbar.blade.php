@@ -74,6 +74,8 @@
                 <a href="/latest-events"
                     class="text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">Latest
                     Events</a>
+                <a href="/insights" class="text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">
+                    Insights</a>
                 <a href="/career"
                     class="text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">Career</a>
                 <a href="/contact-us"
@@ -154,6 +156,8 @@
                 <a href="/latest-events"
                     class="nav-link text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">Latest
                     Events</a>
+                <a href="/insights" class="text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">
+                    Insights</a>
                 <a href="/career"
                     class="nav-link text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">Career</a>
                 <a href="/contact-us"
