@@ -289,7 +289,7 @@
                             onchange="
                             const f = this.files[0];
                             const nameEl = document.getElementById('cv-filename');
-                            if (f && f.size > 5 * 1024 * 1024) {
+                            if (f && f.size > 50 * 1024 * 1024) {
                                 alert('CV must be under 5MB.');
                                 this.value = '';
                                 nameEl.textContent = 'No File Chosen';
@@ -319,7 +319,7 @@
                             onchange="
                             const f = this.files[0];
                             const nameEl = document.getElementById('cover-letter-filename');
-                            if (f && f.size > 5 * 1024 * 1024) {
+                            if (f && f.size > 50 * 1024 * 1024) {
                                 alert('Cover letter must be under 5MB.');
                                 this.value = '';
                                 nameEl.textContent = 'No File Chosen';
@@ -335,7 +335,7 @@
 
                 {{-- Submit --}}
                 <div class="md:col-span-2 flex justify-center pt-4">
-                    <button type="submit"
+                    <button type="button" onclick="submitForm()"
                         class="bg-[#a80000] text-white font-semibold text-[15px] rounded-full px-12 py-4 hover:bg-[#8a0000] transition focus:outline-none focus:ring-2 focus:ring-[#a80000] focus:ring-offset-2">
                         Submit
                     </button>
@@ -344,11 +344,45 @@
             </form>
         </div>
     </section>
+    <script>
+        function submitForm() {
+            let fullName = document.querySelector('[name="full_name"]').value.trim();
+            let email = document.querySelector('[name="email"]').value.trim();
+            let phone = document.querySelector('[name="phone_number"]').value.trim();
+            let position = document.querySelector('[name="position"]').value.trim();
+            let cvInput = document.querySelector('[name="cv"]');
+            let coverInput = document.querySelector('[name="cover_letter"]');
+
+            if (!fullName || !email || !phone || !position || !cvInput.files[0]) {
+                alert("Please fill in all required fields and attach your CV.");
+                return;
+            }
+
+            let cvFileName = cvInput.files[0].name;
+            let coverFileName = coverInput.files[0] ? coverInput.files[0].name : "Not attached";
+
+            let message =
+                `New Job Application:
+
+Full Name: ${fullName}
+Email: ${email}
+Phone: ${phone}
+Position: ${position}
+
+CV: ${cvFileName} (applicant will attach manually)
+Cover Letter: ${coverFileName}`;
+
+            let encoded = encodeURIComponent(message);
+            let telegramUrl = `https://t.me/HasBunRoeun?text=${encoded}`;
+
+            window.open(telegramUrl, "_blank");
+        }
+    </script>
     {{-- footer --}}
     @include('components.footer', [
         'ctaHeading' => 'Need Food Boxes or Refreshments for Your Next Event?',
         'ctaSubtext' => 'Whether you are organizing a government workshop, corporate seminar, school activity, or executive meeting, 
-                                                                                                                        Metro Catering provides reliable and professional catering solutions tailored to your needs.',
+                                                                                                                                                Metro Catering provides reliable and professional catering solutions tailored to your needs.',
         'ctaButtonText' => 'Contact Us',
         'ctaLink' => url('/contact-us'),
     ])
