@@ -84,6 +84,12 @@
                     <div class="order-1 min-[1050px]:order-1 relative min-h-[260px] md:min-h-[300px] overflow-hidden">
                         <img src="{{ asset($insight['image']) }}" alt="{{ $insight['title'] }}"
                             class="absolute inset-0 w-full h-full object-cover object-center">
+
+                        {{-- Blob: sits on image's bottom edge, 1-col only --}}
+                        <div
+                            class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 min-[1050px]:hidden
+                        w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#f5a623] z-10">
+                        </div>
                     </div>
 
                     {{-- Cream text bottom / right --}}
@@ -101,6 +107,12 @@
                     <div class="order-1 min-[1050px]:order-2 relative min-h-[260px] md:min-h-[300px] overflow-hidden">
                         <img src="{{ asset($insight['image']) }}" alt="{{ $insight['title'] }}"
                             class="absolute inset-0 w-full h-full object-cover object-center">
+
+                        {{-- Blob: sits on image's bottom edge, 1-col only --}}
+                        <div
+                            class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 min-[1050px]:hidden
+                        w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#f5a623] z-10">
+                        </div>
                     </div>
 
                     {{-- Red text bottom when stacked, left on desktop --}}
@@ -115,10 +127,10 @@
                     </div>
                 @endif
 
-                {{-- Blob: top seam when stacked, centered on the column seam at 2-col --}}
+                {{-- Blob: centered on the column seam, 2-col only --}}
                 <div
-                    class="absolute top-0 min-[1050px]:top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-            w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#f5a623] z-10">
+                    class="hidden min-[1050px]:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+                w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#f5a623] z-10">
                 </div>
 
             </div>
@@ -139,7 +151,7 @@
     @include('components.footer', [
         'ctaHeading' => 'Need Food Boxes or Refreshments for Your Next Event?',
         'ctaSubtext' => 'Whether you are organizing a government workshop, corporate seminar, school activity, or executive meeting, 
-                                                                                                                                                                Metro Catering provides reliable and professional catering solutions tailored to your needs.',
+                                                                                                                                                                            Metro Catering provides reliable and professional catering solutions tailored to your needs.',
         'ctaButtonText' => 'Contact Us',
         'ctaLink' => url('/contact-us'),
     ])
