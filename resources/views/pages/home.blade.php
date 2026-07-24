@@ -43,7 +43,7 @@
 
         {{-- hero section --}}
         <section
-            class="relative w-full flex flex-col items-center justify-center text-center px-4 py-24 md:py-32 overflow-hidden min-h-[600px] md:min-h-[700px] -mt-[54px] md:-mt-[58px]">
+            class="relative w-full flex flex-col items-center justify-center text-center px-4 py-24 md:py-52 overflow-hidden min-h-[600px] md:min-h-[700px] -mt-[0px] md:-mt-[18px]">
 
             {{-- Background image --}}
             <img src="{{ asset('hero_section/hero_section.png') }}" alt="Metro Catering hero background"

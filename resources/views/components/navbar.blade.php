@@ -100,77 +100,75 @@
 
         {{-- Mobile slide-down menu --}}
         <div id="mobile-menu"
-            class="lg:hidden mx-auto w-[90%] md:w-[80%] bg-white/95 backdrop-blur-md rounded-3xl shadow-xl mt-2 px-6 py-4
-                   opacity-0 -translate-y-2 pointer-events-none transition-all duration-300 ease-in-out">
-            <div class="flex flex-col gap-3 text-base">
-                <a href="/" class="nav-link text-[#B00000] transition duration-300 ease-in-out">Home</a>
-                <a href="/about-us"
-                    class="nav-link text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">About Metro
-                    Catering</a>
+            class="lg:hidden absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[90%] md:w-[80%] bg-white/95 backdrop-blur-md rounded-3xl shadow-xl px-6 py-4
+       opacity-0 -translate-y-2 pointer-events-none transition-all duration-300 ease-in-out" />
+        <div class="flex flex-col gap-3 text-base">
+            <a href="/" class="nav-link text-[#B00000] transition duration-300 ease-in-out">Home</a>
+            <a href="/about-us"
+                class="nav-link text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">About Metro
+                Catering</a>
 
-                {{-- Catering Services expandable submenu (mobile) --}}
-                <div>
-                    <button type="button" id="mobileCateringToggle"
-                        class="flex items-center justify-between w-full text-[#B00000] font-bold transition duration-300 ease-in-out">
-                        Catering Services
-                        <svg id="mobileCateringChevron" class="w-4 h-4 transition-transform duration-500 ease-in-out"
-                            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
+            {{-- Catering Services expandable submenu (mobile) --}}
+            <div>
+                <button type="button" id="mobileCateringToggle"
+                    class="flex items-center justify-between w-full text-[#B00000] font-bold transition duration-300 ease-in-out">
+                    Catering Services
+                    <svg id="mobileCateringChevron" class="w-4 h-4 transition-transform duration-500 ease-in-out"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
 
-                    <div id="mobileCateringPanel"
-                        class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-in-out">
-                        <div class="overflow-hidden">
-                            <div class="flex flex-col mt-2 rounded-xl overflow-hidden bg-black/[0.03]">
-                                <a href="/canteen-catering-services"
-                                    class="nav-link dropdown-link px-4 py-3 transition-colors duration-300 ease-in-out
+                <div id="mobileCateringPanel"
+                    class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-in-out">
+                    <div class="overflow-hidden">
+                        <div class="flex flex-col mt-2 rounded-xl overflow-hidden bg-black/[0.03]">
+                            <a href="/canteen-catering-services"
+                                class="nav-link dropdown-link px-4 py-3 transition-colors duration-300 ease-in-out
                                            {{ request()->is('canteen-catering-services') ? 'active' : 'text-gray-700' }}">
-                                    Canteen Catering Services
-                                </a>
-                                <a href="/mobile-catering"
-                                    class="nav-link dropdown-link px-4 py-3 transition-colors duration-300 ease-in-out
+                                Canteen Catering Services
+                            </a>
+                            <a href="/mobile-catering"
+                                class="nav-link dropdown-link px-4 py-3 transition-colors duration-300 ease-in-out
                                            {{ request()->is('mobile-catering') ? 'active' : 'text-gray-700' }}">
-                                    Mobile Catering
-                                </a>
-                                <a href="/corporate-buffet-catering"
-                                    class="nav-link dropdown-link px-4 py-3 transition-colors duration-300 ease-in-out
+                                Mobile Catering
+                            </a>
+                            <a href="/corporate-buffet-catering"
+                                class="nav-link dropdown-link px-4 py-3 transition-colors duration-300 ease-in-out
                                            {{ request()->is('corporate-buffet-catering') ? 'active' : 'text-gray-700' }}">
-                                    Corporate Buffet Catering
-                                </a>
-                                <a href="/event-equipment-rental"
-                                    class="nav-link dropdown-link px-4 py-3 transition-colors duration-300 ease-in-out
+                                Corporate Buffet Catering
+                            </a>
+                            <a href="/event-equipment-rental"
+                                class="nav-link dropdown-link px-4 py-3 transition-colors duration-300 ease-in-out
                                            {{ request()->is('event-equipment-rental') ? 'active' : 'text-gray-700' }}">
-                                    Event Equipment Rental
-                                </a>
-                                <a href="/food-box-and-refreshments"
-                                    class="nav-link dropdown-link px-4 py-3 transition-colors duration-300 ease-in-out
+                                Event Equipment Rental
+                            </a>
+                            <a href="/food-box-and-refreshments"
+                                class="nav-link dropdown-link px-4 py-3 transition-colors duration-300 ease-in-out
                                            {{ request()->is('food-box-and-refreshments') ? 'active' : 'text-gray-700' }}">
-                                    Food Box & Refreshments
-                                </a>
-                            </div>
+                                Food Box & Refreshments
+                            </a>
                         </div>
                     </div>
                 </div>
-
-                <a href="/latest-events"
-                    class="nav-link text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">Latest
-                    Events</a>
-                <a href="/insights" class="text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">
-                    Insights</a>
-                <a href="/career"
-                    class="nav-link text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">Career</a>
-                <a href="/contact-us"
-                    class="nav-link text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">Contact
-                    Us</a>
             </div>
+
+            <a href="/latest-events"
+                class="nav-link text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">Latest
+                Events</a>
+            <a href="/insights" class="text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">
+                Insights</a>
+            <a href="/career"
+                class="nav-link text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">Career</a>
+            <a href="/contact-us"
+                class="nav-link text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">Contact
+                Us</a>
         </div>
-    </section>
+</div>
+</section>
 
 </div>
 
-{{-- Spacer so page content doesn't hide behind the fixed navbar --}}
-<div class="h-[54px] md:h-[58px]"></div>
 
 <style>
     .dropdown-link:hover {

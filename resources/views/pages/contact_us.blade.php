@@ -1,172 +1,123 @@
 @extends('layouts.app')
 @section('content')
-    @php
+    {{-- Footer --}}
+    <footer class="relative h-screen w-full bg-[#F3F0E9] font-sans overflow-hidden flex flex-col">
 
-        $metroCateringFaqs = [
-            [
-                'question' => 'Can we order both food boxes and coffee breaks for the same event?',
-                'answer' =>
-                    'Yes. Many clients combine lunch boxes with morning and afternoon refreshment packages to provide a complete catering solution for seminars and workshops.',
-            ],
-            [
-                'question' => 'Can Metro Catering accommodate vegetarian, halal, or allergy requirements?',
-                'answer' => '-',
-            ],
-            [
-                'question' => 'Can we add our company logo to the food boxes?',
-                'answer' => '-',
-            ],
-            [
-                'question' => 'What is the latest time to confirm the final number of participants?',
-                'answer' => '-',
-            ],
-            [
-                'question' => 'Can you deliver food boxes outside Phnom Penh?',
-                'answer' => '-',
-            ],
-            [
-                'question' => 'What happens if additional guests arrive on the event day?',
-                'answer' => '-',
-            ],
-        ];
+        {{-- Background image --}}
+        <img src="{{ asset('contact/contact.png') }}" alt="" class="absolute inset-0 w-full h-full object-cover z-0">
 
-    @endphp
-    @include('components.hero_section_not_for_home.hero_section_not_for_home', [
-        'sectionLabel' => 'Latest Events',
-        'heading' => 'Premium Catering Services in Cambodia for Corporate, Weddings & Private Events',
-        'description' =>
-            'Metro Catering delivers high-quality food, professional event setups, and customized catering solutions for businesses, schools, weddings, and special occasions across Cambodia.',
-        'buttons' => [
-            ['text' => 'Contact Us', 'link' => '#', 'style' => 'solid'],
-            ['text' => 'View Packages', 'link' => '#', 'style' => 'solid'],
-        ],
-    ])
-
-
-    @php
-        $packages = [
-            [
-                'number' => '01',
-                'image' => asset('catering_services/menu/lorem_insume.png'),
-                'title' => 'Lorem Insume',
-                'description' =>
-                    'Metro Catering provides ready-to-serve food boxes and coffee break refreshments designed for organizations that require efficient meal distribution without compromising quality and presentation.',
-                'link' => '#',
-            ],
-            [
-                'number' => '02',
-                'image' => asset('catering_services/menu/lorem_insume.png'),
-                'title' => 'Lorem Insume',
-                'description' =>
-                    'Metro Catering provides ready-to-serve food boxes and coffee break refreshments designed for organizations that require efficient meal distribution without compromising quality and presentation.',
-                'link' => '#',
-            ],
-            [
-                'number' => '03',
-                'image' => asset('catering_services/menu/lorem_insume.png'),
-                'title' => 'Lorem Insume',
-                'description' =>
-                    'Metro Catering provides ready-to-serve food boxes and coffee break refreshments designed for organizations that require efficient meal distribution without compromising quality and presentation.',
-                'link' => '#',
-            ],
-            [
-                'number' => '04',
-                'image' => asset('catering_services/menu/lorem_insume.png'),
-                'title' => 'Lorem Insume',
-                'description' =>
-                    'Metro Catering provides ready-to-serve food boxes and coffee break refreshments designed for organizations that require efficient meal distribution without compromising quality and presentation.',
-                'link' => '#',
-            ],
-            [
-                'number' => '05',
-                'image' => asset('catering_services/menu/lorem_insume.png'),
-                'title' => 'Lorem Insume',
-                'description' =>
-                    'Metro Catering provides ready-to-serve food boxes and coffee break refreshments designed for organizations that require efficient meal distribution without compromising quality and presentation.',
-                'link' => '#',
-            ],
-            [
-                'number' => '06',
-                'image' => asset('catering_services/menu/lorem_insume.png'),
-                'title' => 'Lorem Insume',
-                'description' =>
-                    'Metro Catering provides ready-to-serve food boxes and coffee break refreshments designed for organizations that require efficient meal distribution without compromising quality and presentation.',
-                'link' => '#',
-            ],
-            [
-                'number' => '07',
-                'image' => asset('catering_services/menu/lorem_insume.png'),
-                'title' => 'Lorem Insume',
-                'description' =>
-                    'Metro Catering provides ready-to-serve food boxes and coffee break refreshments designed for organizations that require efficient meal distribution without compromising quality and presentation.',
-                'link' => '#',
-            ],
-            [
-                'number' => '08',
-                'image' => asset('catering_services/menu/lorem_insume.png'),
-                'title' => 'Lorem Insume',
-                'description' =>
-                    'Metro Catering provides ready-to-serve food boxes and coffee break refreshments designed for organizations that require efficient meal distribution without compromising quality and presentation.',
-                'link' => '#',
-            ],
-            // add more packages here...
-        ];
-    @endphp
-
-    <div class="bg-white py-16 px-4">
+        {{-- Content sits above the image --}}
         <div
-            class="grid items-stretch justify-center gap-4 max-w-[1300px] mx-auto grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
-            @foreach ($packages as $package)
-                <div class="font-sans bg-[#f3f0e9] overflow-hidden shadow-sm h-full flex flex-col">
-                    {{-- Image with number badge --}}
-                    <div class="relative bg-[#ffffff] pb-[5px] shrink-0">
-                        <img src="{{ $package['image'] }}" alt="{{ $package['title'] }}"
-                            class="w-full h-[160px] md:h-[130px] object-cover bg-[#d6d6d6]">
-                        <div
-                            class="absolute -bottom-5 right-4 w-11 h-11 rounded-full bg-[#a80000] shadow-md flex items-center justify-center">
-                            <span class="text-white text-[15px] font-semibold">
-                                {{ $package['number'] }}
-                            </span>
-                        </div>
-                    </div>
+            class="relative z-10 flex-1 flex flex-col items-center justify-center text-left max-w-6xl mx-auto px-6 md:px-10">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
 
-                    {{-- Title + description + button --}}
-                    <div class="px-5 pt-8 pb-6 flex-grow flex flex-col">
-                        <p class="text-[#060606] text-[17px] font-bold leading-snug mb-3">
-                            {{ $package['title'] }}
-                        </p>
-                        <p class="text-[#060606] text-[14px] leading-relaxed mb-6">
-                            {{ $package['description'] }}
-                        </p>
+                {{-- Logo + tagline --}}
+                <div class="lg:col-span-1">
+                    <img src="{{ asset('logo_footer/logo_footer.svg') }}" alt="Metro Catering Logo" class="h-14 w-auto mb-2">
+                </div>
 
-                        <div class="mt-auto flex justify-center">
-                            <a href="{{ $package['link'] }}"
-                                class="inline-block bg-[#a80000] text-white text-[14px] font-semibold rounded-full sm:px-8 px-4 py-2.5 hover:bg-[#8f0000] transition-colors">
-                                Read More
-                            </a>
-                        </div>
+                {{-- About + Follow Us --}}
+                <div>
+                    <h3 class="text-[#A80000] text-[16px] font-bold mb-3">Metro Catering</h3>
+                    <p class="text-[#FFFFFF] text-[13px] leading-relaxed mb-6">
+                        Trusted by companies, organizations, and families, Metro Catering provides complete
+                        catering and event solutions from food preparation and buffet services to equipment
+                        rental and venue setup.
+                    </p>
+
+                    <h3 class="text-[#A80000] text-[16px] font-bold mb-3">Follow Us</h3>
+                    <div class="flex items-center gap-3">
+                        <a href="#" aria-label="Facebook"
+                            class="w-9 h-9 rounded-full bg-[#1877F2] flex items-center justify-center hover:opacity-80 transition duration-300 ease-in-out">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="w-4.5 h-4.5">
+                                <path
+                                    d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.83c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94z" />
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Telegram"
+                            class="w-9 h-9 rounded-full bg-[#229ED9] flex items-center justify-center hover:opacity-80 transition duration-300 ease-in-out">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="w-4.5 h-4.5">
+                                <path
+                                    d="M21.94 4.36c.26-1.13-.86-2.03-1.9-1.6L2.4 10.28c-1.1.45-1.09 2.02.02 2.44l4.5 1.7 1.74 5.62c.24.78 1.24.98 1.78.36l2.42-2.8 4.5 3.36c.86.64 2.1.17 2.32-.88l3.26-15.72z" />
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="WhatsApp"
+                            class="w-9 h-9 rounded-full bg-[#25D366] flex items-center justify-center hover:opacity-80 transition duration-300 ease-in-out">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="w-4.5 h-4.5">
+                                <path
+                                    d="M17.47 14.38c-.29-.15-1.72-.85-1.99-.95-.27-.1-.46-.15-.66.15-.2.29-.76.94-.93 1.14-.17.2-.34.22-.63.07-.29-.15-1.23-.45-2.34-1.44-.86-.77-1.45-1.72-1.61-2.02-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.51-.07-.15-.66-1.58-.9-2.16-.24-.58-.48-.5-.66-.5h-.56c-.2 0-.51.07-.78.37-.27.29-1.03 1-1.03 2.45 0 1.44 1.05 2.83 1.2 3.03.15.2 2.07 3.15 5.02 4.42.7.3 1.25.48 1.68.62.7.22 1.35.19 1.85.11.56-.08 1.72-.7 1.97-1.38.24-.68.24-1.26.17-1.38-.07-.12-.27-.2-.56-.35z" />
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.06L2 22l4.94-1.33C8.42 21.5 10.15 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18.15c-1.63 0-3.15-.44-4.46-1.2l-.32-.19-3.32.9.89-3.24-.21-.34A8.14 8.14 0 013.85 12 8.15 8.15 0 1112 20.15z" />
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram"
+                            class="w-9 h-9 rounded-full bg-gradient-to-tr from-[#feda75] via-[#d62976] to-[#4f5bd5] flex items-center justify-center hover:opacity-80 transition duration-300 ease-in-out">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="w-4.5 h-4.5">
+                                <path
+                                    d="M12 2c-2.72 0-3.06.01-4.12.06-1.06.05-1.79.22-2.43.47-.66.26-1.22.6-1.77 1.16-.55.55-.9 1.11-1.16 1.77-.25.64-.42 1.37-.47 2.43C2 8.94 2 9.28 2 12s.01 3.06.06 4.12c.05 1.06.22 1.79.47 2.43.26.66.6 1.22 1.16 1.77.55.55 1.11.9 1.77 1.16.64.25 1.37.42 2.43.47C8.94 22 9.28 22 12 22s3.06-.01 4.12-.06c1.06-.05 1.79-.22 2.43-.47.66-.26 1.22-.6 1.77-1.16.55-.55.9-1.11 1.16-1.77.25-.64.42-1.37.47-2.43.05-1.06.06-1.4.06-4.12s-.01-3.06-.06-4.12c-.05-1.06-.22-1.79-.47-2.43a4.9 4.9 0 00-1.16-1.77 4.9 4.9 0 00-1.77-1.16c-.64-.25-1.37-.42-2.43-.47C15.06 2.01 14.72 2 12 2zm0 1.8c2.67 0 2.99.01 4.04.06.98.04 1.5.21 1.86.35.47.18.8.4 1.15.75.35.35.57.68.75 1.15.14.36.31.88.35 1.86.05 1.05.06 1.37.06 4.04s-.01 2.99-.06 4.04c-.04.98-.21 1.5-.35 1.86-.18.47-.4.8-.75 1.15-.35.35-.68.57-1.15.75-.36.14-.88.31-1.86.35-1.05.05-1.37.06-4.04.06s-2.99-.01-4.04-.06c-.98-.04-1.5-.21-1.86-.35a3.1 3.1 0 01-1.15-.75 3.1 3.1 0 01-.75-1.15c-.14-.36-.31-.88-.35-1.86-.05-1.05-.06-1.37-.06-4.04s.01-2.99.06-4.04c.04-.98.21-1.5.35-1.86.18-.47.4-.8.75-1.15.35-.35.68-.57 1.15-.75.36-.14.88-.31 1.86-.35 1.05-.05 1.37-.06 4.04-.06z" />
+                                <path
+                                    d="M12 7.4a4.6 4.6 0 100 9.2 4.6 4.6 0 000-9.2zm0 7.6a3 3 0 110-6 3 3 0 010 6zm5.85-7.78a1.08 1.08 0 11-2.16 0 1.08 1.08 0 012.16 0z" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
-            @endforeach
+
+                {{-- Company links --}}
+                <div>
+                    <h3 class="text-[#A80000] text-[16px] font-bold mb-3">Company</h3>
+                    <div class="flex flex-col gap-2.5 text-[14px]">
+                        <a href="{{ url('/') }}"
+                            class="text-[#FFFFFF] hover:text-[#A80000] transition duration-300 ease-in-out">Home</a>
+                        <a href="{{ url('/about-us') }}"
+                            class="text-[#FFFFFF] hover:text-[#A80000] transition duration-300 ease-in-out">About Metro
+                            Catering</a>
+                        <a href="{{ url('/catering-services') }}"
+                            class="text-[#FFFFFF] hover:text-[#A80000] transition duration-300 ease-in-out">Catering
+                            Services</a>
+                        <a href="{{ url('/latest-activities') }}"
+                            class="text-[#FFFFFF] hover:text-[#A80000] transition duration-300 ease-in-out">Latest
+                            Events</a>
+                        <a href="{{ url('/insights') }}"
+                            class="text-[#FFFFFF] hover:text-[#A80000] transition duration-300 ease-in-out">Insights</a>
+                        <a href="{{ url('/career') }}"
+                            class="text-[#FFFFFF] hover:text-[#A80000] transition duration-300 ease-in-out">Career</a>
+                        <a href="{{ url('/contact-us') }}"
+                            class="text-[#FFFFFF] hover:text-[#A80000] transition duration-300 ease-in-out">Contact Us</a>
+                    </div>
+                </div>
+
+                {{-- Contact --}}
+                <div>
+                    <h3 class="text-[#A80000] text-[16px] font-bold mb-3">Contact</h3>
+                    <div class="flex flex-col gap-2.5 text-[14px] text-[#FFFFFF]">
+                        <p class="leading-relaxed">
+                            #159A, Street No. 2011, Phum Lorem, Sangkat Lorem, Khan Lorem, Phnom Penh, Cambodia.
+                        </p>
+                        <a href="tel:089911988" class="hover:text-[#A80000] transition duration-300 ease-in-out">089 911 988
+                            Lorem</a>
+                        <a href="tel:081688880" class="hover:text-[#A80000] transition duration-300 ease-in-out">081 688 880
+                            Lorem</a>
+                        <a href="mailto:lorem@gmail.com"
+                            class="hover:text-[#A80000] transition duration-300 ease-in-out">lorem@gmail.com</a>
+                        <a href="https://www.lorem.com.kh" target="_blank"
+                            class="underline hover:text-[#A80000] transition duration-300 ease-in-out">www.Lorem.com.kh</a>
+                    </div>
+                </div>
+
+            </div>
+
+            {{-- Bottom note --}}
+            <p class="text-[#A80000] text-[12px] text-center mt-16 md:mt-20">
+                All right reserved. {{ date('Y') }}
+            </p>
         </div>
-    </div>
 
+        {{-- Bottom red strip --}}
+        <div class="relative z-10 w-full bg-[#A80000] py-3">
+            <p class="text-white text-center text-[12px] tracking-widest">
+                <span class="font-bold">METRO</span> CATERING &amp; EVENTS
+            </p>
+        </div>
 
-    {{-- Frequently Ask Questions --}}
-    <x-faqs.faqs :faqs="$metroCateringFaqs" />
-
-
-
-
-
-    </section>
-
-    {{-- footer --}}
-    @include('components.footer', [
-        'ctaHeading' => 'Need Food Boxes or Refreshments for Your Next Event?',
-        'ctaSubtext' => 'Whether you are organizing a government workshop, corporate seminar, school activity, or executive meeting, 
-    Metro Catering provides reliable and professional catering solutions tailored to your needs.',
-        'ctaButtonText' => 'Contact Us',
-        'ctaLink' => url('/contact-us'),
-    ])
+    </footer>
 @endsection
