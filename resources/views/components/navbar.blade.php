@@ -1,178 +1,236 @@
-{{-- Fixed wrapper for top bar + navbar --}}
-<div class="fixed top-0 left-0 w-full z-40">
+{{-- ============================================================
+     Metro Catering — Primary Navigation
+     Utility bar + floating pill nav, desktop dropdown, mobile sheet
+     ============================================================ --}}
+<header id="siteHeader" class="fixed inset-x-0 top-0 z-40 isolate [transform:translateZ(0)] will-change-transform">
 
-    {{-- Top info bar --}}
-    <section
-        class="w-full h-[38px] md:h-[50px] bg-[#B00000] flex flex-row justify-center md:gap-[50rem] sm:gap-[20rem] gap-[10rem] items-center">
-        <p class="text-white text-[11px] md:text-xs font-light">
-            Address
-        </p>
-        <a href="tel:0123132277"
-            class="text-white text-[11px] md:text-xs font-light hover:opacity-80 transition duration-300 ease-in-out">
-            012 31 32 77
-        </a>
-    </section>
+    {{-- Utility bar --}}
+    <div class="w-full bg-[#B00000]">
+        <div class="mx-auto flex h-[38px] md:h-[44px] max-w-7xl items-center justify-center gap-8 px-6 md:justify-end">
+            <p class="text-[15px] font-light text-white/90">
+                Address
+            </p>
+            <a href="tel:0123132277"
+                class="text-[15px] font-light text-white/90 transition-opacity duration-200 hover:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white rounded-sm">
+                012 31 32 77
+            </a>
+        </div>
+    </div>
 
     {{-- Floating navbar --}}
-    <section class="relative mt-10 md:mt-12 z-30">
+    <nav class="relative mt-6 md:mt-8" aria-label="Main navigation">
 
         <div
-            class="grid grid-cols-[auto_1fr_auto] items-center mx-auto rounded-full bg-white/95 backdrop-blur-md shadow-xl w-[90%] md:w-[80%] px-6 md:px-10 h-13 md:h-[60px] transition duration-300 ease-in-out">
+            class="mx-auto grid h-[60px] md:h-[68px] w-[92%] md:w-[85%] max-w-6xl grid-cols-[1fr_auto_1fr] items-center rounded-full border border-black/5 bg-white px-5 md:px-8 shadow-[0_8px_30px_rgba(0,0,0,0.08)]">
 
             {{-- Logo (left) --}}
-            <img src="{{ asset('logo/metro_log.svg') }}" alt="Metro Catering Logo" class="h-8 md:h-10 w-auto shrink-0">
+            <a href="{{ url('/') }}" class="flex w-max shrink-0 items-center justify-self-start"
+                aria-label="Metro Catering — home">
+                <img src="{{ asset('logo/metro_log.svg') }}" alt="Metro Catering" width="140" height="36"
+                    class="h-8 md:h-9 w-auto">
+            </a>
 
-            {{-- Desktop links (centered) --}}
-            <div class="hidden lg:flex flex-row items-center justify-center gap-10 text-base">
-                <a href="/" class="text-[#B00000] transition duration-300 ease-in-out">Home</a>
-                <a href="/about-us" class="text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">About
-                    Metro Catering</a>
+            {{-- Desktop links (true center, via 1fr/auto/1fr grid) --}}
+            <div class="hidden lg:flex items-center gap-1 justify-self-center">
+                <a href="{{ url('/') }}" aria-current="{{ request()->is('/') ? 'page' : 'false' }}"
+                    class="rounded-full px-4 py-2.5 text-[15px] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B00000]
+                           {{ request()->is('/') ? 'font-semibold text-[#B00000]' : 'text-gray-600 hover:text-[#B00000] hover:bg-black/[0.03]' }}">
+                    Home
+                </a>
 
-                {{-- Catering Services dropdown (desktop) --}}
+                <a href="{{ url('/about-us') }}" aria-current="{{ request()->is('about-us') ? 'page' : 'false' }}"
+                    class="rounded-full px-4 py-2.5 text-[15px] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B00000]
+                           {{ request()->is('about-us') ? 'font-semibold text-[#B00000]' : 'text-gray-600 hover:text-[#B00000] hover:bg-black/[0.03]' }}">
+                    About Metro Catering
+                </a>
+
+                {{-- Catering Services dropdown (desktop, hover-intent) --}}
                 <div class="relative" id="cateringDropdown">
-                    <button type="button"
-                        class="flex items-center gap-1 text-[#B00000] font-bold transition duration-300 ease-in-out focus:outline-none">
+                    <button type="button" id="cateringTrigger" aria-haspopup="true" aria-expanded="false"
+                        aria-controls="cateringPanel"
+                        class="flex items-center gap-1.5 rounded-full px-4 py-2.5 text-[15px] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B00000]
+                               {{ request()->is('canteen-catering-services', 'mobile-catering', 'corporate-buffet-catering', 'event-equipment-rental', 'food-box-and-refreshments') ? 'font-semibold text-[#B00000]' : 'text-gray-600 hover:text-[#B00000] hover:bg-black/[0.03]' }}">
                         Catering Services
-                        <svg id="cateringChevron" class="w-3.5 h-3.5 transition-transform duration-500 ease-in-out"
-                            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <svg id="cateringChevron" class="h-3.5 w-3.5 transition-transform duration-300 ease-out"
+                            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"
+                            aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                         </svg>
                     </button>
 
-                    {{-- Dropdown panel --}}
-                    <div id="cateringPanel"
-                        class="absolute left-1/2 -translate-x-1/2 mt-4 w-64 bg-white rounded-2xl shadow-xl overflow-hidden
-                               opacity-0 -translate-y-2 pointer-events-none transition-all duration-500 ease-in-out">
-                        <a href="/canteen-catering-services"
-                            class="dropdown-link block px-5 py-3 transition-colors duration-300 ease-in-out
-                                   {{ request()->is('canteen-catering-services') ? 'active' : 'text-gray-700' }}">
-                            Canteen Catering Services
-                        </a>
-                        <a href="/mobile-catering"
-                            class="dropdown-link block px-5 py-3 transition-colors duration-300 ease-in-out
-                                   {{ request()->is('mobile-catering') ? 'active' : 'text-gray-700' }}">
-                            Mobile Catering
-                        </a>
-                        <a href="/corporate-buffet-catering"
-                            class="dropdown-link block px-5 py-3 transition-colors duration-300 ease-in-out
-                                   {{ request()->is('corporate-buffet-catering') ? 'active' : 'text-gray-700' }}">
-                            Corporate Buffet Catering
-                        </a>
-                        <a href="/event-equipment-rental"
-                            class="dropdown-link block px-5 py-3 transition-colors duration-300 ease-in-out
-                                   {{ request()->is('event-equipment-rental') ? 'active' : 'text-gray-700' }}">
-                            Event Equipment Rental
-                        </a>
-                        <a href="/food-box-and-refreshments"
-                            class="dropdown-link block px-5 py-3 transition-colors duration-300 ease-in-out
-                                   {{ request()->is('food-box-and-refreshments') ? 'active' : 'text-gray-700' }}">
-                            Food Box & Refreshments
-                        </a>
-                    </div>
-                </div>
-
-                <a href="/latest-events"
-                    class="text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">Latest
-                    Events</a>
-                <a href="/insights" class="text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">
-                    Insights</a>
-                <a href="/career"
-                    class="text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">Career</a>
-                <a href="/contact-us"
-                    class="text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">Contact
-                    Us</a>
-            </div>
-
-            {{-- Mobile hamburger (right) --}}
-            <button id="navToggleBtn" type="button" aria-expanded="false" aria-label="Toggle navigation menu"
-                aria-controls="mobile-menu"
-                class="lg:hidden flex flex-col justify-center items-center gap-[5px] w-10 h-10 rounded-full hover:bg-black/5 transition duration-300 ease-in-out ml-auto">
-                <span class="nav-bar block w-5 h-[2px] bg-gray-800 transition duration-300 ease-in-out"></span>
-                <span class="nav-bar block w-5 h-[2px] bg-gray-800 transition duration-300 ease-in-out"></span>
-                <span class="nav-bar block w-5 h-[2px] bg-gray-800 transition duration-300 ease-in-out"></span>
-            </button>
-        </div>
-
-        {{-- Backdrop overlay (click outside to close) --}}
-        <div id="navBackdrop"
-            class="lg:hidden fixed inset-0 top-0 bg-black/30 -z-10 opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out"
-            style="height: 100vh;"></div>
-
-        {{-- Mobile slide-down menu --}}
-        <div id="mobile-menu"
-            class="lg:hidden absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[90%] md:w-[80%] bg-white/95 backdrop-blur-md rounded-3xl shadow-xl px-6 py-4
-       opacity-0 -translate-y-2 pointer-events-none transition-all duration-300 ease-in-out" />
-        <div class="flex flex-col gap-3 text-base">
-            <a href="/" class="nav-link text-[#B00000] transition duration-300 ease-in-out">Home</a>
-            <a href="/about-us"
-                class="nav-link text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">About Metro
-                Catering</a>
-
-            {{-- Catering Services expandable submenu (mobile) --}}
-            <div>
-                <button type="button" id="mobileCateringToggle"
-                    class="flex items-center justify-between w-full text-[#B00000] font-bold transition duration-300 ease-in-out">
-                    Catering Services
-                    <svg id="mobileCateringChevron" class="w-4 h-4 transition-transform duration-500 ease-in-out"
-                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </button>
-
-                <div id="mobileCateringPanel"
-                    class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-in-out">
-                    <div class="overflow-hidden">
-                        <div class="flex flex-col mt-2 rounded-xl overflow-hidden bg-black/[0.03]">
-                            <a href="/canteen-catering-services"
-                                class="nav-link dropdown-link px-4 py-3 transition-colors duration-300 ease-in-out
-                                           {{ request()->is('canteen-catering-services') ? 'active' : 'text-gray-700' }}">
+                    {{-- Hover bridge: invisible padding keeps the dropdown open while the
+                         cursor travels from the trigger down to the panel. --}}
+                    <div class="absolute left-1/2 top-full w-72 -translate-x-1/2 pt-3">
+                        <div id="cateringPanel" role="menu"
+                            class="origin-top scale-95 -translate-y-1 rounded-2xl border border-black/5 bg-white p-2 opacity-0 shadow-[0_20px_60px_rgba(0,0,0,0.15)] pointer-events-none transition-all duration-200 ease-out">
+                            <a href="/canteen-catering-services" role="menuitem"
+                                class="dropdown-link block rounded-xl px-4 py-3 text-[15px] transition-colors duration-150
+                                       {{ request()->is('canteen-catering-services') ? 'active' : 'text-gray-600' }}">
                                 Canteen Catering Services
                             </a>
-                            <a href="/mobile-catering"
-                                class="nav-link dropdown-link px-4 py-3 transition-colors duration-300 ease-in-out
-                                           {{ request()->is('mobile-catering') ? 'active' : 'text-gray-700' }}">
+                            <a href="/mobile-catering" role="menuitem"
+                                class="dropdown-link block rounded-xl px-4 py-3 text-[15px] transition-colors duration-150
+                                       {{ request()->is('mobile-catering') ? 'active' : 'text-gray-600' }}">
                                 Mobile Catering
                             </a>
-                            <a href="/corporate-buffet-catering"
-                                class="nav-link dropdown-link px-4 py-3 transition-colors duration-300 ease-in-out
-                                           {{ request()->is('corporate-buffet-catering') ? 'active' : 'text-gray-700' }}">
+                            <a href="/corporate-buffet-catering" role="menuitem"
+                                class="dropdown-link block rounded-xl px-4 py-3 text-[15px] transition-colors duration-150
+                                       {{ request()->is('corporate-buffet-catering') ? 'active' : 'text-gray-600' }}">
                                 Corporate Buffet Catering
                             </a>
-                            <a href="/event-equipment-rental"
-                                class="nav-link dropdown-link px-4 py-3 transition-colors duration-300 ease-in-out
-                                           {{ request()->is('event-equipment-rental') ? 'active' : 'text-gray-700' }}">
+                            <a href="/event-equipment-rental" role="menuitem"
+                                class="dropdown-link block rounded-xl px-4 py-3 text-[15px] transition-colors duration-150
+                                       {{ request()->is('event-equipment-rental') ? 'active' : 'text-gray-600' }}">
                                 Event Equipment Rental
                             </a>
-                            <a href="/food-box-and-refreshments"
-                                class="nav-link dropdown-link px-4 py-3 transition-colors duration-300 ease-in-out
-                                           {{ request()->is('food-box-and-refreshments') ? 'active' : 'text-gray-700' }}">
+                            <a href="/food-box-and-refreshments" role="menuitem"
+                                class="dropdown-link block rounded-xl px-4 py-3 text-[15px] transition-colors duration-150
+                                       {{ request()->is('food-box-and-refreshments') ? 'active' : 'text-gray-600' }}">
                                 Food Box & Refreshments
                             </a>
                         </div>
                     </div>
                 </div>
+
+                <a href="{{ url('/latest-events') }}"
+                    aria-current="{{ request()->is('latest-events') ? 'page' : 'false' }}"
+                    class="rounded-full px-4 py-2.5 text-[15px] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B00000]
+                           {{ request()->is('latest-events') ? 'font-semibold text-[#B00000]' : 'text-gray-600 hover:text-[#B00000] hover:bg-black/[0.03]' }}">
+                    Latest Events
+                </a>
+
+                <a href="{{ url('/insights') }}" aria-current="{{ request()->is('insights') ? 'page' : 'false' }}"
+                    class="rounded-full px-4 py-2.5 text-[15px] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B00000]
+                           {{ request()->is('insights') ? 'font-semibold text-[#B00000]' : 'text-gray-600 hover:text-[#B00000] hover:bg-black/[0.03]' }}">
+                    Insights
+                </a>
+
+                <a href="{{ url('/career') }}" aria-current="{{ request()->is('career') ? 'page' : 'false' }}"
+                    class="rounded-full px-4 py-2.5 text-[15px] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B00000]
+                           {{ request()->is('career') ? 'font-semibold text-[#B00000]' : 'text-gray-600 hover:text-[#B00000] hover:bg-black/[0.03]' }}">
+                    Career
+                </a>
+
+                <a href="{{ url('/contact-us') }}" aria-current="{{ request()->is('contact-us') ? 'page' : 'false' }}"
+                    class="rounded-full px-4 py-2.5 text-[15px] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B00000]
+                           {{ request()->is('contact-us') ? 'font-semibold text-[#B00000]' : 'text-gray-600 hover:text-[#B00000] hover:bg-black/[0.03]' }}">
+                    Contact Us
+                </a>
             </div>
 
-            <a href="/latest-events"
-                class="nav-link text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">Latest
-                Events</a>
-            <a href="/insights" class="text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">
-                Insights</a>
-            <a href="/career"
-                class="nav-link text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">Career</a>
-            <a href="/contact-us"
-                class="nav-link text-gray-700 hover:text-[#B00000] transition duration-300 ease-in-out">Contact
-                Us</a>
+            {{-- Mobile hamburger (right) --}}
+            <button id="navToggleBtn" type="button" aria-expanded="false" aria-label="Toggle navigation menu"
+                aria-controls="mobile-menu"
+                class="flex h-11 w-11 shrink-0 items-center justify-center justify-self-end gap-[5px] rounded-full transition-colors duration-200 hover:bg-black/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B00000] lg:hidden">
+                <span class="sr-only">Toggle navigation menu</span>
+                <span class="nav-bar-icon flex flex-col items-center justify-center gap-[5px]">
+                    <span
+                        class="nav-bar block h-[2px] w-5 bg-gray-800 transition-transform duration-300 ease-in-out"></span>
+                    <span
+                        class="nav-bar block h-[2px] w-5 bg-gray-800 transition-opacity duration-300 ease-in-out"></span>
+                    <span
+                        class="nav-bar block h-[2px] w-5 bg-gray-800 transition-transform duration-300 ease-in-out"></span>
+                </span>
+            </button>
         </div>
-</div>
-</section>
 
-</div>
+        {{-- Backdrop overlay (click outside to close) --}}
+        <div id="navBackdrop"
+            class="fixed inset-0 top-0 -z-10 bg-black/30 opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out lg:hidden">
+        </div>
 
+        {{-- Mobile slide-down menu --}}
+        <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation"
+            class="absolute left-1/2 top-full mt-3 w-[92%] -translate-x-1/2 origin-top scale-95 -translate-y-1 rounded-[28px] border border-black/5 bg-white/95 p-3 opacity-0 shadow-[0_20px_60px_rgba(0,0,0,0.15)] backdrop-blur-xl pointer-events-none transition-all duration-300 ease-out lg:hidden">
+            <div class="flex flex-col gap-1">
+                <a href="{{ url('/') }}" aria-current="{{ request()->is('/') ? 'page' : 'false' }}"
+                    class="nav-link flex min-h-[44px] items-center rounded-2xl px-4 text-[16px] transition-colors duration-150
+                           {{ request()->is('/') ? 'font-semibold text-[#B00000] bg-black/[0.03]' : 'text-gray-700' }}">
+                    Home
+                </a>
+                <a href="{{ url('/about-us') }}" aria-current="{{ request()->is('about-us') ? 'page' : 'false' }}"
+                    class="nav-link flex min-h-[44px] items-center rounded-2xl px-4 text-[16px] transition-colors duration-150
+                           {{ request()->is('about-us') ? 'font-semibold text-[#B00000] bg-black/[0.03]' : 'text-gray-700' }}">
+                    About Metro Catering
+                </a>
+
+                {{-- Catering Services expandable submenu (mobile) --}}
+                <div>
+                    <button type="button" id="mobileCateringToggle" aria-expanded="false"
+                        aria-controls="mobileCateringPanel"
+                        class="flex min-h-[44px] w-full items-center justify-between rounded-2xl px-4 text-[16px] font-medium text-[#B00000] transition-colors duration-150">
+                        Catering Services
+                        <svg id="mobileCateringChevron" class="h-4 w-4 transition-transform duration-300 ease-out"
+                            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"
+                            aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+
+                    <div id="mobileCateringPanel"
+                        class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out">
+                        <div class="overflow-hidden">
+                            <div class="ml-4 mt-1 flex flex-col gap-0.5 border-l-2 border-black/[0.06] pl-4">
+                                <a href="/canteen-catering-services"
+                                    class="nav-link dropdown-link flex min-h-[44px] items-center rounded-xl px-3 text-[15px] transition-colors duration-150
+                                           {{ request()->is('canteen-catering-services') ? 'active' : 'text-gray-600' }}">
+                                    Canteen Catering Services
+                                </a>
+                                <a href="/mobile-catering"
+                                    class="nav-link dropdown-link flex min-h-[44px] items-center rounded-xl px-3 text-[15px] transition-colors duration-150
+                                           {{ request()->is('mobile-catering') ? 'active' : 'text-gray-600' }}">
+                                    Mobile Catering
+                                </a>
+                                <a href="/corporate-buffet-catering"
+                                    class="nav-link dropdown-link flex min-h-[44px] items-center rounded-xl px-3 text-[15px] transition-colors duration-150
+                                           {{ request()->is('corporate-buffet-catering') ? 'active' : 'text-gray-600' }}">
+                                    Corporate Buffet Catering
+                                </a>
+                                <a href="/event-equipment-rental"
+                                    class="nav-link dropdown-link flex min-h-[44px] items-center rounded-xl px-3 text-[15px] transition-colors duration-150
+                                           {{ request()->is('event-equipment-rental') ? 'active' : 'text-gray-600' }}">
+                                    Event Equipment Rental
+                                </a>
+                                <a href="/food-box-and-refreshments"
+                                    class="nav-link dropdown-link flex min-h-[44px] items-center rounded-xl px-3 text-[15px] transition-colors duration-150
+                                           {{ request()->is('food-box-and-refreshments') ? 'active' : 'text-gray-600' }}">
+                                    Food Box & Refreshments
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="{{ url('/latest-events') }}"
+                    aria-current="{{ request()->is('latest-events') ? 'page' : 'false' }}"
+                    class="nav-link flex min-h-[44px] items-center rounded-2xl px-4 text-[16px] transition-colors duration-150
+                           {{ request()->is('latest-events') ? 'font-semibold text-[#B00000] bg-black/[0.03]' : 'text-gray-700' }}">
+                    Latest Events
+                </a>
+                <a href="{{ url('/insights') }}" aria-current="{{ request()->is('insights') ? 'page' : 'false' }}"
+                    class="nav-link flex min-h-[44px] items-center rounded-2xl px-4 text-[16px] transition-colors duration-150
+                           {{ request()->is('insights') ? 'font-semibold text-[#B00000] bg-black/[0.03]' : 'text-gray-700' }}">
+                    Insights
+                </a>
+                <a href="{{ url('/career') }}" aria-current="{{ request()->is('career') ? 'page' : 'false' }}"
+                    class="nav-link flex min-h-[44px] items-center rounded-2xl px-4 text-[16px] transition-colors duration-150
+                           {{ request()->is('career') ? 'font-semibold text-[#B00000] bg-black/[0.03]' : 'text-gray-700' }}">
+                    Career
+                </a>
+                <a href="{{ url('/contact-us') }}"
+                    aria-current="{{ request()->is('contact-us') ? 'page' : 'false' }}"
+                    class="nav-link flex min-h-[44px] items-center rounded-2xl px-4 text-[16px] transition-colors duration-150
+                           {{ request()->is('contact-us') ? 'font-semibold text-[#B00000] bg-black/[0.03]' : 'text-gray-700' }}">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>
 
 <style>
     .dropdown-link:hover {
-        background-color: rgba(0, 0, 0, 0.05);
+        background-color: rgba(0, 0, 0, 0.04);
     }
 
     .dropdown-link.active {
@@ -184,114 +242,185 @@
     .dropdown-link.active:hover {
         background-color: #B00000;
     }
+
+    /* Open-state utility (applied/removed by JS via setPanelState) */
+    .panel-open {
+        opacity: 1 !important;
+        transform: translateY(0) scale(1) !important;
+        pointer-events: auto !important;
+    }
 </style>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const btn = document.getElementById('navToggleBtn');
-        const menu = document.getElementById('mobile-menu');
-        const backdrop = document.getElementById('navBackdrop');
-        const bars = document.querySelectorAll('.nav-bar');
-        const links = document.querySelectorAll('.nav-link');
-        let isOpen = false;
 
-        function openMenu() {
-            isOpen = true;
-            btn.setAttribute('aria-expanded', 'true');
+        /* =========================================================
+           Shared helpers
+           ========================================================= */
 
-            menu.classList.remove('opacity-0', '-translate-y-2', 'pointer-events-none');
-            menu.classList.add('opacity-100', 'translate-y-0');
+        // Fades/scales a floating panel open or closed. Used by both
+        // the desktop dropdown and the mobile sheet so the animation
+        // logic only lives in one place.
+        function setPanelState(el, open) {
+            el.classList.toggle('opacity-0', !open);
+            el.classList.toggle('scale-95', !open);
+            el.classList.toggle('-translate-y-1', !open);
+            el.classList.toggle('pointer-events-none', !open);
+            el.classList.toggle('opacity-100', open);
+            el.classList.toggle('scale-100', open);
+            el.classList.toggle('translate-y-0', open);
+        }
 
-            backdrop.classList.remove('opacity-0', 'pointer-events-none');
-            backdrop.classList.add('opacity-100');
-
-            bars[0].classList.add('rotate-45', 'translate-y-[7px]');
-            bars[1].classList.add('opacity-0');
-            bars[2].classList.add('-rotate-45', '-translate-y-[7px]');
-
+        // Locks page scroll without shifting layout width: measures the
+        // scrollbar's width and compensates with padding-right so fixed,
+        // centered elements (like the navbar) never jump sideways.
+        function lockBodyScroll() {
+            const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+            document.body.style.paddingRight = scrollbarWidth + 'px';
             document.body.style.overflow = 'hidden';
         }
 
-        function closeMenu() {
-            isOpen = false;
-            btn.setAttribute('aria-expanded', 'false');
-
-            menu.classList.add('opacity-0', '-translate-y-2', 'pointer-events-none');
-            menu.classList.remove('opacity-100', 'translate-y-0');
-
-            backdrop.classList.add('opacity-0', 'pointer-events-none');
-            backdrop.classList.remove('opacity-100');
-
-            bars[0].classList.remove('rotate-45', 'translate-y-[7px]');
-            bars[1].classList.remove('opacity-0');
-            bars[2].classList.remove('-rotate-45', '-translate-y-[7px]');
-
+        function unlockBodyScroll() {
             document.body.style.overflow = '';
+            document.body.style.paddingRight = '';
         }
 
-        btn.addEventListener('click', function(e) {
+        /* =========================================================
+           Mobile menu (hamburger sheet)
+           ========================================================= */
+
+        const navToggleBtn = document.getElementById('navToggleBtn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navBackdrop = document.getElementById('navBackdrop');
+        const hamburgerBars = document.querySelectorAll('.nav-bar');
+        const mobileNavLinks = mobileMenu.querySelectorAll('.nav-link');
+        let isMobileMenuOpen = false;
+
+        function openMobileMenu() {
+            isMobileMenuOpen = true;
+            navToggleBtn.setAttribute('aria-expanded', 'true');
+
+            setPanelState(mobileMenu, true);
+            navBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+            navBackdrop.classList.add('opacity-100');
+
+            hamburgerBars[0].classList.add('rotate-45', 'translate-y-[7px]');
+            hamburgerBars[1].classList.add('opacity-0');
+            hamburgerBars[2].classList.add('-rotate-45', '-translate-y-[7px]');
+
+            lockBodyScroll();
+        }
+
+        function closeMobileMenu() {
+            isMobileMenuOpen = false;
+            navToggleBtn.setAttribute('aria-expanded', 'false');
+
+            setPanelState(mobileMenu, false);
+            navBackdrop.classList.add('opacity-0', 'pointer-events-none');
+            navBackdrop.classList.remove('opacity-100');
+
+            hamburgerBars[0].classList.remove('rotate-45', 'translate-y-[7px]');
+            hamburgerBars[1].classList.remove('opacity-0');
+            hamburgerBars[2].classList.remove('-rotate-45', '-translate-y-[7px]');
+
+            unlockBodyScroll();
+        }
+
+        navToggleBtn.addEventListener('click', function(e) {
             e.stopPropagation();
-            isOpen ? closeMenu() : openMenu();
+            isMobileMenuOpen ? closeMobileMenu() : openMobileMenu();
         });
 
-        backdrop.addEventListener('click', closeMenu);
-
-        links.forEach(function(link) {
-            link.addEventListener('click', closeMenu);
+        navBackdrop.addEventListener('click', closeMobileMenu);
+        mobileNavLinks.forEach(function(link) {
+            link.addEventListener('click', closeMobileMenu);
         });
 
         document.addEventListener('click', function(e) {
-            if (isOpen && !menu.contains(e.target) && !btn.contains(e.target)) {
-                closeMenu();
+            if (isMobileMenuOpen && !mobileMenu.contains(e.target) && !navToggleBtn.contains(e
+                .target)) {
+                closeMobileMenu();
             }
         });
 
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && isOpen) {
-                closeMenu();
-            }
+            if (e.key === 'Escape' && isMobileMenuOpen) closeMobileMenu();
         });
 
-        // ===== Desktop Catering Services dropdown (hover) =====
-        const cateringDropdown = document.getElementById('cateringDropdown');
-        const cateringPanel = document.getElementById('cateringPanel');
-        const cateringChevron = document.getElementById('cateringChevron');
+        /* =========================================================
+           Desktop dropdown (hover-intent, with close-delay tolerance)
+           ========================================================= */
 
-        if (cateringDropdown) {
-            let closeTimeout;
+        function createHoverDropdown({
+            wrapper,
+            trigger,
+            panel,
+            chevron,
+            closeDelay = 250
+        }) {
+            let closeTimer;
 
-            function openCateringPanel() {
-                clearTimeout(closeTimeout);
-                cateringPanel.classList.remove('opacity-0', '-translate-y-2', 'pointer-events-none');
-                cateringPanel.classList.add('opacity-100', 'translate-y-0');
-                cateringChevron.classList.add('rotate-180');
+            function open() {
+                clearTimeout(closeTimer);
+                setPanelState(panel, true);
+                if (chevron) chevron.classList.add('rotate-180');
+                trigger.setAttribute('aria-expanded', 'true');
             }
 
-            function closeCateringPanel() {
-                cateringPanel.classList.add('opacity-0', '-translate-y-2', 'pointer-events-none');
-                cateringPanel.classList.remove('opacity-100', 'translate-y-0');
-                cateringChevron.classList.remove('rotate-180');
+            function close() {
+                setPanelState(panel, false);
+                if (chevron) chevron.classList.remove('rotate-180');
+                trigger.setAttribute('aria-expanded', 'false');
             }
 
-            cateringDropdown.addEventListener('mouseenter', openCateringPanel);
-            cateringDropdown.addEventListener('mouseleave', function() {
-                closeTimeout = setTimeout(closeCateringPanel, 400);
+            wrapper.addEventListener('mouseenter', open);
+            wrapper.addEventListener('mouseleave', function() {
+                closeTimer = setTimeout(close, closeDelay);
+            });
+            trigger.addEventListener('focus', open);
+            trigger.addEventListener('click', function(e) {
+                e.preventDefault();
+                panel.classList.contains('opacity-0') ? open() : close();
+            });
+            wrapper.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    close();
+                    trigger.focus();
+                }
+            });
+
+            return {
+                open,
+                close
+            };
+        }
+
+        const cateringWrapper = document.getElementById('cateringDropdown');
+        if (cateringWrapper) {
+            createHoverDropdown({
+                wrapper: cateringWrapper,
+                trigger: document.getElementById('cateringTrigger'),
+                panel: document.getElementById('cateringPanel'),
+                chevron: document.getElementById('cateringChevron'),
             });
         }
 
-        // ===== Mobile Catering Services expandable submenu (tap) =====
+        /* =========================================================
+           Mobile submenu (tap-to-expand accordion)
+           ========================================================= */
+
         const mobileCateringToggle = document.getElementById('mobileCateringToggle');
         const mobileCateringPanel = document.getElementById('mobileCateringPanel');
         const mobileCateringChevron = document.getElementById('mobileCateringChevron');
 
         if (mobileCateringToggle) {
-            let subOpen = false;
-
+            let isSubOpen = false;
             mobileCateringToggle.addEventListener('click', function(e) {
                 e.stopPropagation();
-                subOpen = !subOpen;
-                mobileCateringPanel.style.gridTemplateRows = subOpen ? '1fr' : '0fr';
-                mobileCateringChevron.classList.toggle('rotate-180', subOpen);
+                isSubOpen = !isSubOpen;
+                mobileCateringPanel.style.gridTemplateRows = isSubOpen ? '1fr' : '0fr';
+                mobileCateringChevron.classList.toggle('rotate-180', isSubOpen);
+                mobileCateringToggle.setAttribute('aria-expanded', String(isSubOpen));
             });
         }
     });
