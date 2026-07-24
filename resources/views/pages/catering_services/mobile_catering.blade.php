@@ -97,7 +97,7 @@
     @include('components.hero_section_not_for_home.hero_section_not_for_home', [
         'sectionLabel' => 'Mobile Catering',
         'heading' => 'Professional Mobile Catering Services
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            in Cambodia',
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    in Cambodia',
         'description' =>
             '  Metro Catering brings fully equipped mobile kitchens and professional food service teams directly to your location. Whether you are organizing a factory event, provincial roadshow, government ceremony, construction project, or outdoor festival, we ensure fresh meals and seamless operations anywhere in Cambodia.',
         'buttons' => [
@@ -107,7 +107,7 @@
     ])
     <section>
         <div
-            class="flex justify-center bg-[#f3f0e9] pt-10 text-[#a80000] md:text-[30px] sm:text-[25px] text-[20px] font-bold">
+            class="flex justify-center bg-[#f3f0e9] pt-10 text-[#a80000] md:text-[36px] sm:text-[25px] text-[20px] font-bold">
             <h1>What We Serve</h1>
         </div>
 
@@ -201,7 +201,7 @@ Package',
 
                     {{-- Fixed-width inner content container --}}
                     <div class="text-left w-full max-w-[200px] sm:max-w-[340px] md:max-w-[420px]">
-                        <p class="text-[#ffffff] text-[20px] sm:text-[28px] md:text-[40px] font-bold mb-4">Who We Serve</p>
+                        <p class="text-[#ffffff] text-[20px] sm:text-[28px] md:text-[36px] font-bold mb-4">Who We Serve</p>
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1">
                             <ul class="space-y-1">

@@ -5,13 +5,14 @@
 <header id="siteHeader" class="fixed inset-x-0 top-0 z-[100]">
 
     {{-- Utility bar --}}
-    <div class="w-full bg-[#B00000]">
+    <div class="w-full text-[#ffffff] bg-[#B00000]">
         <div class="mx-auto flex h-[38px] md:h-[44px] max-w-6xl items-center justify-between gap-8 px-4 sm:px-6 lg:px-8">
-            <p class="text-[15px] font-light text-white/90">
+            <p class=font-semibold"text-[15px] font-light text-white/90">
                 Address
             </p>
-            <a href="tel:0123132277"
-                class="text-[15px] font-light text-white/90 transition-opacity duration-200 hover:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white rounded-sm">
+            <a href="tel:0123132277" class=font-semibold"text-[15px] font-light text-white/90 transition-opacity
+                duration-200 hover:opacity-70 focus-visible:outline focus-visible:outline-2
+                focus-visible:outline-offset-2 focus-visible:outline-white rounded-sm">
                 012 31 32 77
             </a>
         </div>
@@ -33,13 +34,13 @@
             {{-- Desktop links (true center, via 1fr/auto/1fr grid) --}}
             <div class="hidden min-[1180px]:flex items-center gap-1 justify-self-center">
                 <a href="{{ url('/') }}" aria-current="{{ request()->is('/') ? 'page' : 'false' }}"
-                    class="rounded-full px-4 py-2.5 text-[15px] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B00000]
+                    class="rounded-full px-4 py-2.5 font-semibold text-[15px] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B00000]
                            {{ request()->is('/') ? 'font-semibold text-[#B00000]' : 'text-gray-600 hover:text-[#B00000] hover:bg-black/[0.03]' }}">
                     Home
                 </a>
 
                 <a href="{{ url('/about-us') }}" aria-current="{{ request()->is('about-us') ? 'page' : 'false' }}"
-                    class="rounded-full px-4 py-2.5 text-[15px] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B00000]
+                    class="rounded-full px-4 py-2.5 font-semibold text-[15px] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B00000]
                            {{ request()->is('about-us') ? 'font-semibold text-[#B00000]' : 'text-gray-600 hover:text-[#B00000] hover:bg-black/[0.03]' }}">
                     About Metro Catering
                 </a>
@@ -48,7 +49,7 @@
                 <div class="relative" id="cateringDropdown">
                     <button type="button" id="cateringTrigger" aria-haspopup="true" aria-expanded="false"
                         aria-controls="cateringPanel"
-                        class="flex items-center gap-1.5 rounded-full px-4 py-2.5 text-[15px] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B00000]
+                        class="flex items-center gap-1.5 rounded-full px-4 py-2.5 font-semibold text-[15px] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B00000]
                                {{ request()->is('canteen-catering-services', 'mobile-catering', 'corporate-buffet-catering', 'event-equipment-rental', 'food-box-and-refreshments') ? 'font-semibold text-[#B00000]' : 'text-gray-600 hover:text-[#B00000] hover:bg-black/[0.03]' }}">
                         Catering Services
                         <svg id="cateringChevron" class="h-3.5 w-3.5 transition-transform duration-300 ease-out"
@@ -62,27 +63,27 @@
                     <div id="cateringPanel" role="menu"
                         class="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-72 origin-top scale-95 -translate-y-1 rounded-2xl border border-black/5 bg-white p-2 opacity-0 shadow-[0_20px_60px_rgba(0,0,0,0.15)] pointer-events-none transition-all duration-200 ease-out z-50">
                         <a href="/canteen-catering-services" role="menuitem"
-                            class="dropdown-link block rounded-xl px-4 py-3 text-[15px] transition-colors duration-150
+                            class="dropdown-link block rounded-xl px-4 py-3 font-semibold text-[15px] transition-colors duration-150
                                        {{ request()->is('canteen-catering-services') ? 'active' : 'text-gray-600' }}">
                             Canteen Catering Services
                         </a>
                         <a href="/mobile-catering" role="menuitem"
-                            class="dropdown-link block rounded-xl px-4 py-3 text-[15px] transition-colors duration-150
+                            class="dropdown-link block rounded-xl px-4 py-3 font-semibold text-[15px] transition-colors duration-150
                                        {{ request()->is('mobile-catering') ? 'active' : 'text-gray-600' }}">
                             Mobile Catering
                         </a>
                         <a href="/corporate-buffet-catering" role="menuitem"
-                            class="dropdown-link block rounded-xl px-4 py-3 text-[15px] transition-colors duration-150
+                            class="dropdown-link block rounded-xl px-4 py-3 font-semibold text-[15px] transition-colors duration-150
                                        {{ request()->is('corporate-buffet-catering') ? 'active' : 'text-gray-600' }}">
                             Corporate Buffet Catering
                         </a>
                         <a href="/event-equipment-rental" role="menuitem"
-                            class="dropdown-link block rounded-xl px-4 py-3 text-[15px] transition-colors duration-150
+                            class="dropdown-link block rounded-xl px-4 py-3 font-semibold text-[15px] transition-colors duration-150
                                        {{ request()->is('event-equipment-rental') ? 'active' : 'text-gray-600' }}">
                             Event Equipment Rental
                         </a>
                         <a href="/food-box-and-refreshments" role="menuitem"
-                            class="dropdown-link block rounded-xl px-4 py-3 text-[15px] transition-colors duration-150
+                            class="dropdown-link block rounded-xl px-4 py-3 font-semibold text-[15px] transition-colors duration-150
                                        {{ request()->is('food-box-and-refreshments') ? 'active' : 'text-gray-600' }}">
                             Food Box & Refreshments
                         </a>
@@ -91,25 +92,25 @@
 
                 <a href="{{ url('/latest-events') }}"
                     aria-current="{{ request()->is('latest-events') ? 'page' : 'false' }}"
-                    class="rounded-full px-4 py-2.5 text-[15px] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B00000]
+                    class="rounded-full px-4 py-2.5 font-semibold text-[15px] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B00000]
                            {{ request()->is('latest-events') ? 'font-semibold text-[#B00000]' : 'text-gray-600 hover:text-[#B00000] hover:bg-black/[0.03]' }}">
                     Latest Events
                 </a>
 
                 <a href="{{ url('/insights') }}" aria-current="{{ request()->is('insights') ? 'page' : 'false' }}"
-                    class="rounded-full px-4 py-2.5 text-[15px] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B00000]
+                    class="rounded-full px-4 py-2.5 font-semibold text-[15px] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B00000]
                            {{ request()->is('insights') ? 'font-semibold text-[#B00000]' : 'text-gray-600 hover:text-[#B00000] hover:bg-black/[0.03]' }}">
                     Insights
                 </a>
 
                 <a href="{{ url('/career') }}" aria-current="{{ request()->is('career') ? 'page' : 'false' }}"
-                    class="rounded-full px-4 py-2.5 text-[15px] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B00000]
+                    class="rounded-full px-4 py-2.5 font-semibold text-[15px] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B00000]
                            {{ request()->is('career') ? 'font-semibold text-[#B00000]' : 'text-gray-600 hover:text-[#B00000] hover:bg-black/[0.03]' }}">
                     Career
                 </a>
 
                 <a href="{{ url('/contact-us') }}" aria-current="{{ request()->is('contact-us') ? 'page' : 'false' }}"
-                    class="rounded-full px-4 py-2.5 text-[15px] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B00000]
+                    class="rounded-full px-4 py-2.5 font-semibold text-[15px] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B00000]
                            {{ request()->is('contact-us') ? 'font-semibold text-[#B00000]' : 'text-gray-600 hover:text-[#B00000] hover:bg-black/[0.03]' }}">
                     Contact Us
                 </a>
@@ -169,27 +170,27 @@
                         <div class="overflow-hidden">
                             <div class="ml-4 mt-1 flex flex-col gap-0.5 border-l-2 border-black/[0.06] pl-4">
                                 <a href="/canteen-catering-services"
-                                    class="nav-link dropdown-link flex min-h-[44px] items-center rounded-xl px-3 text-[15px] transition-colors duration-150
+                                    class="nav-link dropdown-link flex min-h-[44px] items-center rounded-xl px-3 font-semibold text-[15px] transition-colors duration-150
                                            {{ request()->is('canteen-catering-services') ? 'active' : 'text-gray-600' }}">
                                     Canteen Catering Services
                                 </a>
                                 <a href="/mobile-catering"
-                                    class="nav-link dropdown-link flex min-h-[44px] items-center rounded-xl px-3 text-[15px] transition-colors duration-150
+                                    class="nav-link dropdown-link flex min-h-[44px] items-center rounded-xl px-3 font-semibold text-[15px] transition-colors duration-150
                                            {{ request()->is('mobile-catering') ? 'active' : 'text-gray-600' }}">
                                     Mobile Catering
                                 </a>
                                 <a href="/corporate-buffet-catering"
-                                    class="nav-link dropdown-link flex min-h-[44px] items-center rounded-xl px-3 text-[15px] transition-colors duration-150
+                                    class="nav-link dropdown-link flex min-h-[44px] items-center rounded-xl px-3 font-semibold text-[15px] transition-colors duration-150
                                            {{ request()->is('corporate-buffet-catering') ? 'active' : 'text-gray-600' }}">
                                     Corporate Buffet Catering
                                 </a>
                                 <a href="/event-equipment-rental"
-                                    class="nav-link dropdown-link flex min-h-[44px] items-center rounded-xl px-3 text-[15px] transition-colors duration-150
+                                    class="nav-link dropdown-link flex min-h-[44px] items-center rounded-xl px-3 font-semibold text-[15px] transition-colors duration-150
                                            {{ request()->is('event-equipment-rental') ? 'active' : 'text-gray-600' }}">
                                     Event Equipment Rental
                                 </a>
                                 <a href="/food-box-and-refreshments"
-                                    class="nav-link dropdown-link flex min-h-[44px] items-center rounded-xl px-3 text-[15px] transition-colors duration-150
+                                    class="nav-link dropdown-link flex min-h-[44px] items-center rounded-xl px-3 font-semibold text-[15px] transition-colors duration-150
                                            {{ request()->is('food-box-and-refreshments') ? 'active' : 'text-gray-600' }}">
                                     Food Box & Refreshments
                                 </a>

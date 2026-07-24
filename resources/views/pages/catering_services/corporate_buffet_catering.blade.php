@@ -125,9 +125,9 @@
     @include('components.hero_section_not_for_home.hero_section_not_for_home', [
         'sectionLabel' => 'Corporate Buffet Catering',
         'heading' => 'Corporate Buffet Catering Services
-                                                                                                                                                                    in Cambodia',
+                                                                                                                                                                                    in Cambodia',
         'description' => '
-                                                                                                                                                                     Metro Catering provides professional lunch and dinner buffet experiences for companies, ministries, embassies, and organizations seeking high-quality dining services.',
+                                                                                                                                                                                     Metro Catering provides professional lunch and dinner buffet experiences for companies, ministries, embassies, and organizations seeking high-quality dining services.',
         'buttons' => [
             ['text' => 'Contact Us', 'link' => '/contact-us', 'style' => 'solid'],
             // ['text' => 'View Packages', 'link' => '#', 'style' => 'solid'],
@@ -135,7 +135,7 @@
     ])
     <section>
         <div
-            class="flex  gap-2 justify-center bg-[#f3f0e9] pt-10 text-[#a80000] md:text-[30px] sm:text-[25px] text-[20px] font-bold">
+            class="flex  gap-2 justify-center bg-[#f3f0e9] pt-10 text-[#a80000] md:text-[36px] sm:text-[25px] text-[20px] font-bold">
             <h1 class="font-normal">Buffet </h1>
             <h1>Packages</h1>
         </div>
@@ -206,7 +206,7 @@
 
                     {{-- Fixed-width inner content container --}}
                     <div class="text-left w-full max-w-[200px] sm:max-w-[340px] md:max-w-[420px]">
-                        <p class="text-[#ffffff] text-[20px] sm:text-[28px] md:text-[40px] font-bold mb-4">Who We Serve</p>
+                        <p class="text-[#ffffff] text-[20px] sm:text-[28px] md:text-[36px] font-bold mb-4">Who We Serve</p>
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1">
                             <ul class="space-y-1">

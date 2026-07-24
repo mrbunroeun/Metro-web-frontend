@@ -36,8 +36,8 @@
 
                     {{-- Fixed-width inner content container --}}
                     <div class="text-left w-full max-w-[280px] sm:max-w-[340px] md:max-w-[420px]">
-                        <p class="text-white sm:text-[40px] text-[20px] font-semibold">Company</p>
-                        <h2 class="text-white sm:text-[40px] text-[20px] font-bold mt-1 mb-2">
+                        <p class="text-white sm:text-[36px] text-[20px] font-semibold">Company</p>
+                        <h2 class="text-white sm:text-[36px] text-[20px] font-bold mt-1 mb-2">
                             Overview
                         </h2>
                         <p class="text-white/90 sm:text-[16px] text-[13px] leading-snug mb-3">
@@ -45,7 +45,7 @@
                             corporate dining and event services.
                         </p>
                         <a href="/contact-us"
-                            class="inline-flex items-center justify-center bg-black hover:bg-gray-800 active:bg-gray-700 text-white text-[14px] font-medium px-2 py-2.5 min-h-[44px] md:px-6 md:py-2.5 rounded-full w-fit transition duration-300 ease-in-out">
+                            class="inline-flex items-center justify-center bg-black hover:bg-[#ffffff] active:bg-gray-700 text-white hover:text-[#000000]  text-[14px] font-medium px-2 py-2.5 min-h-[44px] md:px-6 md:py-2.5 rounded-full w-fit transition duration-300 ease-in-out">
                             Request Quotation
                         </a>
                     </div>
@@ -76,7 +76,7 @@
                         <img src="{{ asset('about_us/icons/mision.svg') }}" alt="Mission icon"
                             class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 shrink-0">
                         <div>
-                            <h3 class="text-[#A80000] text-[18px] sm:text-[26px] md:text-[32px] font-bold mb-1 sm:mb-2">
+                            <h3 class="text-[#A80000] text-[18px] sm:text-[26px] md:text-[36px] font-bold mb-1 sm:mb-2">
                                 Mission</h3>
                             <p class="text-gray-700 text-[13px] sm:text-[16px] md:text-[18px] leading-snug">
                                 To deliver safe, delicious, and professionally managed catering experiences
@@ -99,7 +99,7 @@
                         <img src="{{ asset('about_us/icons/vision.svg') }}" alt="Vision icon"
                             class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 shrink-0">
                         <div>
-                            <h3 class="text-white text-[18px] sm:text-[26px] md:text-[32px] font-bold mb-1 sm:mb-2">
+                            <h3 class="text-white text-[18px] sm:text-[26px] md:text-[36px] font-bold mb-1 sm:mb-2">
                                 Vision</h3>
                             <p class="text-white/90 text-[13px] sm:text-[16px] md:text-[18px] leading-snug">
                                 To become Cambodia's leading corporate and event catering provider.
@@ -117,7 +117,7 @@
             {{-- Top icon + heading --}}
             <img src="{{ asset('about_us/our_core_values/our_core_values.svg') }}" alt="Core Values icon"
                 class="w-10 h-10 mx-auto mb-2">
-            <h2 class="text-[20px] sm:text-[24px] mb-10 sm:mb-12">
+            <h2 class="text-[20px] sm:text-[36px] mb-10 sm:mb-12">
                 Core <span class="font-bold text-[#A80000]">Values</span>
             </h2>
 
@@ -127,7 +127,7 @@
                     <div class="bg-[#F3F0E9] rounded-xl w-[150px] sm:w-[170px] pt-8 pb-5 px-3">
                         <img src="{{ asset('about_us/our_core_values/' . $value['icon']) }}"
                             alt="{{ $value['label'] }} icon" class="w-14 h-14 mx-auto -mt-14 mb-3">
-                        <p class="text-gray-800 pt-[1.5rem] text-[13px] sm:text-[14px]">{{ $value['label'] }}</p>
+                        <p class="text-gray-800 pt-[1.5rem] text-[15px] sm:text-[18px]">{{ $value['label'] }}</p>
                     </div>
                 @endforeach
             </div>
@@ -142,7 +142,7 @@
             <div class="absolute inset-0 bg-black/60"></div>
 
             <div class="relative z-10 max-w-5xl mx-auto text-center">
-                <h2 class="text-[#FFFFFF] text-[20px] sm:text-[28px] font-bold mb-8 sm:mb-10">
+                <h2 class="text-[#FFFFFF] text-[20px] sm:text-[36px] font-bold mb-8 sm:mb-10">
                     Our Facilities
                 </h2>
 
@@ -175,8 +175,8 @@
 
                     {{-- Fixed-width inner content container --}}
                     <div class="text-left w-full max-w-[200px] sm:max-w-[340px] md:max-w-[420px]">
-                        <p class="text-[#ffffff] text-[20px] sm:text-[28px] md:text-[40px] font-semibold">Food Insights</p>
-                        <p class="text-[#ffffff] text-[20px] sm:text-[15px] md:text-[16px] font-bold mb-1 md:mb-2">
+                        <p class="text-[#ffffff] text-[20px] sm:text-[28px] md:text-[36px] font-semibold">Food Insights</p>
+                        <p class="text-[#ffffff] text-[15px] sm:text-[18px] md:text-[20px] font-bold mb-1 md:mb-2">
                             Featured Articles:
                         </p>
                         <ul

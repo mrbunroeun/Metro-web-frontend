@@ -1,15 +1,15 @@
 @extends('layouts.app')
 @section('content')
     {{-- Footer --}}
-    <footer class="relative h-full sm:h-screen w-full bg-[#F3F0E9] font-sans overflow-hidden flex flex-col">
+    <footer class="relative w-full min-h-screen bg-[#F3F0E9] font-sans overflow-x-hidden flex flex-col">
 
         {{-- Background image --}}
         <img src="{{ asset('contact/contact.png') }}" alt="" class="absolute inset-0 w-full h-full object-cover z-0">
 
         {{-- Content sits above the image --}}
         <div
-            class="relative mt-[10rem] sm:mt-[10rem] md:mt-[15rem] lg:mt-[20rem] z-10 flex-1 flex flex-col items-center justify-center text-left max-w-6xl mx-auto px-6 md:px-10 ">
-            <div class="grid grid-cols-1 sm:mb-[5rem] sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+            class="relative flex-1 pt-16 sm:pt-20 md:pt-28 lg:pt-32 z-10 flex flex-col items-center justify-start text-left max-w-6xl mx-auto px-6 md:px-10 ">
+            <div class=" lg:mt-40 grid grid-cols-1 sm:mt-[5rem] mt-[5rem] sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
 
                 {{-- Logo + tagline --}}
                 <div class="lg:col-span-1">
@@ -65,24 +65,60 @@
                 {{-- Company links --}}
                 <div>
                     <h3 class="text-[#A80000] text-[20px] font-bold mb-3">Company</h3>
-                    <div class="flex flex-col gap-2.5 text-[14px]">
+                    <div class="flex flex-col gap-1 text-[14px]">
                         <a href="{{ url('/') }}"
-                            class="text-[#FFFFFF] hover:text-[#A80000] transition duration-300 ease-in-out">Home</a>
+                            class="rounded-full px-2 py-1.5 text-[#FFFFFF] transition-colors duration-200 hover:text-[#A80000] hover:bg-white/[0.06]">Home</a>
                         <a href="{{ url('/about-us') }}"
-                            class="text-[#FFFFFF] hover:text-[#A80000] transition duration-300 ease-in-out">About Metro
-                            Catering</a>
-                        <a href="{{ url('/catering-services') }}"
-                            class="text-[#FFFFFF] hover:text-[#A80000] transition duration-300 ease-in-out">Catering
-                            Services</a>
+                            class="rounded-full px-2 py-1.5 text-[#FFFFFF] transition-colors duration-200 hover:text-[#A80000] hover:bg-white/[0.06]">About
+                            Metro Catering</a>
+
+                        {{-- Catering Services expandable (click-to-toggle, footer version) --}}
+                        <div>
+                            <button type="button" id="footerCateringToggle" aria-expanded="false"
+                                aria-controls="footerCateringPanel"
+                                class="flex w-full items-center justify-between rounded-full px-2 py-1.5 text-left text-[#FFFFFF] transition-colors duration-200 hover:text-[#A80000] hover:bg-white/[0.06]">
+                                Catering Services
+                                <svg id="footerCateringChevron"
+                                    class="h-3.5 w-3.5 shrink-0 transition-transform duration-300 ease-out" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+
+                            <div id="footerCateringPanel"
+                                class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out">
+                                <div class="overflow-hidden">
+                                    <div class="ml-2 mt-1 flex flex-col gap-0.5 border-l-2 border-white/[0.15] pl-3">
+                                        <a href="/canteen-catering-services"
+                                            class="rounded-full px-2 py-2 text-[13px] text-white/80 transition-colors duration-150 hover:text-[#A80000] hover:bg-white/[0.06]">Canteen
+                                            Catering Services</a>
+                                        <a href="/mobile-catering"
+                                            class="rounded-full px-2 py-2 text-[13px] text-white/80 transition-colors duration-150 hover:text-[#A80000] hover:bg-white/[0.06]">Mobile
+                                            Catering</a>
+                                        <a href="/corporate-buffet-catering"
+                                            class="rounded-full px-2 py-2 text-[13px] text-white/80 transition-colors duration-150 hover:text-[#A80000] hover:bg-white/[0.06]">Corporate
+                                            Buffet Catering</a>
+                                        <a href="/event-equipment-rental"
+                                            class="rounded-full px-2 py-2 text-[13px] text-white/80 transition-colors duration-150 hover:text-[#A80000] hover:bg-white/[0.06]">Event
+                                            Equipment Rental</a>
+                                        <a href="/food-box-and-refreshments"
+                                            class="rounded-full px-2 py-2 text-[13px] text-white/80 transition-colors duration-150 hover:text-[#A80000] hover:bg-white/[0.06]">Food
+                                            Box & Refreshments</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <a href="{{ url('/latest-activities') }}"
-                            class="text-[#FFFFFF] hover:text-[#A80000] transition duration-300 ease-in-out">Latest
+                            class="rounded-full px-2 py-1.5 text-[#FFFFFF] transition-colors duration-200 hover:text-[#A80000] hover:bg-white/[0.06]">Latest
                             Events</a>
                         <a href="{{ url('/insights') }}"
-                            class="text-[#FFFFFF] hover:text-[#A80000] transition duration-300 ease-in-out">Insights</a>
+                            class="rounded-full px-2 py-1.5 text-[#FFFFFF] transition-colors duration-200 hover:text-[#A80000] hover:bg-white/[0.06]">Insights</a>
                         <a href="{{ url('/career') }}"
-                            class="text-[#FFFFFF] hover:text-[#A80000] transition duration-300 ease-in-out">Career</a>
+                            class="rounded-full px-2 py-1.5 text-[#FFFFFF] transition-colors duration-200 hover:text-[#A80000] hover:bg-white/[0.06]">Career</a>
                         <a href="{{ url('/contact-us') }}"
-                            class="text-[#FFFFFF] hover:text-[#A80000] transition duration-300 ease-in-out">Contact Us</a>
+                            class="rounded-full px-2 py-1.5 text-[#FFFFFF] transition-colors duration-200 hover:text-[#A80000] hover:bg-white/[0.06]">Contact
+                            Us</a>
                     </div>
                 </div>
 
@@ -113,6 +149,7 @@
         </div>
 
         {{-- Bottom red strip --}}
+
         <div class="relative  z-10 w-full bg-[#A80000] py-3">
             <p class="text-white text-center text-[12px] tracking-widest">
                 <span class="font-bold">METRO</span> CATERING &amp; EVENTS
@@ -120,4 +157,23 @@
         </div>
 
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const footerCateringToggle = document.getElementById('footerCateringToggle');
+            const footerCateringPanel = document.getElementById('footerCateringPanel');
+            const footerCateringChevron = document.getElementById('footerCateringChevron');
+
+            if (footerCateringToggle) {
+                let isOpen = false;
+                footerCateringToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    isOpen = !isOpen;
+                    footerCateringPanel.style.gridTemplateRows = isOpen ? '1fr' : '0fr';
+                    footerCateringChevron.classList.toggle('rotate-180', isOpen);
+                    footerCateringToggle.setAttribute('aria-expanded', String(isOpen));
+                });
+            }
+        });
+    </script>
 @endsection

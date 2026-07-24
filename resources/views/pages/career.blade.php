@@ -102,6 +102,7 @@
                     @enderror
                 </div>
 
+
                 <script>
                     // Self-contained, reusable for any .js-dropdown on the page (Position, Department, Location, etc.)
                     document.addEventListener('DOMContentLoaded', () => {
@@ -273,75 +274,24 @@
                     });
                 </script>
 
-                {{-- Upload CV --}}
-                <div>
-                    <label class="block text-[#a80000] font-semibold text-[15px] mb-2">Upload CV (PDF)</label>
-                    <label class="flex items-center gap-3 rounded-full bg-white px-2 py-2 pl-2 pr-6 cursor-pointer w-fit">
-                        <span
-                            class="flex items-center gap-2 rounded-full border-[2px] border-[#a80000] text-[#a80000] font-semibold text-[15px] px-6 py-3">
-                            Choose File
-                            <svg class="w-3 h-3 fill-[#a80000]" viewBox="0 0 12 8">
-                                <path d="M6 8L0 0h12z" />
-                            </svg>
-                        </span>
-                        <span class="text-[#a80000] text-[15px]" id="cv-filename">No File Chosen</span>
-                        <input type="file" name="cv" accept="application/pdf" required class="hidden"
-                            onchange="
-                            const f = this.files[0];
-                            const nameEl = document.getElementById('cv-filename');
-                            if (f && f.size > 50 * 1024 * 1024) {
-                                alert('CV must be under 5MB.');
-                                this.value = '';
-                                nameEl.textContent = 'No File Chosen';
-                                return;
-                            }
-                            nameEl.textContent = f?.name || 'No File Chosen';
-                        ">
-                    </label>
-                    @error('cv')
-                        <p class="text-red-600 text-[13px] mt-1 ml-2">{{ $message }}</p>
-                    @enderror
-                </div>
 
-                {{-- Upload Cover Letter --}}
-                <div>
-                    <label class="block text-[#a80000] font-semibold text-[15px] mb-2">Upload Cover Letter</label>
-                    <label class="flex items-center gap-3 rounded-full bg-white px-2 py-2 pl-2 pr-6 cursor-pointer w-fit">
-                        <span
-                            class="flex items-center gap-2 rounded-full border-[2px] border-[#a80000] text-[#a80000] font-semibold text-[15px] px-6 py-3">
-                            Choose File
-                            <svg class="w-3 h-3 fill-[#a80000]" viewBox="0 0 12 8">
-                                <path d="M6 8L0 0h12z" />
-                            </svg>
-                        </span>
-                        <span class="text-[#a80000] text-[15px]" id="cover-letter-filename">No File Chosen</span>
-                        <input type="file" name="cover_letter" accept="application/pdf,.doc,.docx" class="hidden"
-                            onchange="
-                            const f = this.files[0];
-                            const nameEl = document.getElementById('cover-letter-filename');
-                            if (f && f.size > 50 * 1024 * 1024) {
-                                alert('Cover letter must be under 5MB.');
-                                this.value = '';
-                                nameEl.textContent = 'No File Chosen';
-                                return;
-                            }
-                            nameEl.textContent = f?.name || 'No File Chosen';
-                        ">
-                    </label>
-                    @error('cover_letter')
-                        <p class="text-red-600 text-[13px] mt-1 ml-2">{{ $message }}</p>
-                    @enderror
-                </div>
+
 
                 {{-- Submit --}}
-                <div class="md:col-span-2 flex justify-center pt-4">
-                    <button type="button" onclick="submitForm()"
-                        class="bg-[#a80000] text-white font-semibold text-[15px] rounded-full px-12 py-4 hover:bg-[#8a0000] transition focus:outline-none focus:ring-2 focus:ring-[#a80000] focus:ring-offset-2">
-                        Submit
-                    </button>
-                </div>
+
 
             </form>
+            <div iv class="flex items-center py-[2rem] justify-center">
+                <p class="block text-[#a80000] font-semibold text-[15px] mb-2">Please Attatch Your CV and Cover Letter
+                    in the Telegram</p>
+            </div>
+            <div class="md:col-span-2 flex justify-center pt-4">
+                <button type="button" onclick="submitForm()"
+                    class="bg-[#a80000] text-white hover:text-[#a80000] font-semibold text-[15px] rounded-full px-12 py-4 hover:bg-[#ffffff] transition focus:outline-none focus:ring-2 focus:ring-[#a80000] focus:ring-offset-2 cursor-pointer">
+                    Submit
+                </button>
+            </div>
+
         </div>
     </section>
     <script>
@@ -350,16 +300,11 @@
             let email = document.querySelector('[name="email"]').value.trim();
             let phone = document.querySelector('[name="phone_number"]').value.trim();
             let position = document.querySelector('[name="position"]').value.trim();
-            let cvInput = document.querySelector('[name="cv"]');
-            let coverInput = document.querySelector('[name="cover_letter"]');
 
-            if (!fullName || !email || !phone || !position || !cvInput.files[0]) {
-                alert("Please fill in all required fields and attach your CV.");
+            if (!fullName || !email || !phone || !position) {
+                alert("Please fill in all required fields.");
                 return;
             }
-
-            let cvFileName = cvInput.files[0].name;
-            let coverFileName = coverInput.files[0] ? coverInput.files[0].name : "Not attached";
 
             let message =
                 `New Job Application:
@@ -369,8 +314,7 @@ Email: ${email}
 Phone: ${phone}
 Position: ${position}
 
-CV: ${cvFileName} (applicant will attach manually)
-Cover Letter: ${coverFileName}`;
+Please Attach Your CV and Cover Letter in the Telegram`;
 
             let encoded = encodeURIComponent(message);
             let telegramUrl = `https://t.me/HasBunRoeun?text=${encoded}`;
@@ -382,7 +326,7 @@ Cover Letter: ${coverFileName}`;
     @include('components.footer', [
         'ctaHeading' => 'Need Food Boxes or Refreshments for Your Next Event?',
         'ctaSubtext' => 'Whether you are organizing a government workshop, corporate seminar, school activity, or executive meeting, 
-                                                                                                                                                        Metro Catering provides reliable and professional catering solutions tailored to your needs.',
+                                                                                                                                                                                                                                                        Metro Catering provides reliable and professional catering solutions tailored to your needs.',
         'ctaButtonText' => 'Contact Us',
         'ctaLink' => url('/contact-us'),
     ])

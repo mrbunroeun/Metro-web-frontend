@@ -141,7 +141,7 @@
 
                         <div class="mt-auto flex justify-center">
                             <a href="/latest-events-detail"
-                                class="inline-block bg-[#a80000] text-white text-[14px] font-semibold rounded-full sm:px-8 px-4 py-2.5 hover:bg-[#8f0000] transition-colors">
+                                class="inline-block bg-[#a80000] text-white hover:text-[#a80000] hover:bg-white text-[14px] font-semibold rounded-full sm:px-8 px-4 py-2.5 transition-colors">
                                 Read More
                             </a>
                         </div>
@@ -165,7 +165,7 @@
     @include('components.footer', [
         'ctaHeading' => 'Need Food Boxes or Refreshments for Your Next Event?',
         'ctaSubtext' => 'Whether you are organizing a government workshop, corporate seminar, school activity, or executive meeting, 
-                Metro Catering provides reliable and professional catering solutions tailored to your needs.',
+                        Metro Catering provides reliable and professional catering solutions tailored to your needs.',
         'ctaButtonText' => 'Contact Us',
         'ctaLink' => url('/contact-us'),
     ])

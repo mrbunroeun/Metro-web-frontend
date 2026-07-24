@@ -136,7 +136,7 @@
 
                     <div class="text-left">
                         <a href="/contact-us"
-                            class="bg-black text-[#FFFFFF] text-[15px] font-medium rounded-full px-6 py-3 hover:bg-gray-900 transition">
+                            class=" bg-black hover:bg-[#ffffff] active:bg-gray-700 text-white hover:text-[#000000]  text-[15px] font-medium rounded-full px-6 py-3  transition duration-300 ease-in-out ">
                             Request Quotation
                         </a>
                     </div>
@@ -161,7 +161,7 @@
 
                     {{-- Fixed-width inner content container --}}
                     <div class="text-left w-full max-w-[200px] sm:max-w-[340px] md:max-w-[420px]">
-                        <p class="text-[#a80000] text-[20px] sm:text-[28px] md:text-[40px] font-semibold">Who We Serves</p>
+                        <p class="text-[#a80000] text-[20px] sm:text-[28px] md:text-[36px] font-semibold">Who We Serves</p>
 
                         <p class="text-[#060606] text-[15px] sm:text-[15px] md:text-[14px] leading-snug md:leading-relaxed">
                             Metro Catering provides professional canteen management and daily meal supply services for

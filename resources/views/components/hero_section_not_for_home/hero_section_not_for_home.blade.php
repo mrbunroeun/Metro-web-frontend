@@ -64,7 +64,7 @@
                 class="w-full max-w-[200px] text-center text-[14px] font-medium px-6 py-3 rounded-full transition duration-300 ease-in-out
                 {{ ($button['style'] ?? 'solid') === 'outline'
                     ? 'border border-white text-white hover:bg-white hover:text-[#A80000]'
-                    : 'bg-[#A80000] hover:bg-[#8f0000] text-white' }}">
+                    : 'bg-[#A80000] hover:bg-[#ffffff] hover:text-[#A80000] text-white' }}">
                 {{ $button['text'] }}
             </a>
         @endforeach

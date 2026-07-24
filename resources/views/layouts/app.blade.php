@@ -22,6 +22,16 @@
             if (sessionStorage.getItem('metro-page-transition') === '1') {
                 document.body.style.backgroundColor = '#B00000';
             }
+            window.addEventListener('pageshow', function(e) {
+                if (e.persisted) {
+                    document.body.style.backgroundColor = '';
+                    var loader = document.getElementById('page-loader');
+                    if (loader) {
+                        loader.classList.add('opacity-0', 'pointer-events-none');
+                        loader.classList.remove('opacity-100');
+                    }
+                }
+            });
         })();
     </script>
 

@@ -22,14 +22,15 @@
             @foreach ($leftFaqs as $index => $faq)
                 <div class="faq-item" data-index="{{ $index }}">
                     <div
-                        class="faq-question  px-5 py-4 cursor-pointer bg-[#f3f0e9] text-[#060606] text-[15px] sm:text-[16px] transition-colors duration-150 hover:bg-[#e9e4d8] active:bg-[#ddd6c4]">
+                        class="faq-question  px-5 py-4 cursor-pointer bg-[#f3f0e9] text-[#060606] text-[15px] sm:text-[18px] transition-colors duration-150 hover:bg-[#e9e4d8] active:bg-[#ddd6c4]">
                         {{ $faq['question'] }}
                     </div>
 
                     <div class="faq-answer-grid grid transition-[grid-template-rows] duration-300 ease-in-out"
                         style="grid-template-rows: 0fr;">
                         <div class="overflow-hidden">
-                            <div class=" px-5 py-4 mt-2 bg-[#a80000] text-[#ffffff] text-[15px] leading-relaxed">
+                            <div
+                                class=" px-5 py-4 mt-2 bg-[#a80000] text-[#ffffff] text-[15px] sm:text-[18px] leading-relaxed">
                                 {{ $faq['answer'] }}
                             </div>
                         </div>

@@ -79,7 +79,7 @@
 
             {{-- Contact Us button --}}
             <a href="/contact-us"
-                class="mt-8 bg-[#A80000] hover:bg-[#8f0000] text-white text-[14px] font-medium px-8 py-3 rounded-full transition duration-300 ease-in-out">
+                class="mt-8 bg-[#A80000] hover:bg-[#ffffff] text-white hover:text-[#a80000] text-[14px] font-medium px-8 py-3 rounded-full transition duration-300 ease-in-out">
                 Contact Us
             </a>
 
@@ -94,8 +94,8 @@
 
                     {{-- Fixed-width inner content container --}}
                     <div class="text-left w-full max-w-[280px] sm:max-w-[340px] md:max-w-[420px]">
-                        <p class="text-white sm:text-[40px] text-[20px] font-semibold">About</p>
-                        <h2 class="text-white sm:text-[40px] text-[20px] font-bold mt-1 mb-2">
+                        <p class="text-white sm:text-[36px] text-[20px] font-semibold">About</p>
+                        <h2 class="text-white sm:text-[36px] text-[20px] font-bold mt-1 mb-2">
                             Metro Catering
                         </h2>
                         <p class="text-white/90 sm:text-[20px] text-[14px] leading-snug mb-3">
@@ -104,7 +104,7 @@
                             and buffet services to equipment rental and venue setup.
                         </p>
                         <a href="/contact-us"
-                            class="inline-flex items-center justify-center bg-black hover:bg-gray-800 active:bg-gray-700 text-white text-[14px] font-medium px-2 py-2.5 min-h-[44px] md:px-6 md:py-2.5 rounded-full w-fit transition duration-300 ease-in-out">
+                            class="inline-flex items-center justify-center bg-black hover:bg-[#ffffff] active:bg-gray-700 text-white hover:text-[#000000] text-[14px] font-medium px-2 py-2.5 min-h-[44px] md:px-6 md:py-2.5 rounded-full w-fit transition duration-300 ease-in-out">
                             Request Quotation
                         </a>
                     </div>
@@ -132,7 +132,7 @@ w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#F3F0E9] z-10">
 
             {{-- Title --}}
             <div class="text-center mb-8 sm:mb-10 lg:mb-12">
-                <h2 class="text-[24px] md:text-[30px] font-medium text-gray-800">
+                <h2 class="text-[20px] md:text-[36px] font-medium text-gray-800">
                     Our <span class="text-[#A80000] font-bold">Core Services</span>
                 </h2>
             </div>
@@ -173,7 +173,7 @@ w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#F3F0E9] z-10">
 
                 {{-- Left content --}}
                 <div class="flex flex-col items-center text-center lg:w-[300px] shrink-0">
-                    <h2 class="text-white text-[20px] sm:text-[24px] leading-snug">
+                    <h2 class="text-white text-[20px] sm:text-[36px] leading-snug">
                         Featured Mobile Catering
                         <span class="block font-bold">Menu Packages</span>
                     </h2>
@@ -207,9 +207,9 @@ Catering Solutions --}}
         <section class="py-12 sm:py-16 px-4 text-center font-sans">
 
             {{-- Title --}}
-            <h2 class="text-[18px] sm:text-[20px] mb-8 sm:mb-10">
+            <h2 class="text-[20px] sm:text-[36px] mb-8 sm:mb-10">
                 Canteen
-                <span class="block font-bold text-[#A80000] text-[20px] sm:text-[24px]">Catering Solutions</span>
+                <span class="block font-bold text-[#A80000] text-[20px] sm:text-[36px]">Catering Solutions</span>
             </h2>
 
 
@@ -241,7 +241,7 @@ Catering Solutions --}}
 
                 {{-- Left heading --}}
                 <div class="text-center lg:text-left shrink-0 lg:w-[340px]">
-                    <h2 class="text-white text-[30px] sm:text-[36px] leading-snug">
+                    <h2 class="text-white text-[20px] sm:text-[36px] leading-snug">
                         Why Choose
                         <span class="block font-bold">Metro Catering?</span>
                     </h2>
@@ -298,7 +298,7 @@ Catering Solutions --}}
 
         {{-- Latest Events --}}
         <section class="bg-[#ffffff] py-20 px-6 md:px-10">
-            <h2 class="text-center text-[20px] sm:text-[40px] mb-10 sm:mb-12">
+            <h2 class="text-center text-[20px] sm:text-[36px] mb-10 sm:mb-12">
                 Latest <span class="font-bold text-[#A80000]">Events</span>
             </h2>
             <div
@@ -365,7 +365,7 @@ Catering Solutions --}}
 
         {{-- Food Insights --}}
         <section class="relative sm:mb-[10rem] mb-[5rem] w-full max-w-full md:max-w-[80%] mx-auto font-sans">
-            <div class="grid grid-cols-2 h-[300px]">
+            <div class="grid grid-cols-2 min-h-[300px]">
 
                 {{-- Left image panel --}}
                 <div class="relative h-full overflow-hidden">
@@ -379,8 +379,8 @@ Catering Solutions --}}
 
                     {{-- Fixed-width inner content container --}}
                     <div class="text-left w-full max-w-[200px] sm:max-w-[340px] md:max-w-[420px]">
-                        <p class="text-[#ffffff] text-[20px] sm:text-[28px] md:text-[40px] font-semibold">Food Insights</p>
-                        <p class="text-[#ffffff] text-[20px] sm:text-[15px] md:text-[16px] font-bold mb-1 md:mb-2">
+                        <p class="text-[#ffffff] text-[20px] sm:text-[28px] md:text-[36px] font-semibold">Food Insights</p>
+                        <p class="text-[#ffffff] text-[14px] sm:text-[18px] md:text-[20px] font-bold mb-1 md:mb-2">
                             Featured Articles:
                         </p>
                         <ul

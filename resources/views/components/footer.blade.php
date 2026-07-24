@@ -22,18 +22,18 @@
         </p>
 
         {{-- Editable heading --}}
-        <h2 class="text-white text-[20px] sm:text-[28px] md:text-[34px] font-bold leading-snug mt-2">
+        <h2 class="text-white text-[20px] sm:text-[28px] md:text-[36px] font-bold leading-snug mt-2">
             {{ $ctaHeading ?? 'Looking for a long-term canteen partner?' }}
         </h2>
 
         {{-- Editable subtext --}}
-        <p class="text-white/90 text-[13px] max-w-[900px] sm:text-[15px] mt-2 mb-5">
+        <p class="text-white/90 text-[18px] max-w-[900px] text-[15px] sm:text-[20px] mt-2 mb-5">
             {{ $ctaSubtext ?? 'Contact our team for a customized proposal.' }}
         </p>
 
         {{-- CTA button --}}
         <a href="{{ $ctaLink ?? url('/contact-us') }}"
-            class="inline-flex items-center justify-center bg-[#A80000] hover:bg-[#8a0000] active:bg-[#700000] text-white text-[13px] sm:text-[14px] font-medium px-6 py-2.5 rounded-full transition duration-300 ease-in-out">
+            class="inline-flex items-center justify-center bg-[#A80000] hover:bg-[#ffffff] active:bg-[#700000] text-white hover:text-[#A80000] text-[18px] sm:text-[18px] font-medium px-6 py-2.5 rounded-full transition duration-300 ease-in-out">
             {{ $ctaButtonText ?? 'Contact Us' }}
         </a>
 
@@ -57,7 +57,7 @@
             {{-- About + Follow Us --}}
             <div>
                 <h3 class="text-[#A80000] text-[20px] font-bold mb-3">Metro Catering</h3>
-                <p class="text-gray-700 text-[13px] leading-relaxed mb-6">
+                <p class="text-gray-700 text-[18px] leading-relaxed mb-6">
                     Trusted by companies, organizations, and families, Metro Catering provides complete
                     catering and event solutions from food preparation and buffet services to equipment
                     rental and venue setup.
@@ -103,7 +103,7 @@
             {{-- Company links --}}
             <div>
                 <h3 class="text-[#A80000] text-[20px] font-bold mb-3">Company</h3>
-                <div class="flex flex-col gap-1 text-[14px]">
+                <div class="flex flex-col gap-1 text-[18px]">
                     <a href="{{ url('/') }}"
                         class="rounded-full px-2 py-1.5 text-gray-700 transition-colors duration-200 hover:text-[#A80000] hover:bg-black/[0.03]">Home</a>
                     <a href="{{ url('/about-us') }}"
@@ -118,7 +118,7 @@
                             class="flex w-full items-center justify-between rounded-full px-2 py-1.5 text-left text-gray-700 transition-colors duration-200 hover:text-[#A80000] hover:bg-black/[0.03]">
                             Catering Services
                             <svg id="footerCateringChevron"
-                                class="h-3.5 w-3.5 shrink-0 transition-transform duration-300 ease-out" fill="none"
+                                class="h-5.5 w-5.5 shrink-0 transition-transform duration-300 ease-out" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                             </svg>
@@ -129,19 +129,19 @@
                             <div class="overflow-hidden">
                                 <div class="ml-2 mt-1 flex flex-col gap-0.5 border-l-2 border-black/[0.06] pl-3">
                                     <a href="/canteen-catering-services"
-                                        class="rounded-full px-2 py-2 text-[13px] text-gray-600 transition-colors duration-150 hover:text-[#A80000] hover:bg-black/[0.03]">Canteen
+                                        class="rounded-full px-2 py-2 text-[18px] text-gray-600 transition-colors duration-150 hover:text-[#A80000] hover:bg-black/[0.03]">Canteen
                                         Catering Services</a>
                                     <a href="/mobile-catering"
-                                        class="rounded-full px-2 py-2 text-[13px] text-gray-600 transition-colors duration-150 hover:text-[#A80000] hover:bg-black/[0.03]">Mobile
+                                        class="rounded-full px-2 py-2 text-[18px] text-gray-600 transition-colors duration-150 hover:text-[#A80000] hover:bg-black/[0.03]">Mobile
                                         Catering</a>
                                     <a href="/corporate-buffet-catering"
-                                        class="rounded-full px-2 py-2 text-[13px] text-gray-600 transition-colors duration-150 hover:text-[#A80000] hover:bg-black/[0.03]">Corporate
+                                        class="rounded-full px-2 py-2 text-[18px] text-gray-600 transition-colors duration-150 hover:text-[#A80000] hover:bg-black/[0.03]">Corporate
                                         Buffet Catering</a>
                                     <a href="/event-equipment-rental"
-                                        class="rounded-full px-2 py-2 text-[13px] text-gray-600 transition-colors duration-150 hover:text-[#A80000] hover:bg-black/[0.03]">Event
+                                        class="rounded-full px-2 py-2 text-[18px] text-gray-600 transition-colors duration-150 hover:text-[#A80000] hover:bg-black/[0.03]">Event
                                         Equipment Rental</a>
                                     <a href="/food-box-and-refreshments"
-                                        class="rounded-full px-2 py-2 text-[13px] text-gray-600 transition-colors duration-150 hover:text-[#A80000] hover:bg-black/[0.03]">Food
+                                        class="rounded-full px-2 py-2 text-[18px] text-gray-600 transition-colors duration-150 hover:text-[#A80000] hover:bg-black/[0.03]">Food
                                         Box & Refreshments</a>
                                 </div>
                             </div>
@@ -164,7 +164,7 @@
             {{-- Contact --}}
             <div>
                 <h3 class="text-[#A80000] text-[20px] font-bold mb-3">Contact</h3>
-                <div class="flex flex-col gap-2.5 text-[14px] text-gray-700">
+                <div class="flex flex-col gap-2.5 text-[18px] text-gray-700">
                     <p class="leading-relaxed">
                         #159A, Street No. 2011, Phum Lorem, Sangkat Lorem, Khan Lorem, Phnom Penh, Cambodia.
                     </p>
@@ -183,7 +183,7 @@
         </div>
 
         {{-- Bottom note --}}
-        <p class="text-[#A80000] text-[15px] text-center mt-16 md:mt-20">
+        <p class="text-[#A80000] text-[20px] text-center mt-16 md:mt-20">
             All right reserved. {{ date('Y') }}
         </p>
     </div>
