@@ -84,8 +84,8 @@
         'description' =>
             'Convenient, hygienic, and delicious food boxes and refreshment packages for meetings, seminars, training programs, schools, government institutions, and corporate events across Cambodia.',
         'buttons' => [
-            ['text' => 'Contact Us', 'link' => '#', 'style' => 'solid'],
-            ['text' => 'View Packages', 'link' => '#', 'style' => 'solid'],
+            ['text' => 'Contact Us', 'link' => '/contact-us', 'style' => 'solid'],
+            ['text' => 'View Packages', 'link' => '/corporate-buffet-catering', 'style' => 'solid'],
         ],
     ])
 
@@ -112,7 +112,7 @@
                         government conferences, our team delivers customized meal solutions
                         with flexible menus, timely delivery, and professional service.
                     </p>
-                    <a href="#"
+                    <a href="/contact-us"
                         class="inline-flex items-center justify-center border border-white/40 hover:bg-white hover:text-[#1a1a1a] active:bg-white/90 text-white text-[13px] font-medium px-5 py-2.5 min-h-[40px] rounded-full w-fit transition duration-300 ease-in-out">
                         Request Quotation
                     </a>
@@ -582,10 +582,10 @@ w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#a80000] z-10">
     {{-- footer --}}
     @include('components.footer', [
         'ctaHeading' => 'CATERING & EVENTS
-    Need Food Boxes or Refreshments for Your Next Event?',
+                    Need Food Boxes or Refreshments for Your Next Event?',
         'ctaSubtext' => '
-    Whether you are organizing a government workshop, corporate seminar, school activity, or executive meeting, 
-    Metro Catering provides reliable and professional catering solutions tailored to your needs.',
+                    Whether you are organizing a government workshop, corporate seminar, school activity, or executive meeting, 
+                    Metro Catering provides reliable and professional catering solutions tailored to your needs.',
         'ctaButtonText' => 'Contact Us',
         'ctaLink' => url('/contact-us'),
     ])

@@ -1,15 +1,15 @@
 @extends('layouts.app')
 @section('content')
     {{-- Footer --}}
-    <footer class="relative h-screen w-full bg-[#F3F0E9] font-sans overflow-hidden flex flex-col">
+    <footer class="relative h-full sm:h-screen w-full bg-[#F3F0E9] font-sans overflow-hidden flex flex-col">
 
         {{-- Background image --}}
         <img src="{{ asset('contact/contact.png') }}" alt="" class="absolute inset-0 w-full h-full object-cover z-0">
 
         {{-- Content sits above the image --}}
         <div
-            class="relative z-10 flex-1 flex flex-col items-center justify-center text-left max-w-6xl mx-auto px-6 md:px-10">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+            class="relative mt-[10rem] sm:mt-[10rem] md:mt-[15rem] lg:mt-[20rem] z-10 flex-1 flex flex-col items-center justify-center text-left max-w-6xl mx-auto px-6 md:px-10 ">
+            <div class="grid grid-cols-1 sm:mb-[5rem] sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
 
                 {{-- Logo + tagline --}}
                 <div class="lg:col-span-1">
@@ -18,14 +18,14 @@
 
                 {{-- About + Follow Us --}}
                 <div>
-                    <h3 class="text-[#A80000] text-[16px] font-bold mb-3">Metro Catering</h3>
+                    <h3 class="text-[#A80000] text-[20px] font-bold mb-3">Metro Catering</h3>
                     <p class="text-[#FFFFFF] text-[13px] leading-relaxed mb-6">
                         Trusted by companies, organizations, and families, Metro Catering provides complete
                         catering and event solutions from food preparation and buffet services to equipment
                         rental and venue setup.
                     </p>
 
-                    <h3 class="text-[#A80000] text-[16px] font-bold mb-3">Follow Us</h3>
+                    <h3 class="text-[#A80000] text-[20px] font-bold mb-3">Follow Us</h3>
                     <div class="flex items-center gap-3">
                         <a href="#" aria-label="Facebook"
                             class="w-9 h-9 rounded-full bg-[#1877F2] flex items-center justify-center hover:opacity-80 transition duration-300 ease-in-out">
@@ -64,7 +64,7 @@
 
                 {{-- Company links --}}
                 <div>
-                    <h3 class="text-[#A80000] text-[16px] font-bold mb-3">Company</h3>
+                    <h3 class="text-[#A80000] text-[20px] font-bold mb-3">Company</h3>
                     <div class="flex flex-col gap-2.5 text-[14px]">
                         <a href="{{ url('/') }}"
                             class="text-[#FFFFFF] hover:text-[#A80000] transition duration-300 ease-in-out">Home</a>
@@ -88,7 +88,7 @@
 
                 {{-- Contact --}}
                 <div>
-                    <h3 class="text-[#A80000] text-[16px] font-bold mb-3">Contact</h3>
+                    <h3 class="text-[#A80000] text-[20px] font-bold mb-3">Contact</h3>
                     <div class="flex flex-col gap-2.5 text-[14px] text-[#FFFFFF]">
                         <p class="leading-relaxed">
                             #159A, Street No. 2011, Phum Lorem, Sangkat Lorem, Khan Lorem, Phnom Penh, Cambodia.
@@ -107,13 +107,13 @@
             </div>
 
             {{-- Bottom note --}}
-            <p class="text-[#A80000] text-[12px] text-center mt-16 md:mt-20">
+            <p class="text-[#A80000] text-[15px] text-center mt-16 md:mt-20">
                 All right reserved. {{ date('Y') }}
             </p>
         </div>
 
         {{-- Bottom red strip --}}
-        <div class="relative z-10 w-full bg-[#A80000] py-3">
+        <div class="relative  z-10 w-full bg-[#A80000] py-3">
             <p class="text-white text-center text-[12px] tracking-widest">
                 <span class="font-bold">METRO</span> CATERING &amp; EVENTS
             </p>

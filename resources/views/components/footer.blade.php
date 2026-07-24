@@ -1,16 +1,17 @@
 {{-- CTA Banner (on top of footer) --}}
+{{-- CTA Banner (on top of footer) --}}
 <section class="relative w-full overflow-hidden">
 
-    {{-- Background image --}}
+    {{-- Background image (fills whatever height the content below defines) --}}
     <img src="{{ asset('footer/top_footer/bg_top_footer.png') }}" alt="Metro Catering food background"
-        class="w-full h-[220px] sm:h-[260px] md:h-[300px] object-cover object-center">
+        class="absolute inset-0 w-full h-full object-cover object-center">
 
     {{-- Dark overlay for text readability --}}
     <div class="absolute inset-0 bg-black/50"></div>
 
-    {{-- Overlay content --}}
+    {{-- Content (normal flow — this now determines the section's height) --}}
     <div
-        class="absolute inset-0  mx-auto max-w-[1300px] flex flex-col items-center justify-center text-center px-4 sm:px-8 font-sans">
+        class="relative mx-auto max-w-[1300px] flex flex-col items-center justify-center text-center px-4 sm:px-8 py-10 sm:py-14 md:py-16 font-sans">
 
         {{-- Small logo/brand line --}}
         <p class="text-[#A80000] text-[15px] sm:text-[20px] font-bold tracking-widest mb-1">
@@ -43,24 +44,26 @@
 {{-- Footer --}}
 <footer class="relative w-full bg-[#F3F0E9] font-sans">
 
-    <div class="mx-auto w-[92%] md:w-[85%] max-w-6xl py-16 md:py-20">
+    <div class="mx-auto w-[92%] md:w-[85%] max-w-6xl pt-16 md:pt-20">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
 
             {{-- Logo + tagline --}}
             <div class="lg:col-span-1">
-                <img src="{{ asset('logo/metro_logo.svg') }}" alt="Metro Catering Logo" class="h-14 w-auto mb-2">
+                <a href="/">
+                    <img src="{{ asset('logo/metro_logo.svg') }}" alt="Metro Catering Logo" class="h-14 w-auto mb-2">
+                </a>
             </div>
 
             {{-- About + Follow Us --}}
             <div>
-                <h3 class="text-[#A80000] text-[18px] font-bold mb-3">Metro Catering</h3>
+                <h3 class="text-[#A80000] text-[20px] font-bold mb-3">Metro Catering</h3>
                 <p class="text-gray-700 text-[13px] leading-relaxed mb-6">
                     Trusted by companies, organizations, and families, Metro Catering provides complete
                     catering and event solutions from food preparation and buffet services to equipment
                     rental and venue setup.
                 </p>
 
-                <h3 class="text-[#A80000] text-[18px] font-bold mb-3">Follow Us</h3>
+                <h3 class="text-[#A80000] text-[20px] font-bold mb-3">Follow Us</h3>
                 <div class="flex items-center gap-3">
                     <a href="#" aria-label="Facebook"
                         class="w-9 h-9 rounded-full bg-[#1877F2] flex items-center justify-center hover:opacity-80 transition duration-300 ease-in-out">
@@ -99,12 +102,12 @@
 
             {{-- Company links --}}
             <div>
-                <h3 class="text-[#A80000] text-[18px] font-bold mb-3">Company</h3>
+                <h3 class="text-[#A80000] text-[20px] font-bold mb-3">Company</h3>
                 <div class="flex flex-col gap-1 text-[14px]">
                     <a href="{{ url('/') }}"
-                        class="rounded-full px-4 py-2.5 text-gray-700 transition-colors duration-200 hover:text-[#A80000] hover:bg-black/[0.03]">Home</a>
+                        class="rounded-full px-2 py-1.5 text-gray-700 transition-colors duration-200 hover:text-[#A80000] hover:bg-black/[0.03]">Home</a>
                     <a href="{{ url('/about-us') }}"
-                        class="rounded-full px-4 py-2.5 text-gray-700 transition-colors duration-200 hover:text-[#A80000] hover:bg-black/[0.03]">About
+                        class="rounded-full px-2 py-1.5 text-gray-700 transition-colors duration-200 hover:text-[#A80000] hover:bg-black/[0.03]">About
                         Metro
                         Catering</a>
 
@@ -112,11 +115,11 @@
                     <div>
                         <button type="button" id="footerCateringToggle" aria-expanded="false"
                             aria-controls="footerCateringPanel"
-                            class="flex w-full items-center justify-between rounded-full px-4 py-2.5 text-left text-gray-700 transition-colors duration-200 hover:text-[#A80000] hover:bg-black/[0.03]">
+                            class="flex w-full items-center justify-between rounded-full px-2 py-1.5 text-left text-gray-700 transition-colors duration-200 hover:text-[#A80000] hover:bg-black/[0.03]">
                             Catering Services
                             <svg id="footerCateringChevron"
                                 class="h-3.5 w-3.5 shrink-0 transition-transform duration-300 ease-out" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                             </svg>
                         </button>
@@ -126,19 +129,19 @@
                             <div class="overflow-hidden">
                                 <div class="ml-2 mt-1 flex flex-col gap-0.5 border-l-2 border-black/[0.06] pl-3">
                                     <a href="/canteen-catering-services"
-                                        class="rounded-full px-4 py-2 text-[13px] text-gray-600 transition-colors duration-150 hover:text-[#A80000] hover:bg-black/[0.03]">Canteen
+                                        class="rounded-full px-2 py-2 text-[13px] text-gray-600 transition-colors duration-150 hover:text-[#A80000] hover:bg-black/[0.03]">Canteen
                                         Catering Services</a>
                                     <a href="/mobile-catering"
-                                        class="rounded-full px-4 py-2 text-[13px] text-gray-600 transition-colors duration-150 hover:text-[#A80000] hover:bg-black/[0.03]">Mobile
+                                        class="rounded-full px-2 py-2 text-[13px] text-gray-600 transition-colors duration-150 hover:text-[#A80000] hover:bg-black/[0.03]">Mobile
                                         Catering</a>
                                     <a href="/corporate-buffet-catering"
-                                        class="rounded-full px-4 py-2 text-[13px] text-gray-600 transition-colors duration-150 hover:text-[#A80000] hover:bg-black/[0.03]">Corporate
+                                        class="rounded-full px-2 py-2 text-[13px] text-gray-600 transition-colors duration-150 hover:text-[#A80000] hover:bg-black/[0.03]">Corporate
                                         Buffet Catering</a>
                                     <a href="/event-equipment-rental"
-                                        class="rounded-full px-4 py-2 text-[13px] text-gray-600 transition-colors duration-150 hover:text-[#A80000] hover:bg-black/[0.03]">Event
+                                        class="rounded-full px-2 py-2 text-[13px] text-gray-600 transition-colors duration-150 hover:text-[#A80000] hover:bg-black/[0.03]">Event
                                         Equipment Rental</a>
                                     <a href="/food-box-and-refreshments"
-                                        class="rounded-full px-4 py-2 text-[13px] text-gray-600 transition-colors duration-150 hover:text-[#A80000] hover:bg-black/[0.03]">Food
+                                        class="rounded-full px-2 py-2 text-[13px] text-gray-600 transition-colors duration-150 hover:text-[#A80000] hover:bg-black/[0.03]">Food
                                         Box & Refreshments</a>
                                 </div>
                             </div>
@@ -146,28 +149,29 @@
                     </div>
 
                     <a href="{{ url('/latest-events') }}"
-                        class="rounded-full px-4 py-2.5 text-gray-700 transition-colors duration-200 hover:text-[#A80000] hover:bg-black/[0.03]">Latest
+                        class="rounded-full px-2 py-1.5 text-gray-700 transition-colors duration-200 hover:text-[#A80000] hover:bg-black/[0.03]">Latest
                         Events</a>
                     <a href="{{ url('/insights') }}"
-                        class="rounded-full px-4 py-2.5 text-gray-700 transition-colors duration-200 hover:text-[#A80000] hover:bg-black/[0.03]">Insights</a>
+                        class="rounded-full px-2 py-1.5 text-gray-700 transition-colors duration-200 hover:text-[#A80000] hover:bg-black/[0.03]">Insights</a>
                     <a href="{{ url('/career') }}"
-                        class="rounded-full px-4 py-2.5 text-gray-700 transition-colors duration-200 hover:text-[#A80000] hover:bg-black/[0.03]">Career</a>
+                        class="rounded-full px-2 py-1.5 text-gray-700 transition-colors duration-200 hover:text-[#A80000] hover:bg-black/[0.03]">Career</a>
                     <a href="{{ url('/contact-us') }}"
-                        class="rounded-full px-4 py-2.5 text-gray-700 transition-colors duration-200 hover:text-[#A80000] hover:bg-black/[0.03]">Contact
+                        class="rounded-full px-2 py-1.5 text-gray-700 transition-colors duration-200 hover:text-[#A80000] hover:bg-black/[0.03]">Contact
                         Us</a>
                 </div>
             </div>
 
             {{-- Contact --}}
             <div>
-                <h3 class="text-[#A80000] text-[18px] font-bold mb-3">Contact</h3>
+                <h3 class="text-[#A80000] text-[20px] font-bold mb-3">Contact</h3>
                 <div class="flex flex-col gap-2.5 text-[14px] text-gray-700">
                     <p class="leading-relaxed">
                         #159A, Street No. 2011, Phum Lorem, Sangkat Lorem, Khan Lorem, Phnom Penh, Cambodia.
                     </p>
                     <a href="tel:089911988" class="hover:text-[#A80000] transition duration-300 ease-in-out">089 911 988
                         Lorem</a>
-                    <a href="tel:081688880" class="hover:text-[#A80000] transition duration-300 ease-in-out">081 688 880
+                    <a href="tel:081688880" class="hover:text-[#A80000] transition duration-300 ease-in-out">081 688
+                        880
                         Lorem</a>
                     <a href="mailto:lorem@gmail.com"
                         class="hover:text-[#A80000] transition duration-300 ease-in-out">lorem@gmail.com</a>
@@ -179,14 +183,14 @@
         </div>
 
         {{-- Bottom note --}}
-        <p class="text-[#A80000] text-[12px] text-center mt-16 md:mt-20">
+        <p class="text-[#A80000] text-[15px] text-center mt-16 md:mt-20">
             All right reserved. {{ date('Y') }}
         </p>
     </div>
 
     {{-- Bottom red strip --}}
     <div class="w-full bg-[#A80000] py-3">
-        <p class="text-white text-center text-[12px] tracking-widest">
+        <p class="text-white text-center text-[15px] tracking-widest">
             <span class="font-bold">METRO</span> CATERING &amp; EVENTS
         </p>
     </div>

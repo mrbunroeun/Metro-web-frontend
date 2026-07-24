@@ -37,8 +37,8 @@
         'description' =>
             'Metro Catering delivers high-quality food, professional event setups, and customized catering solutions for businesses, schools, weddings, and special occasions across Cambodia.',
         'buttons' => [
-            ['text' => 'Contact Us', 'link' => '#', 'style' => 'solid'],
-            ['text' => 'View Packages', 'link' => '#', 'style' => 'solid'],
+            ['text' => 'Contact Us', 'link' => '/contact-us', 'style' => 'solid'],
+            ['text' => 'View Packages', 'link' => '/corporate-buffet-catering', 'style' => 'solid'],
         ],
     ])
 
@@ -108,7 +108,7 @@
     @include('components.footer', [
         'ctaHeading' => 'Need Food Boxes or Refreshments for Your Next Event?',
         'ctaSubtext' => 'Whether you are organizing a government workshop, corporate seminar, school activity, or executive meeting, 
-                                                                                                                                                                                                                                Metro Catering provides reliable and professional catering solutions tailored to your needs.',
+                                                                                                                                                                                                                                    Metro Catering provides reliable and professional catering solutions tailored to your needs.',
         'ctaButtonText' => 'Contact Us',
         'ctaLink' => url('/contact-us'),
     ])
