@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="@yield('description', 'Laravel Application')">
+    <link rel="preload" as="image" href="{{ asset('logo/metro_log.svg') }}" fetchpriority="high">
 
     <title>@yield('title', config('app.name', 'Laravel'))</title>
 
@@ -13,7 +14,7 @@
     @stack('styles')
 </head>
 
-<body class=" text-gray-900 bg-[#ffffff]/90 h-[100vh] font-sans antialiased">
+<body class=" text-gray-900 bg-[#ffffff]/90 font-sans antialiased">
 
     {{-- Header --}}
     <x-navbar />

@@ -2,7 +2,7 @@
      Metro Catering — Primary Navigation
      Utility bar + floating pill nav, desktop dropdown, mobile sheet
      ============================================================ --}}
-<header id="siteHeader" class="fixed inset-x-0 top-0 z-40 isolate [transform:translateZ(0)] will-change-transform">
+<header id="siteHeader" class="fixed inset-x-0 top-0 z-[100]">
 
     {{-- Utility bar --}}
     <div class="w-full bg-[#B00000]">
@@ -26,8 +26,8 @@
             {{-- Logo (left) --}}
             <a href="{{ url('/') }}" class="flex w-max shrink-0 items-center justify-self-start"
                 aria-label="Metro Catering — home">
-                <img src="{{ asset('logo/metro_log.svg') }}" alt="Metro Catering" width="140" height="36"
-                    class="h-8 md:h-9 w-auto">
+                <img src="{{ asset('logo/metro_logo.svg') }}" alt="Metro Catering" width="140" height="36"
+                    fetchpriority="high" decoding="sync" loading="eager" class="h-8 md:h-9 w-auto">
             </a>
 
             {{-- Desktop links (true center, via 1fr/auto/1fr grid) --}}
@@ -58,37 +58,34 @@
                         </svg>
                     </button>
 
-                    {{-- Hover bridge: invisible padding keeps the dropdown open while the
-                         cursor travels from the trigger down to the panel. --}}
-                    <div class="absolute left-1/2 top-full w-72 -translate-x-1/2 pt-3">
-                        <div id="cateringPanel" role="menu"
-                            class="origin-top scale-95 -translate-y-1 rounded-2xl border border-black/5 bg-white p-2 opacity-0 shadow-[0_20px_60px_rgba(0,0,0,0.15)] pointer-events-none transition-all duration-200 ease-out">
-                            <a href="/canteen-catering-services" role="menuitem"
-                                class="dropdown-link block rounded-xl px-4 py-3 text-[15px] transition-colors duration-150
+                    {{-- Dropdown panel --}}
+                    <div id="cateringPanel" role="menu"
+                        class="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-72 origin-top scale-95 -translate-y-1 rounded-2xl border border-black/5 bg-white p-2 opacity-0 shadow-[0_20px_60px_rgba(0,0,0,0.15)] pointer-events-none transition-all duration-200 ease-out z-50">
+                        <a href="/canteen-catering-services" role="menuitem"
+                            class="dropdown-link block rounded-xl px-4 py-3 text-[15px] transition-colors duration-150
                                        {{ request()->is('canteen-catering-services') ? 'active' : 'text-gray-600' }}">
-                                Canteen Catering Services
-                            </a>
-                            <a href="/mobile-catering" role="menuitem"
-                                class="dropdown-link block rounded-xl px-4 py-3 text-[15px] transition-colors duration-150
+                            Canteen Catering Services
+                        </a>
+                        <a href="/mobile-catering" role="menuitem"
+                            class="dropdown-link block rounded-xl px-4 py-3 text-[15px] transition-colors duration-150
                                        {{ request()->is('mobile-catering') ? 'active' : 'text-gray-600' }}">
-                                Mobile Catering
-                            </a>
-                            <a href="/corporate-buffet-catering" role="menuitem"
-                                class="dropdown-link block rounded-xl px-4 py-3 text-[15px] transition-colors duration-150
+                            Mobile Catering
+                        </a>
+                        <a href="/corporate-buffet-catering" role="menuitem"
+                            class="dropdown-link block rounded-xl px-4 py-3 text-[15px] transition-colors duration-150
                                        {{ request()->is('corporate-buffet-catering') ? 'active' : 'text-gray-600' }}">
-                                Corporate Buffet Catering
-                            </a>
-                            <a href="/event-equipment-rental" role="menuitem"
-                                class="dropdown-link block rounded-xl px-4 py-3 text-[15px] transition-colors duration-150
+                            Corporate Buffet Catering
+                        </a>
+                        <a href="/event-equipment-rental" role="menuitem"
+                            class="dropdown-link block rounded-xl px-4 py-3 text-[15px] transition-colors duration-150
                                        {{ request()->is('event-equipment-rental') ? 'active' : 'text-gray-600' }}">
-                                Event Equipment Rental
-                            </a>
-                            <a href="/food-box-and-refreshments" role="menuitem"
-                                class="dropdown-link block rounded-xl px-4 py-3 text-[15px] transition-colors duration-150
+                            Event Equipment Rental
+                        </a>
+                        <a href="/food-box-and-refreshments" role="menuitem"
+                            class="dropdown-link block rounded-xl px-4 py-3 text-[15px] transition-colors duration-150
                                        {{ request()->is('food-box-and-refreshments') ? 'active' : 'text-gray-600' }}">
-                                Food Box & Refreshments
-                            </a>
-                        </div>
+                            Food Box & Refreshments
+                        </a>
                     </div>
                 </div>
 
@@ -141,7 +138,7 @@
 
         {{-- Mobile slide-down menu --}}
         <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation"
-            class="absolute left-1/2 top-full mt-3 w-[92%] -translate-x-1/2 origin-top scale-95 -translate-y-1 rounded-[28px] border border-black/5 bg-white/95 p-3 opacity-0 shadow-[0_20px_60px_rgba(0,0,0,0.15)] backdrop-blur-xl pointer-events-none transition-all duration-300 ease-out lg:hidden">
+            class="absolute left-1/2 top-full mt-3 w-[92%] -translate-x-1/2 origin-top scale-95 -translate-y-1 rounded-[28px] border border-black/5 bg-white/95 p-3 opacity-0 shadow-[0_20px_60px_rgba(0,0,0,0.15)] pointer-events-none transition-all duration-300 ease-out lg:hidden">
             <div class="flex flex-col gap-1">
                 <a href="{{ url('/') }}" aria-current="{{ request()->is('/') ? 'page' : 'false' }}"
                     class="nav-link flex min-h-[44px] items-center rounded-2xl px-4 text-[16px] transition-colors duration-150
@@ -338,7 +335,7 @@
 
         document.addEventListener('click', function(e) {
             if (isMobileMenuOpen && !mobileMenu.contains(e.target) && !navToggleBtn.contains(e
-                .target)) {
+                    .target)) {
                 closeMobileMenu();
             }
         });
@@ -356,7 +353,7 @@
             trigger,
             panel,
             chevron,
-            closeDelay = 250
+            closeDelay = 200
         }) {
             let closeTimer;
 
@@ -373,8 +370,14 @@
                 trigger.setAttribute('aria-expanded', 'false');
             }
 
-            wrapper.addEventListener('mouseenter', open);
-            wrapper.addEventListener('mouseleave', function() {
+            trigger.addEventListener('mouseenter', open);
+            trigger.addEventListener('mouseleave', function() {
+                closeTimer = setTimeout(close, closeDelay);
+            });
+            panel.addEventListener('mouseenter', function() {
+                clearTimeout(closeTimer);
+            });
+            panel.addEventListener('mouseleave', function() {
                 closeTimer = setTimeout(close, closeDelay);
             });
             trigger.addEventListener('focus', open);
@@ -382,7 +385,7 @@
                 e.preventDefault();
                 panel.classList.contains('opacity-0') ? open() : close();
             });
-            wrapper.addEventListener('keydown', function(e) {
+            trigger.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape') {
                     close();
                     trigger.focus();
