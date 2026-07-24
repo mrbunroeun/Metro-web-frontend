@@ -74,21 +74,30 @@
     @endphp
 
     <section class="w-full max-w-[100%] sm:max-w-[90%] py-[5rem] mx-auto">
+        @php
+            $blobColors = ['#f3f0e9', '#a80000', '#f3f0e9', '#a80000'];
+        @endphp
+
         @foreach ($insights as $insight)
-            @php $isOdd = $loop->iteration % 2 !== 0; @endphp
+            @php
+                $isOdd = $loop->iteration % 2 !== 0;
+                $blobColor = $blobColors[$loop->index % count($blobColors)];
+            @endphp
 
             <div class="relative grid grid-cols-1 min-[1050px]:grid-cols-2">
 
                 @if ($isOdd)
                     {{-- Image top / left --}}
-                    <div class="order-1 min-[1050px]:order-1 relative min-h-[260px] md:min-h-[300px] overflow-hidden">
-                        <img src="{{ asset($insight['image']) }}" alt="{{ $insight['title'] }}"
-                            class="absolute inset-0 w-full h-full object-cover object-center">
+                    <div class="order-1 min-[1050px]:order-1 relative min-h-[260px] md:min-h-[300px]">
+                        <div class="absolute inset-0 overflow-hidden">
+                            <img src="{{ asset($insight['image']) }}" alt="{{ $insight['title'] }}"
+                                class="absolute inset-0 w-full h-full object-cover object-center">
+                        </div>
 
-                        {{-- Blob: sits on image's bottom edge, 1-col only --}}
-                        <div
+                        {{-- Blob: sits on image's bottom edge, 1-col only, not clipped --}}
+                        <div style="background-color: {{ $blobColor }};"
                             class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 min-[1050px]:hidden
-                        w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#f5a623] z-10">
+                        w-13 h-13 md:w-18 md:h-18 rounded-full z-50">
                         </div>
                     </div>
 
@@ -104,14 +113,16 @@
                     </div>
                 @else
                     {{-- Image top / right on desktop, always on top when stacked --}}
-                    <div class="order-1 min-[1050px]:order-2 relative min-h-[260px] md:min-h-[300px] overflow-hidden">
-                        <img src="{{ asset($insight['image']) }}" alt="{{ $insight['title'] }}"
-                            class="absolute inset-0 w-full h-full object-cover object-center">
+                    <div class="order-1 min-[1050px]:order-2 relative min-h-[260px] md:min-h-[300px]">
+                        <div class="absolute inset-0 overflow-hidden">
+                            <img src="{{ asset($insight['image']) }}" alt="{{ $insight['title'] }}"
+                                class="absolute inset-0 w-full h-full object-cover object-center">
+                        </div>
 
-                        {{-- Blob: sits on image's bottom edge, 1-col only --}}
-                        <div
+                        {{-- Blob: sits on image's bottom edge, 1-col only, not clipped --}}
+                        <div style="background-color: {{ $blobColor }};"
                             class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 min-[1050px]:hidden
-                        w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#f5a623] z-10">
+                        w-13 h-13 md:w-18 md:h-18 rounded-full z-50">
                         </div>
                     </div>
 
@@ -128,9 +139,9 @@
                 @endif
 
                 {{-- Blob: centered on the column seam, 2-col only --}}
-                <div
+                <div style="background-color: {{ $blobColor }};"
                     class="hidden min-[1050px]:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#f5a623] z-10">
+                w-13 h-13 md:w-18 md:h-18 rounded-full z-50">
                 </div>
 
             </div>
@@ -151,7 +162,7 @@
     @include('components.footer', [
         'ctaHeading' => 'Need Food Boxes or Refreshments for Your Next Event?',
         'ctaSubtext' => 'Whether you are organizing a government workshop, corporate seminar, school activity, or executive meeting, 
-                                                                                                                                                                            Metro Catering provides reliable and professional catering solutions tailored to your needs.',
+                                                                                                                                                                                    Metro Catering provides reliable and professional catering solutions tailored to your needs.',
         'ctaButtonText' => 'Contact Us',
         'ctaLink' => url('/contact-us'),
     ])
