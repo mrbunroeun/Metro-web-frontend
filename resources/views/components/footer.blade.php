@@ -43,24 +43,24 @@
 {{-- Footer --}}
 <footer class="relative w-full bg-[#F3F0E9] font-sans">
 
-    <div class="max-w-6xl mx-auto px-6 md:px-10 py-16 md:py-20">
+    <div class="mx-auto w-[92%] md:w-[85%] max-w-6xl py-16 md:py-20">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
 
             {{-- Logo + tagline --}}
             <div class="lg:col-span-1">
-                <img src="{{ asset('logo/metro_log.svg') }}" alt="Metro Catering Logo" class="h-14 w-auto mb-2">
+                <img src="{{ asset('logo/metro_logo.svg') }}" alt="Metro Catering Logo" class="h-14 w-auto mb-2">
             </div>
 
             {{-- About + Follow Us --}}
             <div>
-                <h3 class="text-[#A80000] text-[16px] font-bold mb-3">Metro Catering</h3>
+                <h3 class="text-[#A80000] text-[18px] font-bold mb-3">Metro Catering</h3>
                 <p class="text-gray-700 text-[13px] leading-relaxed mb-6">
                     Trusted by companies, organizations, and families, Metro Catering provides complete
                     catering and event solutions from food preparation and buffet services to equipment
                     rental and venue setup.
                 </p>
 
-                <h3 class="text-[#A80000] text-[16px] font-bold mb-3">Follow Us</h3>
+                <h3 class="text-[#A80000] text-[18px] font-bold mb-3">Follow Us</h3>
                 <div class="flex items-center gap-3">
                     <a href="#" aria-label="Facebook"
                         class="w-9 h-9 rounded-full bg-[#1877F2] flex items-center justify-center hover:opacity-80 transition duration-300 ease-in-out">
@@ -99,30 +99,68 @@
 
             {{-- Company links --}}
             <div>
-                <h3 class="text-[#A80000] text-[16px] font-bold mb-3">Company</h3>
-                <div class="flex flex-col gap-2.5 text-[14px]">
+                <h3 class="text-[#A80000] text-[18px] font-bold mb-3">Company</h3>
+                <div class="flex flex-col gap-1 text-[14px]">
                     <a href="{{ url('/') }}"
-                        class="text-gray-700 hover:text-[#A80000] transition duration-300 ease-in-out">Home</a>
+                        class="rounded-full px-4 py-2.5 text-gray-700 transition-colors duration-200 hover:text-[#A80000] hover:bg-black/[0.03]">Home</a>
                     <a href="{{ url('/about-us') }}"
-                        class="text-gray-700 hover:text-[#A80000] transition duration-300 ease-in-out">About Metro
+                        class="rounded-full px-4 py-2.5 text-gray-700 transition-colors duration-200 hover:text-[#A80000] hover:bg-black/[0.03]">About
+                        Metro
                         Catering</a>
-                    <a href="{{ url('/catering-services') }}"
-                        class="text-gray-700 hover:text-[#A80000] transition duration-300 ease-in-out">Catering
-                        Services</a>
-                    <a href="{{ url('/latest-activities') }}"
-                        class="text-gray-700 hover:text-[#A80000] transition duration-300 ease-in-out">Latest Events</a>
+
+                    {{-- Catering Services expandable (click-to-toggle, footer version) --}}
+                    <div>
+                        <button type="button" id="footerCateringToggle" aria-expanded="false"
+                            aria-controls="footerCateringPanel"
+                            class="flex w-full items-center justify-between rounded-full px-4 py-2.5 text-left text-gray-700 transition-colors duration-200 hover:text-[#A80000] hover:bg-black/[0.03]">
+                            Catering Services
+                            <svg id="footerCateringChevron"
+                                class="h-3.5 w-3.5 shrink-0 transition-transform duration-300 ease-out" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+
+                        <div id="footerCateringPanel"
+                            class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out">
+                            <div class="overflow-hidden">
+                                <div class="ml-2 mt-1 flex flex-col gap-0.5 border-l-2 border-black/[0.06] pl-3">
+                                    <a href="/canteen-catering-services"
+                                        class="rounded-full px-4 py-2 text-[13px] text-gray-600 transition-colors duration-150 hover:text-[#A80000] hover:bg-black/[0.03]">Canteen
+                                        Catering Services</a>
+                                    <a href="/mobile-catering"
+                                        class="rounded-full px-4 py-2 text-[13px] text-gray-600 transition-colors duration-150 hover:text-[#A80000] hover:bg-black/[0.03]">Mobile
+                                        Catering</a>
+                                    <a href="/corporate-buffet-catering"
+                                        class="rounded-full px-4 py-2 text-[13px] text-gray-600 transition-colors duration-150 hover:text-[#A80000] hover:bg-black/[0.03]">Corporate
+                                        Buffet Catering</a>
+                                    <a href="/event-equipment-rental"
+                                        class="rounded-full px-4 py-2 text-[13px] text-gray-600 transition-colors duration-150 hover:text-[#A80000] hover:bg-black/[0.03]">Event
+                                        Equipment Rental</a>
+                                    <a href="/food-box-and-refreshments"
+                                        class="rounded-full px-4 py-2 text-[13px] text-gray-600 transition-colors duration-150 hover:text-[#A80000] hover:bg-black/[0.03]">Food
+                                        Box & Refreshments</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="{{ url('/latest-events') }}"
+                        class="rounded-full px-4 py-2.5 text-gray-700 transition-colors duration-200 hover:text-[#A80000] hover:bg-black/[0.03]">Latest
+                        Events</a>
                     <a href="{{ url('/insights') }}"
-                        class="text-gray-700 hover:text-[#A80000] transition duration-300 ease-in-out">Insights</a>
+                        class="rounded-full px-4 py-2.5 text-gray-700 transition-colors duration-200 hover:text-[#A80000] hover:bg-black/[0.03]">Insights</a>
                     <a href="{{ url('/career') }}"
-                        class="text-gray-700 hover:text-[#A80000] transition duration-300 ease-in-out">Career</a>
+                        class="rounded-full px-4 py-2.5 text-gray-700 transition-colors duration-200 hover:text-[#A80000] hover:bg-black/[0.03]">Career</a>
                     <a href="{{ url('/contact-us') }}"
-                        class="text-gray-700 hover:text-[#A80000] transition duration-300 ease-in-out">Contact Us</a>
+                        class="rounded-full px-4 py-2.5 text-gray-700 transition-colors duration-200 hover:text-[#A80000] hover:bg-black/[0.03]">Contact
+                        Us</a>
                 </div>
             </div>
 
             {{-- Contact --}}
             <div>
-                <h3 class="text-[#A80000] text-[16px] font-bold mb-3">Contact</h3>
+                <h3 class="text-[#A80000] text-[18px] font-bold mb-3">Contact</h3>
                 <div class="flex flex-col gap-2.5 text-[14px] text-gray-700">
                     <p class="leading-relaxed">
                         #159A, Street No. 2011, Phum Lorem, Sangkat Lorem, Khan Lorem, Phnom Penh, Cambodia.
@@ -154,3 +192,22 @@
     </div>
 
 </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const footerCateringToggle = document.getElementById('footerCateringToggle');
+        const footerCateringPanel = document.getElementById('footerCateringPanel');
+        const footerCateringChevron = document.getElementById('footerCateringChevron');
+
+        if (footerCateringToggle) {
+            let isOpen = false;
+            footerCateringToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                isOpen = !isOpen;
+                footerCateringPanel.style.gridTemplateRows = isOpen ? '1fr' : '0fr';
+                footerCateringChevron.classList.toggle('rotate-180', isOpen);
+                footerCateringToggle.setAttribute('aria-expanded', String(isOpen));
+            });
+        }
+    });
+</script>

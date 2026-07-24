@@ -78,7 +78,7 @@
             </p>
 
             {{-- Contact Us button --}}
-            <a href="#"
+            <a href="/contact-us"
                 class="mt-8 bg-[#A80000] hover:bg-[#8f0000] text-white text-[14px] font-medium px-8 py-3 rounded-full transition duration-300 ease-in-out">
                 Contact Us
             </a>
@@ -103,7 +103,7 @@
                             provides complete catering and event solutions from food preparation
                             and buffet services to equipment rental and venue setup.
                         </p>
-                        <a href="#"
+                        <a href="/contact-us"
                             class="inline-flex items-center justify-center bg-black hover:bg-gray-800 active:bg-gray-700 text-white text-[14px] font-medium px-2 py-2.5 min-h-[44px] md:px-6 md:py-2.5 rounded-full w-fit transition duration-300 ease-in-out">
                             Request Quotation
                         </a>
@@ -156,7 +156,7 @@ w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#F3F0E9] z-10">
 
             {{-- Button --}}
             <div class="flex justify-center mt-8 sm:mt-10 lg:mt-12">
-                <a href="#"
+                <a href="/canteen-catering-services"
                     class="inline-block px-8 py-3 rounded-full  bg-[#FFFFFF] text-[#A80000] font-medium text-[14px]
                    transition-colors duration-300 hover:bg-[#A80000] hover:text-white">
                     Explore All Services
@@ -178,7 +178,7 @@ w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#F3F0E9] z-10">
                         <span class="block font-bold">Menu Packages</span>
                     </h2>
 
-                    <a href="#"
+                    <a href="/contact-us"
                         class="mt-5 inline-block px-6 py-3 rounded-full bg-black text-white text-[14px] font-medium
                        transition-colors duration-300 hover:bg-[#F3F0E9] hover:text-[#A80000]">
                         Request Quotation

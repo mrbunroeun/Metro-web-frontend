@@ -101,7 +101,7 @@
         'description' =>
             ' Metro Catering provides reliable daily meal management solutions for factories, schools, universities, hospitals, offices, and institutions across Cambodia. We deliver nutritious, hygienic, and affordable meals designed to meet the needs of large workforces and communities.',
         'buttons' => [
-            ['text' => 'Contact Us', 'link' => '#', 'style' => 'solid'],
+            ['text' => 'Contact Us', 'link' => '/contact-us', 'style' => 'solid'],
             // ['text' => 'View Packages', 'link' => '#', 'style' => 'solid'],
         ],
     ])
@@ -135,10 +135,10 @@
                     </ul>
 
                     <div class="text-left">
-                        <button
+                        <a href="/contact-us"
                             class="bg-black text-[#FFFFFF] text-[15px] font-medium rounded-full px-6 py-3 hover:bg-gray-900 transition">
                             Request Quotation
-                        </button>
+                        </a>
                     </div>
                 </div>
 

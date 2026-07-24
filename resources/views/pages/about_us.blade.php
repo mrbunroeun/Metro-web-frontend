@@ -21,7 +21,7 @@
         'description' =>
             ' Metro Catering delivers high-quality food, professional event setups, and customized catering solutions for businesses, schools, weddings, and special occasions across Cambodia.',
         'buttons' => [
-            ['text' => 'Contact Us', 'link' => '#', 'style' => 'solid'],
+            ['text' => 'Contact Us', 'link' => '/contact-us', 'style' => 'solid'],
             // ['text' => 'View Packages', 'link' => '#', 'style' => 'solid'],
         ],
     ])
@@ -44,7 +44,7 @@
                             Introduce Metro Catering as a trusted Cambodian catering company specializing in
                             corporate dining and event services.
                         </p>
-                        <a href="#"
+                        <a href="/contact-us"
                             class="inline-flex items-center justify-center bg-black hover:bg-gray-800 active:bg-gray-700 text-white text-[14px] font-medium px-2 py-2.5 min-h-[44px] md:px-6 md:py-2.5 rounded-full w-fit transition duration-300 ease-in-out">
                             Request Quotation
                         </a>

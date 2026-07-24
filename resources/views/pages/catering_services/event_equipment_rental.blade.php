@@ -124,11 +124,11 @@
     @include('components.hero_section_not_for_home.hero_section_not_for_home', [
         'sectionLabel' => 'Event Equipment Rental',
         'heading' => 'Event Equipment Rental &
-                                                                                Setup Services',
+                                                                                        Setup Services',
         'description' =>
             'Metro Catering offers complete event equipment solutions, allowing clients to organize successful events with one trusted partner.',
         'buttons' => [
-            ['text' => 'Contact Us', 'link' => '#', 'style' => 'solid'],
+            ['text' => 'Contact Us', 'link' => '/contact-us', 'style' => 'solid'],
             // ['text' => 'View Packages', 'link' => '#', 'style' => 'solid'],
         ],
     ])

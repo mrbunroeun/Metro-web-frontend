@@ -97,11 +97,11 @@
     @include('components.hero_section_not_for_home.hero_section_not_for_home', [
         'sectionLabel' => 'Mobile Catering',
         'heading' => 'Professional Mobile Catering Services
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        in Cambodia',
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            in Cambodia',
         'description' =>
             '  Metro Catering brings fully equipped mobile kitchens and professional food service teams directly to your location. Whether you are organizing a factory event, provincial roadshow, government ceremony, construction project, or outdoor festival, we ensure fresh meals and seamless operations anywhere in Cambodia.',
         'buttons' => [
-            ['text' => 'Contact Us', 'link' => '#', 'style' => 'solid'],
+            ['text' => 'Contact Us', 'link' => '/contact-us', 'style' => 'solid'],
             // ['text' => 'View Packages', 'link' => '#', 'style' => 'solid'],
         ],
     ])

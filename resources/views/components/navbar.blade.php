@@ -6,7 +6,7 @@
 
     {{-- Utility bar --}}
     <div class="w-full bg-[#B00000]">
-        <div class="mx-auto flex h-[38px] md:h-[44px] max-w-7xl items-center justify-center gap-8 px-6 md:justify-end">
+        <div class="mx-auto flex h-[38px] md:h-[44px] max-w-6xl items-center justify-between gap-8 px-4 sm:px-6 lg:px-8">
             <p class="text-[15px] font-light text-white/90">
                 Address
             </p>
@@ -118,7 +118,7 @@
             {{-- Mobile hamburger (right) --}}
             <button id="navToggleBtn" type="button" aria-expanded="false" aria-label="Toggle navigation menu"
                 aria-controls="mobile-menu"
-                class="flex h-11 w-11 shrink-0 items-center justify-center justify-self-end gap-[5px] rounded-full transition-colors duration-200 hover:bg-black/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B00000] min-[1180px]:hidden">
+                class="col-start-3 flex h-11 w-11 shrink-0 items-center justify-center justify-self-end gap-[5px] rounded-full transition-colors duration-200 hover:bg-black/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B00000] min-[1180px]:hidden">
                 <span class="sr-only">Toggle navigation menu</span>
                 <span class="nav-bar-icon flex flex-col items-center justify-center gap-[5px]">
                     <span

@@ -16,6 +16,7 @@
         }
     }
 
+
     function showLoader() {
         if (!loader) return;
         loader.style.transition = "none";
@@ -25,10 +26,10 @@
 
     function hideLoader() {
         if (!loader) return;
-        loader.style.transition = 'opacity 0.4s ease-out';
-        loader.classList.add('opacity-0', 'pointer-events-none');
-        loader.classList.remove('opacity-100');
-        document.body.style.backgroundColor = '';
+        loader.style.transition = "opacity 0.4s ease-out";
+        loader.classList.add("opacity-0", "pointer-events-none");
+        loader.classList.remove("opacity-100");
+        document.body.style.backgroundColor = "";
     }
 
     document.addEventListener("DOMContentLoaded", function () {

@@ -125,11 +125,11 @@
     @include('components.hero_section_not_for_home.hero_section_not_for_home', [
         'sectionLabel' => 'Corporate Buffet Catering',
         'heading' => 'Corporate Buffet Catering Services
-                                                                                                                                                                in Cambodia',
+                                                                                                                                                                    in Cambodia',
         'description' => '
-                                                                                                                                                                 Metro Catering provides professional lunch and dinner buffet experiences for companies, ministries, embassies, and organizations seeking high-quality dining services.',
+                                                                                                                                                                     Metro Catering provides professional lunch and dinner buffet experiences for companies, ministries, embassies, and organizations seeking high-quality dining services.',
         'buttons' => [
-            ['text' => 'Contact Us', 'link' => '#', 'style' => 'solid'],
+            ['text' => 'Contact Us', 'link' => '/contact-us', 'style' => 'solid'],
             // ['text' => 'View Packages', 'link' => '#', 'style' => 'solid'],
         ],
     ])
