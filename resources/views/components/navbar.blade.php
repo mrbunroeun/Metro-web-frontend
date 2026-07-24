@@ -49,7 +49,7 @@
                 <div class="relative" id="cateringDropdown">
                     <button type="button" id="cateringTrigger" aria-haspopup="true" aria-expanded="false"
                         aria-controls="cateringPanel"
-                        class="flex items-center gap-1.5 rounded-full px-4 py-2.5 font-semibold text-[15px] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B00000]
+                        class="flex items-center gap-1.5 rounded-full px-4 cursor-pointer py-2.5 font-semibold text-[15px] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B00000]
                                {{ request()->is('canteen-catering-services', 'mobile-catering', 'corporate-buffet-catering', 'event-equipment-rental', 'food-box-and-refreshments') ? 'font-semibold text-[#B00000]' : 'text-gray-600 hover:text-[#B00000] hover:bg-black/[0.03]' }}">
                         Catering Services
                         <svg id="cateringChevron" class="h-3.5 w-3.5 transition-transform duration-300 ease-out"
@@ -119,9 +119,9 @@
             {{-- Mobile hamburger (right) --}}
             <button id="navToggleBtn" type="button" aria-expanded="false" aria-label="Toggle navigation menu"
                 aria-controls="mobile-menu"
-                class="col-start-3 flex h-11 w-11 shrink-0 items-center justify-center justify-self-end gap-[5px] rounded-full transition-colors duration-200 hover:bg-black/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B00000] min-[1180px]:hidden">
+                class="col-start-3  flex h-11 w-11 shrink-0 items-center justify-center justify-self-end gap-[5px] rounded-full cursor-pointer transition-colors duration-200 hover:bg-black/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B00000] min-[1180px]:hidden">
                 <span class="sr-only">Toggle navigation menu</span>
-                <span class="nav-bar-icon flex flex-col items-center justify-center gap-[5px]">
+                <span class="nav-bar-icon cursor-pointer flex flex-col items-center justify-center gap-[5px]">
                     <span
                         class="nav-bar block h-[2px] w-5 bg-gray-800 transition-transform duration-300 ease-in-out"></span>
                     <span

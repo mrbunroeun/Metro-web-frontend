@@ -310,7 +310,7 @@ Ask Questions --}}
                 [
                     'question' => 'Can Metro Catering serve meals for different shifts, including night shifts?',
                     'answer' =>
-                        'Yes. Many clients combine lunch boxes with morning and afternoon refreshment packages to provide a complete catering solution for seminars and workshops.',
+                        'Yes. We can arrange breakfast, lunch, dinner, and night-shift meals according to your operating schedule. Many factories and industrial facilities require multiple meal sessions, and our team can support 24-hour operations when needed.',
                 ],
                 [
                     'question' => 'Can you provide separate menus for office staff and factory workers?',

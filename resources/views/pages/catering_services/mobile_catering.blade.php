@@ -355,7 +355,7 @@ Ask Questions --}}
                 [
                     'question' => 'Can you provide mobile catering outside Phnom Penh?',
                     'answer' =>
-                        'Yes. Many clients combine lunch boxes with morning and afternoon refreshment packages to provide a complete catering solution for seminars and workshops.',
+                        'Yes. We regularly serve events in Kandal, Siem Reap, Battambang, Kampong Cham, Sihanoukville, and other provinces.',
                 ],
                 [
                     'question' => 'How much space do you need for an on-site kitchen setup?',

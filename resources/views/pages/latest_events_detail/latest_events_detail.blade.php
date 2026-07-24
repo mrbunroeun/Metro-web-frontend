@@ -58,10 +58,10 @@
             {{-- Right text panel --}}
             <div class="w-full min-[1250px]:w-[55%] flex flex-col justify-center">
                 <div class="text-left w-full max-w-full mx-auto min-[1250px]:mx-0">
-                    <h2 class="text-[#e02020] text-[20px] sm:text-[24px] min-[1250px]:text-[26px] font-bold mb-3">
+                    <h2 class="text-[#e02020] text-[20px] sm:text-[24px] min-[1250px]:text-[26  px] font-bold mb-3">
                         Metro Catering
                     </h2>
-                    <p class="text-white/90 text-[12px] sm:text-[13px] leading-relaxed mb-3">
+                    <p class="text-white/90 text-[14px] sm:text-[15px] leading-relaxed mb-3">
                         Trusted by companies, organizations, and families, Metro Catering
                         provides complete catering and event solutions from food preparation
                         and buffet services to equipment rental and venue setup. Trusted by
@@ -73,7 +73,7 @@
                         Catering provides complete catering and event solutions from food
                         preparation and buffet services to equipment rental and venue setup.
                     </p>
-                    <p class="text-white/90 text-[12px] sm:text-[13px] leading-relaxed mb-4">
+                    <p class="text-white/90 text-[14px] sm:text-[15px] leading-relaxed mb-4">
                         Trusted by companies, organizations, and families, Metro Catering
                         provides complete catering and event solutions from food preparation
                         and buffet services to equipment rental and venue setup. Trusted by
@@ -108,7 +108,7 @@
     @include('components.footer', [
         'ctaHeading' => 'Need Food Boxes or Refreshments for Your Next Event?',
         'ctaSubtext' => 'Whether you are organizing a government workshop, corporate seminar, school activity, or executive meeting, 
-                                                                                                                                                                                                                                    Metro Catering provides reliable and professional catering solutions tailored to your needs.',
+                                                                                                                                                                                                                                                    Metro Catering provides reliable and professional catering solutions tailored to your needs.',
         'ctaButtonText' => 'Contact Us',
         'ctaLink' => url('/contact-us'),
     ])

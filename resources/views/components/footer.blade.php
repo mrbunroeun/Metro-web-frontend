@@ -115,7 +115,7 @@
                     <div>
                         <button type="button" id="footerCateringToggle" aria-expanded="false"
                             aria-controls="footerCateringPanel"
-                            class="flex w-full items-center justify-between rounded-full px-2 py-1.5 text-left text-gray-700 transition-colors duration-200 hover:text-[#A80000] hover:bg-black/[0.03]">
+                            class="flex w-full items-center justify-between rounded-full px-2 py-1.5 text-left text-gray-700 transition-colors cursor-pointer    duration-200 hover:text-[#A80000] hover:bg-black/[0.03]">
                             Catering Services
                             <svg id="footerCateringChevron"
                                 class="h-5.5 w-5.5 shrink-0 transition-transform duration-300 ease-out" fill="none"

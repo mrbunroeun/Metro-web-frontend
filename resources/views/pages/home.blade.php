@@ -29,11 +29,13 @@
             ['number' => '05', 'label' => '$15 Package'],
         ];
         $whyChooseUsPoints = [
-            ['text' => 'Experienced large-scale food operations'],
-            ['text' => 'Professional kitchen and serving staff'],
-            ['text' => 'Consistent meal quality and taste'],
-            ['text' => 'Strict food safety standards'],
-            ['text' => 'Flexible menus based on customer requirements'],
+            ['text' => 'Professional event management team'],
+            ['text' => 'Flexible menu packages from $5–$20 per person'],
+            ['text' => 'Minimum order starting from 25 participants'],
+            ['text' => 'Reliable delivery and setup services'],
+            ['text' => 'Corporate contract and long-term catering solutions'],
+            ['text' => 'Three-day advance booking support'],
+            ['text' => 'Customized menus for every event'],
         ];
 
     @endphp
@@ -132,7 +134,7 @@ w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#F3F0E9] z-10">
 
             {{-- Title --}}
             <div class="text-center mb-8 sm:mb-10 lg:mb-12">
-                <h2 class="text-[20px] md:text-[36px] font-medium text-gray-800">
+                <h2 class="text-[20px] md:text-[36px] font-regular text-[#A80000]">
                     Our <span class="text-[#A80000] font-bold">Core Services</span>
                 </h2>
             </div>
@@ -173,7 +175,7 @@ w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#F3F0E9] z-10">
 
                 {{-- Left content --}}
                 <div class="flex flex-col items-center text-center lg:w-[300px] shrink-0">
-                    <h2 class="text-white text-[20px] sm:text-[36px] leading-snug">
+                    <h2 class="text-white text-[20px] sm:text-[25px] leading-snug">
                         Featured Mobile Catering
                         <span class="block font-bold">Menu Packages</span>
                     </h2>
@@ -207,7 +209,7 @@ Catering Solutions --}}
         <section class="py-12 sm:py-16 px-4 text-center font-sans">
 
             {{-- Title --}}
-            <h2 class="text-[20px] sm:text-[36px] mb-8 sm:mb-10">
+            <h2 class="text-[#A80000] font-regular text-[20px] sm:text-[36px] mb-8 sm:mb-10">
                 Canteen
                 <span class="block font-bold text-[#A80000] text-[20px] sm:text-[36px]">Catering Solutions</span>
             </h2>
@@ -298,7 +300,7 @@ Catering Solutions --}}
 
         {{-- Latest Events --}}
         <section class="bg-[#ffffff] py-20 px-6 md:px-10">
-            <h2 class="text-center text-[20px] sm:text-[36px] mb-10 sm:mb-12">
+            <h2 class="text-center font-light text-[20px] sm:text-[36px] mb-10 sm:mb-12 text-[#A80000]">
                 Latest <span class="font-bold text-[#A80000]">Events</span>
             </h2>
             <div
@@ -317,18 +319,18 @@ Catering Solutions --}}
 
                 <a href="#"
                     class="group relative block aspect-square overflow-hidden md:col-start-2 md:row-start-2">
-                    <img src="{{ asset($latestEvents[0]['image']) }}" alt="Festival & Public Events"
+                    <img src="{{ asset($latestEvents[2]['image']) }}" alt="Festival & Public Events"
                         class="h-full w-full bg-black object-cover transition-transform duration-500 ease-out group-hover:scale-110">
                     <span
                         class="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-red-900/90 via-red-900/30 to-transparent"></span>
                     <span class="absolute bottom-3 left-3 right-3 text-sm font-semibold leading-tight text-white">
-                        Festival & Public Events
+                        Community Outreach Activities
                     </span>
                 </a>
 
                 <a href="#"
                     class="group relative block aspect-square overflow-hidden col-span-2 w-32 mx-auto md:w-full md:col-span-1 md:mx-0 md:col-start-3 md:row-start-1">
-                    <img src="{{ asset($latestEvents[2]['image']) }}" alt="Wedding Catering Projects"
+                    <img src="{{ asset($latestEvents[0]['image']) }}" alt="Wedding Catering Projects"
                         class="h-full w-full bg-black object-cover transition-transform duration-500 ease-out group-hover:scale-110">
                     <span
                         class="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-red-900/90 via-red-900/30 to-transparent"></span>
@@ -369,8 +371,8 @@ Catering Solutions --}}
 
                 {{-- Left image panel --}}
                 <div class="relative h-full overflow-hidden">
-                    <img src="{{ asset('under_hero/food.png') }}" alt="Catering buffet spread"
-                        class="absolute inset-0 w-full h-full object-cover object-center">
+                    <img src="{{ asset('home/our_core_services/food_box_light_refreshment_catering.png') }}"
+                        alt="Catering buffet spread" class="absolute inset-0 w-full h-full object-cover object-center">
                 </div>
 
                 {{-- Right red panel --}}

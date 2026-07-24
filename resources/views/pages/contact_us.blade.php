@@ -13,13 +13,16 @@
 
                 {{-- Logo + tagline --}}
                 <div class="lg:col-span-1">
-                    <img src="{{ asset('logo_footer/logo_footer.svg') }}" alt="Metro Catering Logo" class="h-14 w-auto mb-2">
+                    <a href="/">
+                        <img src="{{ asset('logo_footer/logo_footer.svg') }}" alt="Metro Catering Logo"
+                            class="h-14 w-auto mb-2">
+                    </a>
                 </div>
 
                 {{-- About + Follow Us --}}
                 <div>
                     <h3 class="text-[#A80000] text-[20px] font-bold mb-3">Metro Catering</h3>
-                    <p class="text-[#FFFFFF] text-[13px] leading-relaxed mb-6">
+                    <p class="text-[#FFFFFF] text-[18px] leading-relaxed mb-6">
                         Trusted by companies, organizations, and families, Metro Catering provides complete
                         catering and event solutions from food preparation and buffet services to equipment
                         rental and venue setup.
@@ -65,7 +68,7 @@
                 {{-- Company links --}}
                 <div>
                     <h3 class="text-[#A80000] text-[20px] font-bold mb-3">Company</h3>
-                    <div class="flex flex-col gap-1 text-[14px]">
+                    <div class="flex flex-col gap-1 text-[18px]">
                         <a href="{{ url('/') }}"
                             class="rounded-full px-2 py-1.5 text-[#FFFFFF] transition-colors duration-200 hover:text-[#A80000] hover:bg-white/[0.06]">Home</a>
                         <a href="{{ url('/about-us') }}"
@@ -79,7 +82,7 @@
                                 class="flex w-full items-center justify-between rounded-full px-2 py-1.5 text-left text-[#FFFFFF] transition-colors duration-200 hover:text-[#A80000] hover:bg-white/[0.06]">
                                 Catering Services
                                 <svg id="footerCateringChevron"
-                                    class="h-3.5 w-3.5 shrink-0 transition-transform duration-300 ease-out" fill="none"
+                                    class="h-5.5 w-5.5 shrink-0 transition-transform duration-300 ease-out" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                                 </svg>
@@ -90,19 +93,19 @@
                                 <div class="overflow-hidden">
                                     <div class="ml-2 mt-1 flex flex-col gap-0.5 border-l-2 border-white/[0.15] pl-3">
                                         <a href="/canteen-catering-services"
-                                            class="rounded-full px-2 py-2 text-[13px] text-white/80 transition-colors duration-150 hover:text-[#A80000] hover:bg-white/[0.06]">Canteen
+                                            class="rounded-full px-2 py-2 text-[18px] text-white/80 transition-colors duration-150 hover:text-[#A80000] hover:bg-white/[0.06]">Canteen
                                             Catering Services</a>
                                         <a href="/mobile-catering"
-                                            class="rounded-full px-2 py-2 text-[13px] text-white/80 transition-colors duration-150 hover:text-[#A80000] hover:bg-white/[0.06]">Mobile
+                                            class="rounded-full px-2 py-2 text-[18px] text-white/80 transition-colors duration-150 hover:text-[#A80000] hover:bg-white/[0.06]">Mobile
                                             Catering</a>
                                         <a href="/corporate-buffet-catering"
-                                            class="rounded-full px-2 py-2 text-[13px] text-white/80 transition-colors duration-150 hover:text-[#A80000] hover:bg-white/[0.06]">Corporate
+                                            class="rounded-full px-2 py-2 text-[18px] text-white/80 transition-colors duration-150 hover:text-[#A80000] hover:bg-white/[0.06]">Corporate
                                             Buffet Catering</a>
                                         <a href="/event-equipment-rental"
-                                            class="rounded-full px-2 py-2 text-[13px] text-white/80 transition-colors duration-150 hover:text-[#A80000] hover:bg-white/[0.06]">Event
+                                            class="rounded-full px-2 py-2 text-[18px] text-white/80 transition-colors duration-150 hover:text-[#A80000] hover:bg-white/[0.06]">Event
                                             Equipment Rental</a>
                                         <a href="/food-box-and-refreshments"
-                                            class="rounded-full px-2 py-2 text-[13px] text-white/80 transition-colors duration-150 hover:text-[#A80000] hover:bg-white/[0.06]">Food
+                                            class="rounded-full px-2 py-2 text-[18px] text-white/80 transition-colors duration-150 hover:text-[#A80000] hover:bg-white/[0.06]">Food
                                             Box & Refreshments</a>
                                     </div>
                                 </div>
@@ -125,7 +128,7 @@
                 {{-- Contact --}}
                 <div>
                     <h3 class="text-[#A80000] text-[20px] font-bold mb-3">Contact</h3>
-                    <div class="flex flex-col gap-2.5 text-[14px] text-[#FFFFFF]">
+                    <div class="flex flex-col gap-2.5 text-[18px] text-[#FFFFFF]">
                         <p class="leading-relaxed">
                             #159A, Street No. 2011, Phum Lorem, Sangkat Lorem, Khan Lorem, Phnom Penh, Cambodia.
                         </p>

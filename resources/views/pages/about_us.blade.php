@@ -117,7 +117,7 @@
             {{-- Top icon + heading --}}
             <img src="{{ asset('about_us/our_core_values/our_core_values.svg') }}" alt="Core Values icon"
                 class="w-10 h-10 mx-auto mb-2">
-            <h2 class="text-[20px] sm:text-[36px] mb-10 sm:mb-12">
+            <h2 class="text-[20px] text-[#A80000] font-light sm:text-[36px] mb-10 sm:mb-12">
                 Core <span class="font-bold text-[#A80000]">Values</span>
             </h2>
 

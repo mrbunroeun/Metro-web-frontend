@@ -99,7 +99,7 @@
 
                 {{-- Fixed-width inner content container --}}
                 <div class="text-left w-full max-w-[280px] sm:max-w-[340px] md:max-w-[460px]">
-                    <h2 class="text-white sm:text-[32px] text-[20px] font-bold mb-3">
+                    <h2 class="text-white sm:text-[36px] text-[20px] font-bold mb-3">
                         Overview
                     </h2>
                     <p class="text-white/90 sm:text-[15px] text-[13px] leading-snug mb-3">
@@ -161,9 +161,8 @@ w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#a80000] z-10">
 
     <section>
         <div
-            class="flex  gap-2 justify-center bg-[#f3f0e9] pt-10 text-[#a80000] md:text-[30px] sm:text-[25px] text-[20px] font-bold">
-            <h1 class="font-normal">Equipment </h1>
-            <h1>Categories</h1>
+            class="flex  gap-2 justify-center bg-[#f3f0e9] pt-10 text-[#a80000] md:text-[36px] sm:text-[25px] text-[20px] font-bold">
+            <h1>What We Serve </h1>
         </div>
 
         {{-- What We Serve --}}
@@ -295,7 +294,7 @@ w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#a80000] z-10">
         @endphp
 
         <div class="bg-white py-16 px-4">
-            <h2 class="text-[#a80000] text-[28px] md:text-[40px] font-bold text-center mb-12">
+            <h2 class="text-[#a80000] text-[28px] md:text-[36px] font-bold text-center mb-12">
                 Menu Options
             </h2>
 
@@ -349,7 +348,7 @@ w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#a80000] z-10">
                 <div class="relative z-0 flex flex-col items-center lg:h-full lg:justify-center lg:pl-[380px]">
 
                     {{-- Heading --}}
-                    <h2 class="text-white text-[24px] sm:text-[32px] font-bold text-center mb-1">
+                    <h2 class="text-white text-[24px] sm:text-[36px] font-bold text-center mb-1">
                         Who We Serve
                     </h2>
                     <p class="text-white text-[15px] text-center mb-6">
@@ -465,7 +464,7 @@ w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#a80000] z-10">
         {{-- Our Process --}}
         <section class="w-full px-4 sm:px-8 lg:px-16 py-12 sm:py-16 max-w-6xl mx-auto font-sans">
 
-            <h2 class="text-[#A80000] font-bold text-[22px] sm:text-[26px] mb-8">
+            <h2 class="text-[#A80000] font-bold text-[25px] sm:text-[36px] mb-8">
                 Our Process
             </h2>
 
@@ -582,10 +581,10 @@ w-13 h-13 md:w-18 md:h-18 rounded-full bg-[#a80000] z-10">
     {{-- footer --}}
     @include('components.footer', [
         'ctaHeading' => 'CATERING & EVENTS
-                    Need Food Boxes or Refreshments for Your Next Event?',
+                                                        Need Food Boxes or Refreshments for Your Next Event?',
         'ctaSubtext' => '
-                    Whether you are organizing a government workshop, corporate seminar, school activity, or executive meeting, 
-                    Metro Catering provides reliable and professional catering solutions tailored to your needs.',
+                                                        Whether you are organizing a government workshop, corporate seminar, school activity, or executive meeting, 
+                                                        Metro Catering provides reliable and professional catering solutions tailored to your needs.',
         'ctaButtonText' => 'Contact Us',
         'ctaLink' => url('/contact-us'),
     ])

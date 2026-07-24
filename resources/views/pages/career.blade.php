@@ -14,7 +14,7 @@
     {{-- input data part --}}
     <section class="w-full bg-[#f3f0e9] py-16 px-4">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-center text-[#a80000] font-bold text-[28px] sm:text-[36px] md:text-[40px] mb-12">
+            <h2 class="text-center text-[#a80000] font-bold text-[28px] sm:text-[36px] md:text-[36px] mb-12">
                 Application Form
             </h2>
 
@@ -281,9 +281,9 @@
 
 
             </form>
-            <div iv class="flex items-center py-[2rem] justify-center">
-                <p class="block text-[#a80000] font-semibold text-[15px] mb-2">Please Attatch Your CV and Cover Letter
-                    in the Telegram</p>
+            <div iv class="flex items-center pt-[2rem] pb-[1rem] justify-center">
+                <p class="block text-[#a80000] font-semibold sm:text-[20px] text-[15px] mb-2">Please attach your CV and
+                    cover letter in Telegram</p>
             </div>
             <div class="md:col-span-2 flex justify-center pt-4">
                 <button type="button" onclick="submitForm()"
@@ -314,7 +314,7 @@ Email: ${email}
 Phone: ${phone}
 Position: ${position}
 
-Please Attach Your CV and Cover Letter in the Telegram`;
+Please attach your CV and cover letter here in Telegram`;
 
             let encoded = encodeURIComponent(message);
             let telegramUrl = `https://t.me/HasBunRoeun?text=${encoded}`;
@@ -326,7 +326,7 @@ Please Attach Your CV and Cover Letter in the Telegram`;
     @include('components.footer', [
         'ctaHeading' => 'Need Food Boxes or Refreshments for Your Next Event?',
         'ctaSubtext' => 'Whether you are organizing a government workshop, corporate seminar, school activity, or executive meeting, 
-                                                                                                                                                                                                                                                        Metro Catering provides reliable and professional catering solutions tailored to your needs.',
+                                                                                                                                                                                                                                                                                    Metro Catering provides reliable and professional catering solutions tailored to your needs.',
         'ctaButtonText' => 'Contact Us',
         'ctaLink' => url('/contact-us'),
     ])

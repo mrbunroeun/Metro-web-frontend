@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="@yield('description', 'Laravel Application')">
     <link rel="preload" as="image" href="{{ asset('logo/metro_log.svg') }}" fetchpriority="high">
+    <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
 
     <title>@yield('title', config('app.name', 'Laravel'))</title>
 
