@@ -16,6 +16,15 @@
 
 <body class="text-gray-900 bg-white font-sans antialiased">
 
+    <script>
+        (function() {
+            'use strict';
+            if (sessionStorage.getItem('metro-page-transition') === '1') {
+                document.body.style.backgroundColor = '#B00000';
+            }
+        })();
+    </script>
+
     {{-- Loading overlay --}}
     <div id="page-loader"
         class="fixed inset-0 flex items-center justify-center bg-[#B00000] opacity-0 pointer-events-none"

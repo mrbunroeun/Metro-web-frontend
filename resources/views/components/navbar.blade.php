@@ -31,7 +31,7 @@
             </a>
 
             {{-- Desktop links (true center, via 1fr/auto/1fr grid) --}}
-            <div class="hidden lg:flex items-center gap-1 justify-self-center">
+            <div class="hidden min-[1180px]:flex items-center gap-1 justify-self-center">
                 <a href="{{ url('/') }}" aria-current="{{ request()->is('/') ? 'page' : 'false' }}"
                     class="rounded-full px-4 py-2.5 text-[15px] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B00000]
                            {{ request()->is('/') ? 'font-semibold text-[#B00000]' : 'text-gray-600 hover:text-[#B00000] hover:bg-black/[0.03]' }}">
@@ -118,7 +118,7 @@
             {{-- Mobile hamburger (right) --}}
             <button id="navToggleBtn" type="button" aria-expanded="false" aria-label="Toggle navigation menu"
                 aria-controls="mobile-menu"
-                class="flex h-11 w-11 shrink-0 items-center justify-center justify-self-end gap-[5px] rounded-full transition-colors duration-200 hover:bg-black/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B00000] lg:hidden">
+                class="flex h-11 w-11 shrink-0 items-center justify-center justify-self-end gap-[5px] rounded-full transition-colors duration-200 hover:bg-black/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B00000] min-[1180px]:hidden">
                 <span class="sr-only">Toggle navigation menu</span>
                 <span class="nav-bar-icon flex flex-col items-center justify-center gap-[5px]">
                     <span
@@ -133,12 +133,12 @@
 
         {{-- Backdrop overlay (click outside to close) --}}
         <div id="navBackdrop"
-            class="fixed inset-0 top-0 -z-10 bg-black/30 opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out lg:hidden">
+            class="fixed inset-0 top-0 -z-10 bg-black/30 opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out min-[1180px]:hidden">
         </div>
 
         {{-- Mobile slide-down menu --}}
         <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation"
-            class="absolute left-1/2 top-full mt-3 w-[92%] -translate-x-1/2 origin-top scale-95 -translate-y-1 rounded-[28px] border border-black/5 bg-white/95 p-3 opacity-0 shadow-[0_20px_60px_rgba(0,0,0,0.15)] pointer-events-none transition-all duration-300 ease-out lg:hidden">
+            class="absolute left-1/2 top-full mt-3 w-[92%] -translate-x-1/2 origin-top scale-95 -translate-y-1 rounded-[28px] border border-black/5 bg-white/95 p-3 opacity-0 shadow-[0_20px_60px_rgba(0,0,0,0.15)] pointer-events-none transition-all duration-300 ease-out min-[1180px]:hidden">
             <div class="flex flex-col gap-1">
                 <a href="{{ url('/') }}" aria-current="{{ request()->is('/') ? 'page' : 'false' }}"
                     class="nav-link flex min-h-[44px] items-center rounded-2xl px-4 text-[16px] transition-colors duration-150
